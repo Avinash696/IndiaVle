@@ -6,118 +6,175 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.RetailerCoupanActivity"
     android:background="@drawable/gob">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        android:layout_above="@+id/materialCard"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#E1F5FE"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="1 -P-coupon : Physical Pan Card send your address"/>
 
+            <TextView
+                android:id="@+id/tvDes2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 -E-coupon : Only Electronic Pan Card send in your Email" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/materialCard"
+        app:cardBackgroundColor="#E1F5FE"
+        style="@style/CustomCardCorners">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical"
         android:padding="5dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="User Id :"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:fontFamily="@font/fatface"/>
 
         <View
             android:layout_width="70dp"
             android:layout_height="1dp"
             android:layout_marginTop="2dp"
+            android:background="@color/blue"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="80dp"
+            android:autofillHints="name"
+            android:background="@drawable/edit_border"
+            android:hint="User Id" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Select Coupon type :"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:fontFamily="@font/fatface"/>
+
+        <View
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/blue" />
 
         <EditText
-            android:layout_width="150dp"
+            android:layout_width="180dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="80dp"
             android:autofillHints="name"
             android:background="@drawable/edit_border"
-            android:text="User Id" />
+            android:hint="Coupon Type" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Select Coupon type :"
-            android:textColor="@color/black" />
-
-        <View
-            android:layout_width="70dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/black" />
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="50dp"
-            android:autofillHints="name"
-            android:background="@drawable/edit_border"
-            android:text="User Id" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
             android:text="No. Of Coupon :"
             android:textColor="@color/black"
-            android:layout_marginTop="3dp"/>
+            android:textSize="13sp"
+            android:fontFamily="@font/fatface"/>
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/blue" />
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="80dp"
+            android:autofillHints="name"
+            android:background="@drawable/edit_border"
+            android:hint="No. of Coupon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Mobile No. :"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:fontFamily="@font/fatface"/>
 
         <View
             android:layout_width="70dp"
             android:layout_height="1dp"
             android:layout_marginTop="2dp"
-            android:background="@color/black" />
+            android:background="@color/blue"
+            android:layout_marginBottom="10dp"/>
 
         <EditText
-            android:layout_width="150dp"
+            android:layout_width="180dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="50dp"
-            android:autofillHints="name"
-            android:background="@drawable/edit_border"
-            android:text="User Id" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Mobile No. :"
-            android:textColor="@color/black" />
-
-        <View
-            android:layout_width="150dp"
-            android:layout_height="1dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="2dp"
-            android:background="@color/cyan" />
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="50dp"
             android:autofillHints="name"
             android:background="@drawable/edit_border"
-            android:text="User Id"
-            android:layout_marginTop="2dp"/>
+            android:hint="Mobile No." />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="170dp"
                 app:cardBackgroundColor="@color/blue"
                 app:cardCornerRadius="3dp"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                android:layout_marginLeft="130dp">
+                app:cardUseCompatPadding="true">
 
 
                 <TextView
                     android:layout_width="70dp"
                     android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="Pay Now "
                     android:textColor="@color/white" />
@@ -130,4 +187,5 @@
 <!--            android:layout_height="wrap_content"-->
 <!--            android:text="Pay Now" />-->
     </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

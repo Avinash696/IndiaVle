@@ -1,11 +1,18 @@
 package com.example.indiavle.ui.frag
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Spinner
 import com.example.panindia.R
+import com.example.panindia.databinding.FragmentOneWayBinding
+import android.widget.ArrayAdapter
+
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,8 +28,13 @@ class OneWayFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var binding :FragmentOneWayBinding
+    lateinit var viewlayout :View
+//    lateinit var spinnerPassanger :Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        var items = arrayOf("1", "2", "3")
+
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -35,7 +47,23 @@ class OneWayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_one_way, container, false)
+        viewlayout =inflater.inflate(R.layout.fragment_one_way, container, false)
+//        val adapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerPassanger)
+//        if(spinnerPassanger != null ){
+//            val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, spinnerPassanger)
+//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//            spinnerPassanger.adapter = adapter;
+//        }
+
+        return  viewlayout
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        init()
+        super.onViewCreated(view, savedInstanceState)
+    }
+    fun init(){
+//        spinnerPassanger =  viewlayout.findViewById(R.id.spPassangers)
     }
 
     companion object {

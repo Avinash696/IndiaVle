@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.activity.FlightActivity"
-        app:cardBackgroundColor="@color/blue">
+        android:background="@color/sf_green">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -23,7 +23,6 @@
             app:cardUseCompatPadding="true"
             android:clickable="true"
             android:id="@+id/cvFlightTabs">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -66,12 +65,25 @@
                 </LinearLayout>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Your Flight"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_below="@+id/cvFlightTabs"
+            android:id="@+id/tvNormalText"
+            android:textStyle="bold"
+            android:fontFamily="@font/lobster"
+            android:gravity="center"/>
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/frgFlightHost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/cvFlightTabs"
-            android:background="@color/blue"
-            android:padding="2dp" />
+            android:layout_below="@+id/tvNormalText"
+            android:background="@drawable/gob"
+            android:padding="2dp"
+            android:layout_marginBottom="10dp"/>
     </RelativeLayout>
 </layout>

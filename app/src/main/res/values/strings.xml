@@ -8,5 +8,6 @@
     <string name="super_distributer">Super Distributer</string>
     <string name="admin">Admin</string>
     <string name="distributer">Distributer</string>
-    <string name="retailer">Retailer</string>>
+    <string name="retailer">Retailer</string>
+    <string name="passangers_luggage"><![CDATA[Passangers & Luggage]]></string>>
 </resources>

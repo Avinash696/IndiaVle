@@ -23,4 +23,25 @@
     <color name="cyan">#00FFFF</color>
     <color name="light_cyan">#E0FFFF</color>
     <color name="tomato">#FF6347</color>
+    <color name="sf_green">#089083</color>
+    <color name="sf_black">#161A20</color>
+    <color name="greenish_grey">#5f8482</color>
+    <color name="dark_grey">#344c4b</color>
+    <color name="cream">#bba362</color>
+
+    <color name="text_multiStop">#546564</color>
+    <color name="onclick_multiStop">#e09660</color>
+    <color name="heading_multiStop">#101d1b</color>
+    <color name="textHead_multiStop">#A0aaa6</color>
+    //bus color
+    <color name="btn_bus">#263cb0</color>
+    <color name="lightBlue_bus">#a7def7</color>
+    <color name="dots_bus">#4eabec</color>
+    <color name="background_bus">#e7f6fc</color>
+    <color name="define_bus">#ef7d22</color>
+    <color name="transparent">#33FFFF00</color>
+    <color name="hotel_background">#b7d7f2</color>
+
+
+
 </resources>

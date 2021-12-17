@@ -1,285 +1,585 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.frag.MultiStopFragment"
-    android:padding="10dp"
-    android:background="#682BBC">
-  <androidx.cardview.widget.CardView
-      android:id="@+id/cvDetail"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      app:cardCornerRadius="5dp"
-      app:cardElevation="10dp"
-      app:cardMaxElevation="10dp"
-      app:cardPreventCornerOverlap="true"
-      app:cardUseCompatPadding="true">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:background="@drawable/gradiant_light">
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
+    android:background="@color/sf_green">
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginLeft="5dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:fontFamily="@font/regular"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:text="From"-->
-<!--        android:textColor="@color/red"-->
-<!--        android:textSize="15sp" />-->
-
-<!--    <View-->
-<!--        android:layout_width="@dimen/view_width"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_margin="@dimen/mid_color"-->
-<!--        android:background="@color/seperator" />-->
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Enter Origin"
-        android:fontFamily="@font/lato"/>
-  </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-<!--      <TextView-->
-<!--          android:layout_width="match_parent"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_marginLeft="5dp"-->
-<!--          android:layout_weight="1"-->
-<!--          android:fontFamily="@font/regular"-->
-<!--          android:gravity="center_vertical"-->
-<!--          android:text="To"-->
-<!--          android:textColor="@color/red"-->
-<!--          android:textSize="15sp" />-->
-
-<!--      <View-->
-<!--          android:layout_width="@dimen/view_width"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_margin="@dimen/mid_color"-->
-<!--          android:background="@color/seperator" />-->
-
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:hint="Enter Destination"
-          android:fontFamily="@font/lato"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-<!--      <TextView-->
-<!--          android:layout_width="match_parent"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_marginLeft="5dp"-->
-<!--          android:layout_weight="1"-->
-<!--          android:fontFamily="@font/regular"-->
-<!--          android:gravity="center_vertical"-->
-<!--          android:text="Depart"-->
-<!--          android:textColor="@color/red"-->
-<!--          android:textSize="15sp" />-->
-
-<!--      <View-->
-<!--          android:layout_width="@dimen/view_width"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_margin="@dimen/mid_color"-->
-<!--          android:background="@color/seperator" />-->
-
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:hint="Select Depart Date"
-          android:fontFamily="@font/lato"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-<!--      <TextView-->
-<!--          android:layout_width="match_parent"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_marginLeft="5dp"-->
-<!--          android:layout_weight="1"-->
-<!--          android:fontFamily="@font/regular"-->
-<!--          android:gravity="center_vertical"-->
-<!--          android:text="Adult (12+ YRS)"-->
-<!--          android:textColor="@color/red"-->
-<!--          android:textSize="15sp" />-->
-
-<!--      <View-->
-<!--          android:layout_width="@dimen/view_width"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_margin="@dimen/mid_color"-->
-<!--          android:background="@color/seperator" />-->
-
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:hint="Enter Adult (12+ YRS) Origin" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-<!--      <TextView-->
-<!--          android:layout_width="match_parent"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_marginLeft="5dp"-->
-<!--          android:layout_weight="1"-->
-<!--          android:fontFamily="@font/regular"-->
-<!--          android:gravity="center_vertical"-->
-<!--          android:text="Children(2-11 YRS)"-->
-<!--          android:textColor="@color/red"-->
-<!--          android:textSize="15sp" />-->
-
-<!--      <View-->
-<!--          android:layout_width="@dimen/view_width"-->
-<!--          android:layout_height="match_parent"-->
-<!--          android:layout_margin="@dimen/mid_color"-->
-<!--          android:background="@color/seperator" />-->
-
-      <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:hint="Select Children(2-11 YRS) Passangers" />
-    </LinearLayout>
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginLeft="5dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:fontFamily="@font/regular"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:text="INFANT (0-2 YRS)"-->
-<!--        android:textColor="@color/red"-->
-<!--        android:textSize="15sp" />-->
-
-<!--    <View-->
-<!--        android:layout_width="@dimen/view_width"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_margin="@dimen/mid_color"-->
-<!--        android:background="@color/seperator" />-->
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Select INFANT (0-2 YRS) Passangers" />
-  </LinearLayout>
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-
-    <TextView
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CustomCardCorners"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/regular"
-        android:gravity="center_vertical"
-        android:text="Class"
-        android:textColor="@color/red"
-        android:textSize="15sp" />
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/white"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
 
-    <View
-        android:layout_width="@dimen/view_width"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/mid_color"
-        android:background="@color/seperator" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="Economy" />
-  </LinearLayout>
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
-      <androidx.cardview.widget.CardView
-          android:layout_width="130dp"
-          android:layout_height="70dp"
-          app:cardBackgroundColor="@color/purple_200"
-          app:cardCornerRadius="5dp"
-          app:cardElevation="10dp"
-          app:cardMaxElevation="10dp"
-          app:cardPreventCornerOverlap="true"
-          app:cardUseCompatPadding="true"
-         android:layout_alignParentRight="true"
-          android:padding="4dp">
 
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center"
-              android:text="Search Bus"
-              android:textColor="@color/black"
-              android:textSize="15sp" />
-      </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-  </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-      <RadioButton
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Select Preferred Carrier"
-          android:textColor="@color/red"
-          android:fontFamily="@font/lato"/>
-      <RadioButton
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Show Direct Flight Only"
-          android:textColor="@color/red"/>
-      <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Refundable Flight Only"
-        android:textColor="@color/red"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/dark_grey">
 
-    </RadioGroup>
-    </LinearLayout>
-  </LinearLayout>
-</ScrollView>
-  </androidx.cardview.widget.CardView>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@id/tvFromMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="From"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvFromMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Enter Origin"
+                                    android:text="India"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/text_multiStop" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@id/tvToMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="To"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvToMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Enter Destination"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/dark_grey">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tvDateMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="Depart Date"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvDateMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="DD/MM/YYYY"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/dark_grey">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@id/tvAdultMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="(12+YRS)"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvAdultMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Select Passangers"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@id/tvChildrenMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="(2-11 YRS)"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvChildrenMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Select Passangers"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@id/tvInfantMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="(0-2 YRS)"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvInfantMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Select Passangers"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/dark_grey">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tvClassMulti"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:fontFamily="@font/fatface"
+                                    android:text="Class"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/tvClassMulti"
+                                    android:layout_marginStart="20dp"
+                                    android:hint="Economy Class"
+                                    android:textColor="@color/onclick_multiStop"
+                                    android:textColorHint="@color/textHead_multiStop" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="190dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="@color/onclick_multiStop"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/fatface"
+                            android:text="Search Flight"
+                            android:textColor="@color/text_multiStop" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <!--  <LinearLayout-->
+            <!--      android:layout_width="match_parent"-->
+            <!--      android:layout_height="wrap_content"-->
+            <!--      android:orientation="vertical"-->
+            <!--      android:background="@drawable/gradiant_light">-->
+            <!--  <LinearLayout-->
+            <!--      android:layout_width="match_parent"-->
+            <!--      android:layout_height="wrap_content"-->
+            <!--      android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;    <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:text="From"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;    <View&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--    <EditText-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_weight="1"-->
+            <!--        android:hint="Enter Origin"-->
+            <!--        android:fontFamily="@font/lato"/>-->
+            <!--  </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;      <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:text="To"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;      <View&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--      <EditText-->
+            <!--          android:layout_width="match_parent"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:layout_weight="1"-->
+            <!--          android:hint="Enter Destination"-->
+            <!--          android:fontFamily="@font/lato"/>-->
+            <!--    </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;      <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:text="Depart"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;      <View&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--      <EditText-->
+            <!--          android:layout_width="match_parent"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:layout_weight="1"-->
+            <!--          android:hint="Select Depart Date"-->
+            <!--          android:fontFamily="@font/lato"/>-->
+            <!--    </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;      <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:text="Adult (12+ YRS)"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;      <View&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--      <EditText-->
+            <!--          android:layout_width="match_parent"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:layout_weight="1"-->
+            <!--          android:hint="Enter Adult (12+ YRS) Origin" />-->
+            <!--    </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;      <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:text="Children(2-11 YRS)"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;      <View&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;          android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--      <EditText-->
+            <!--          android:layout_width="match_parent"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:layout_weight="1"-->
+            <!--          android:hint="Select Children(2-11 YRS) Passangers" />-->
+            <!--    </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--      android:layout_width="match_parent"-->
+            <!--      android:layout_height="wrap_content"-->
+            <!--      android:orientation="horizontal">-->
+
+            <!--&lt;!&ndash;    <TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_marginLeft="5dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:fontFamily="@font/regular"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:gravity="center_vertical"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:text="INFANT (0-2 YRS)"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:textColor="@color/red"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:textSize="15sp" />&ndash;&gt;-->
+
+            <!--&lt;!&ndash;    <View&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_width="@dimen/view_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
+            <!--&lt;!&ndash;        android:background="@color/seperator" />&ndash;&gt;-->
+
+            <!--    <EditText-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_weight="1"-->
+            <!--        android:hint="Select INFANT (0-2 YRS) Passangers" />-->
+            <!--  </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--      android:layout_width="match_parent"-->
+            <!--      android:layout_height="wrap_content"-->
+            <!--      android:orientation="horizontal">-->
+
+            <!--    <TextView-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:layout_marginLeft="5dp"-->
+            <!--        android:layout_weight="1"-->
+            <!--        android:fontFamily="@font/regular"-->
+            <!--        android:gravity="center_vertical"-->
+            <!--        android:text="Class"-->
+            <!--        android:textColor="@color/red"-->
+            <!--        android:textSize="15sp" />-->
+
+            <!--    <View-->
+            <!--        android:layout_width="@dimen/view_width"-->
+            <!--        android:layout_height="match_parent"-->
+            <!--        android:layout_margin="@dimen/mid_color"-->
+            <!--        android:background="@color/seperator" />-->
+
+            <!--    <Spinner-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_weight="1"-->
+            <!--        android:hint="Economy" />-->
+            <!--  </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--      android:layout_width="match_parent"-->
+            <!--      android:layout_height="wrap_content"-->
+            <!--      android:orientation="horizontal">-->
+            <!--        <RelativeLayout-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content">-->
+            <!--      <androidx.cardview.widget.CardView-->
+            <!--          android:layout_width="130dp"-->
+            <!--          android:layout_height="70dp"-->
+            <!--          app:cardBackgroundColor="@color/purple_200"-->
+            <!--          app:cardCornerRadius="5dp"-->
+            <!--          app:cardElevation="10dp"-->
+            <!--          app:cardMaxElevation="10dp"-->
+            <!--          app:cardPreventCornerOverlap="true"-->
+            <!--          app:cardUseCompatPadding="true"-->
+            <!--         android:layout_alignParentRight="true"-->
+            <!--          android:padding="4dp">-->
+
+            <!--          <TextView-->
+            <!--              android:layout_width="wrap_content"-->
+            <!--              android:layout_height="wrap_content"-->
+            <!--              android:layout_gravity="center"-->
+            <!--              android:text="Search Bus"-->
+            <!--              android:textColor="@color/black"-->
+            <!--              android:textSize="15sp" />-->
+            <!--      </androidx.cardview.widget.CardView>-->
+            <!--        </RelativeLayout>-->
+            <!--  </LinearLayout>-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal">-->
+
+            <!--    <RadioGroup-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content">-->
+            <!--      <RadioButton-->
+            <!--          android:layout_width="wrap_content"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:text="Select Preferred Carrier"-->
+            <!--          android:textColor="@color/red"-->
+            <!--          android:fontFamily="@font/lato"/>-->
+            <!--      <RadioButton-->
+            <!--          android:layout_width="wrap_content"-->
+            <!--          android:layout_height="wrap_content"-->
+            <!--          android:text="Show Direct Flight Only"-->
+            <!--          android:textColor="@color/red"/>-->
+            <!--      <RadioButton-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:text="Refundable Flight Only"-->
+            <!--        android:textColor="@color/red"/>-->
+
+            <!--    </RadioGroup>-->
+            <!--    </LinearLayout>-->
+            <!--  </LinearLayout>-->
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

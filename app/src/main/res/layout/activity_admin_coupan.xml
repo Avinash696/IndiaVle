@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2 -E-coupon : Only Electronic Pan Card send in your Email" />
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llCard"

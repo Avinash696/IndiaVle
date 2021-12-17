@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomCardCorners" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners</item>
+    </style>
+
+    <style name="ShapeAppearance_custom_corners" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">80dp</item>
+        <item name="cornerSizeTopRight">80dp</item>
+    </style>
+</resources>

@@ -15,14 +15,20 @@ import com.example.panindia.databinding.ActivityFlightBinding
 
 class FlightActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var bindingFlightActivity: ActivityFlightBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingFlightActivity = DataBindingUtil.setContentView(this, R.layout.activity_flight)
         supportActionBar?.setTitle("Flight")
+        supportActionBar?.hide()
 
         bindingFlightActivity.tvOneWay.setOnClickListener(this)
         bindingFlightActivity.tvRoundTrip.setOnClickListener(this)
         bindingFlightActivity.tvMultiStop.setOnClickListener(this)
+
+    }
+    fun init(){
+
     }
 
     fun FragSwitch(fragment: Fragment) {
