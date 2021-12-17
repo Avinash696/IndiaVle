@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/findid_gradiant"
+    tools:context=".ui.activity.FindIdActivity">
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/icon"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/profile_image"
+        android:id="@+id/ll">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/smartph"
+            android:layout_marginTop="30dp"/>
+        <EditText
+            android:layout_width="196dp"
+            android:layout_height="40dp"
+            android:hint="Enter Mobile No."
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_border"/>
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/ll">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ll"
+            android:layout_centerInParent="true"
+            android:background="#FF6347	">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/search1"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:hint="Search"
+                android:gravity="center"
+                android:onClick="FnSearchNumber"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+</RelativeLayout>

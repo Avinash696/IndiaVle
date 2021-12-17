@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">IndiaVle</string>
+    <string name="hotel">hotel</string>
+    <string name="bus">Bus</string>
+    <string name="flight">flight</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="super_distributer">Super Distributer</string>
+    <string name="admin">Admin</string>
+    <string name="distributer">Distributer</string>
+    <string name="retailer">Retailer</string>>
+</resources>

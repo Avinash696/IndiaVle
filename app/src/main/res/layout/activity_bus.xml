@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bus_background">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:text="From"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/lobster"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/red"
+                                android:textSize="20sp"/>
+
+                            <View
+                                android:layout_width="@dimen/view_width"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/mid_color"
+                                android:background="@color/seperator" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Enter Origin"
+                                android:fontFamily="@font/lato"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/lobster"
+                                android:gravity="center_vertical"
+                                android:text="To"
+                                android:textColor="@color/red"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="@dimen/view_width"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/mid_color"
+                                android:background="@color/seperator" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/lato"
+                                android:hint="Enter Destination" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/lobster"
+                                android:gravity="center_vertical"
+                                android:text="Date"
+                                android:textSize="20sp"
+                                android:textColor="@color/red"/>
+
+                            <View
+                                android:layout_width="@dimen/view_width"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/mid_color"
+                                android:background="@color/seperator" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="Select Date"
+                                android:fontFamily="@font/lato"/>
+                        </LinearLayout>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="130dp"
+                            android:layout_height="70dp"
+                            app:cardBackgroundColor="#7B3BD3"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp"
+                            app:cardMaxElevation="10dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardUseCompatPadding="true"
+                            android:layout_centerInParent="true"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Search Bus"
+                                android:textColor="#FFAB00"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/fatface"/>
+                        </androidx.cardview.widget.CardView>
+<!--                        <Button-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Search Bus"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:id="@+id/btnBusSearch"-->
+<!--                            android:background="@drawable/seperator_mid"-->
+<!--                            android:onClick="FnBusCheck" />-->
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+</RelativeLayout>

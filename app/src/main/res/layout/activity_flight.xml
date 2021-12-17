@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.FlightActivity"
+        app:cardBackgroundColor="@color/blue">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:cardCornerRadius="6dp"
+            app:cardMaxElevation="10dp"
+            android:elevation="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            android:clickable="true"
+            android:id="@+id/cvFlightTabs">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvOneWay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/spartan"
+                        android:gravity="center"
+                        android:text="One Way"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvRoundTrip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/spartan"
+                        android:gravity="center"
+                        android:text="Round Trip"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/tvMultiStop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/spartan"
+                        android:gravity="center"
+                        android:text="Multi Stop"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frgFlightHost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cvFlightTabs"
+            android:background="@color/blue"
+            android:padding="2dp" />
+    </RelativeLayout>
+</layout>
