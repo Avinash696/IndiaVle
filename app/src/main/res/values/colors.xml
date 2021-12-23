@@ -41,7 +41,13 @@
     <color name="define_bus">#ef7d22</color>
     <color name="transparent">#33FFFF00</color>
     <color name="hotel_background">#b7d7f2</color>
+//admin
+    <color name="admin_background">#ededf0</color>
+    <color name="admin_button">#3e6061</color>
+    <color name="admin_tint">#943d2e</color>
+    <color name="admin_notClicked">#b5b7c6</color>
 
-
-
+    //gob color
+    <color name="gob_blue">#3F51B5</color>
+    <color name="trans">#3fff</color>
 </resources>

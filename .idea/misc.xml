@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/bg.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/border.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/btn_test.xml" value="0.1921875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/circle_test.xml" value="0.8392857142857143" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/date_picker.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/edit_border.xml" value="0.18425925925925926" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/edittext_border.xml" value="0.18425925925925926" />
@@ -16,20 +18,26 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/main_border.xml" value="0.1824074074074074" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/residence_shape.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/top_card.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/transparent.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/two_side_border.xml" value="0.19583333333333333" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_admin_coupan.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_admin_coupan.xml" value="0.335" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_bus.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_croping_tools.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_find_id.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_find_id.xml" value="0.335" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_flight.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_hotel.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_hotel.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_psa_login.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_retailer_coupan.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_register.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_retailer_coupan.xml" value="0.335" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_transparent.xml" value="0.375" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/dialog_register.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/flight_class.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_multi_stop.xml" value="0.25" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_one_way.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_one_way.xml" value="0.5" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_round.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/menu/entry_menu.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>

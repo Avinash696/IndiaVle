@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,14 +19,21 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        hideTopBar()
         bindingFlightActivity = DataBindingUtil.setContentView(this, R.layout.activity_flight)
         supportActionBar?.setTitle("Flight")
-        supportActionBar?.hide()
+
 
         bindingFlightActivity.tvOneWay.setOnClickListener(this)
         bindingFlightActivity.tvRoundTrip.setOnClickListener(this)
         bindingFlightActivity.tvMultiStop.setOnClickListener(this)
 
+    }
+    fun hideTopBar(){
+        supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
     fun init(){
 

@@ -10,14 +10,37 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gblue"
+        android:background="@drawable/gob"
         tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3fff"
+            android:id="@+id/ab">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Main Screen"
+                    android:textSize="23sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/rvTabs"
-            android:layout_marginBottom="-78dp">
+            android:layout_marginBottom="-78dp"
+            android:layout_below="@+id/ab">
 
             <!--        <androidx.fragment.app.FragmentContainerView-->
             <!--            android:id="@+id/frgHostMain"-->
@@ -45,7 +68,9 @@
                     <RelativeLayout
                         android:id="@+id/rvHome"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:onClick="fnHome">
 
                         <TextView
                             android:id="@+id/tvHome"
@@ -158,11 +183,11 @@
                                 android:textSize="15sp" />
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
-<!--                    <View-->
-<!--                        android:layout_width="3dp"-->
-<!--                        android:layout_height="350dp"-->
-<!--                        android:layout_marginLeft="50dp"-->
-<!--                        android:background="@color/cyan" />-->
+                    <!--                    <View-->
+                    <!--                        android:layout_width="3dp"-->
+                    <!--                        android:layout_height="350dp"-->
+                    <!--                        android:layout_marginLeft="50dp"-->
+                    <!--                        android:background="@color/cyan" />-->
                 </LinearLayout>
 
                 <View

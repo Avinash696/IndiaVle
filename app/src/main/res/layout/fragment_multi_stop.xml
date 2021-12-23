@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/sf_green">
 
+
     <com.google.android.material.card.MaterialCardView
         style="@style/CustomCardCorners"
         android:layout_width="match_parent"

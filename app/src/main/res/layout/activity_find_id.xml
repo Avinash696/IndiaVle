@@ -6,7 +6,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/findid_gradiant"
     tools:context=".ui.activity.FindIdActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/trans">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Find Id"
+                android:fontFamily="@font/fatface"
+                android:textSize="24sp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/black"/>
 
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -15,34 +38,39 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/icon"
         app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        android:layout_centerHorizontal="true" />
+        app:civ_border_width="2dp" />
+
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@+id/profile_image"
-        android:id="@+id/ll">
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="40dp"
-            android:src="@drawable/smartph"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:src="@drawable/smartph" />
+
         <EditText
             android:layout_width="196dp"
             android:layout_height="40dp"
-            android:hint="Enter Mobile No."
             android:layout_marginTop="30dp"
-            android:background="@drawable/edit_border"/>
+            android:background="@drawable/edit_border"
+            android:hint="Enter Mobile No."
+            android:gravity="center"
+            android:inputType="number"/>
     </LinearLayout>
     <androidx.cardview.widget.CardView
         android:id="@+id/cvDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
@@ -52,22 +80,23 @@
         android:layout_centerInParent="true"
         android:layout_below="@+id/ll">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_below="@+id/ll"
             android:layout_centerInParent="true"
             android:background="#FF6347	">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/search1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/searchf"
                 android:layout_gravity="center"/>
             <TextView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:hint="Search"
-                android:gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_gravity="center"
                 android:onClick="FnSearchNumber"/>
         </LinearLayout>
 

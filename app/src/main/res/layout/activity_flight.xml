@@ -12,6 +12,30 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.FlightActivity"
         android:background="@color/sf_green">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/trans"
+            android:id="@+id/ab">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/back"
+                    app:tint="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Flight"
+                    android:fontFamily="@font/fatface"
+                    android:textSize="24sp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/black"/>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -22,7 +46,8 @@
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             android:clickable="true"
-            android:id="@+id/cvFlightTabs">
+            android:id="@+id/cvFlightTabs"
+            android:layout_below="@id/ab">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
