@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="seperator">#40A0CC</color>
     <color name="blue">#59ACED</color>
-    <color name="grey"> #808080</color>
+    <color name="grey">#808080</color>
     <color name="whitesh_grey">#E1D3CCCC</color>
     <color name="LightBlue">#57C1F4</color>
     <color name="Gray">#808080</color>
@@ -41,7 +41,7 @@
     <color name="define_bus">#ef7d22</color>
     <color name="transparent">#33FFFF00</color>
     <color name="hotel_background">#b7d7f2</color>
-//admin
+    //admin
     <color name="admin_background">#ededf0</color>
     <color name="admin_button">#3e6061</color>
     <color name="admin_tint">#943d2e</color>
@@ -50,4 +50,9 @@
     //gob color
     <color name="gob_blue">#3F51B5</color>
     <color name="trans">#3fff</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
 </resources>

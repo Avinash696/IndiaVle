@@ -5,11 +5,12 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance_custom_corners</item>
     </style>
 
-    <style name="ShapeAppearance_custom_corners" >
+    <style name="ShapeAppearance_custom_corners">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">80dp</item>
         <item name="cornerSizeTopRight">80dp</item>
     </style>
+
     <style name="Theme.Transparent" parent="android:Theme">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -17,5 +18,10 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Widget.Theme.PanIndia.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>

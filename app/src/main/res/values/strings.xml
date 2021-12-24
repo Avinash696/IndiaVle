@@ -9,7 +9,9 @@
     <string name="admin">Admin</string>
     <string name="distributer">Distributer</string>
     <string name="retailer">Retailer</string>
-    <string name="passangers_luggage"><![CDATA[Passangers & Luggage]]></string>>
+    <string name="passangers_luggage"><![CDATA[Passangers & Luggage]]></string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>>
 
 
 </resources>

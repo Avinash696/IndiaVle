@@ -207,6 +207,7 @@
                     android:autofillHints="name"
                     android:background="@drawable/edit_border"
                     android:gravity="center"
+                    android:inputType="number"
                     android:hint="No. of Coupon" />
             </LinearLayout>
 
@@ -247,6 +248,7 @@
                     android:autofillHints="name"
                     android:background="@drawable/edit_border"
                     android:gravity="center"
+                    android:inputType="number"
                     android:hint="Mobile No." />
             </LinearLayout>
 
