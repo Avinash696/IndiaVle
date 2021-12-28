@@ -15,6 +15,10 @@ import androidx.databinding.DataBindingUtil
 import com.example.indiavle.ui.activity.*
 import com.example.panindia.databinding.ActivityMainBinding
 import com.example.panindia.ui.activity.*
+import android.view.LayoutInflater
+
+
+
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
     lateinit var dialog: Dialog
@@ -39,10 +43,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
 
 //        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("3F51B5")))
 //        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.gob_blue)))
-        supportActionBar?.hide()
-        actionBar?.hide()
-        binding.tb.inflateMenu(R.menu.entry_menu)
-
+//        supportActionBar?.hide()
+//        actionBar?.hide()
+//        binding.tb.inflateMenu(R.menu.entry_menu)
 
 //        binding.tb.setOnMenuItemClickListener(Toolbar.OnMenuItemClickListener {
 //            when(it.itemId){
@@ -60,12 +63,12 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val menuInflater = getMenuInflater()
+        val menuInflater = menuInflater
         menuInflater.inflate(R.menu.entry_menu, menu)
         return true
     }
 
-    fun registerDialog() {
+    private fun registerDialog() {
         dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_register)
         dialog.show()
@@ -111,6 +114,8 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.rvCropingLogin -> startActivity(Intent(this,CropingToolsActivity::class.java))
             R.id.rvCouponRetailer -> startActivity(Intent(this,RetailerCoupanActivity::class.java))
             R.id.rvCouponAdmin -> startActivity(Intent(this,AdminCoupanActivity::class.java))
+            R.id.menuLogin -> startActivity(Intent(this,LoginActivity::class.java))
+            R.id.menuRegister -> startActivity(Intent(this,RegisterActivity::class.java))
         }
     }
 

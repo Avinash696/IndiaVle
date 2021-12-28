@@ -13,29 +13,29 @@
         android:background="@drawable/gob">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/ab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/trans"
-            android:id="@+id/ab">
+            android:background="@color/trans">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/back"
-                    app:tint="@color/black" />
+<!--                <ImageView-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:src="@drawable/back"-->
+<!--                    app:tint="@color/black" />-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Hotel"
-                    android:fontFamily="@font/fatface"
-                    android:textSize="24sp"
                     android:layout_marginLeft="50dp"
-                    android:textColor="@color/black" />
+                    android:fontFamily="@font/fatface"
+                    android:text="Hotel"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
 
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -48,16 +48,16 @@
                 android:id="@+id/cvDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/ab"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
                 android:padding="10dp"
                 app:cardBackgroundColor="@color/trans"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="10dp"
                 app:cardMaxElevation="10dp"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                android:layout_below="@+id/ab"
-                android:layout_marginTop="40dp">
+                app:cardUseCompatPadding="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -96,14 +96,14 @@
 
                                 <RelativeLayout
                                     android:layout_width="350dp"
-                                    android:layout_height="30dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvDestinationHotel"
                                     android:layout_centerHorizontal="true"
                                     android:background="#E7F3F2">
 
                                     <RelativeLayout
                                         android:layout_width="match_parent"
-                                        android:layout_height="25dp"
+                                        android:layout_height="wrap_content"
                                         android:clickable="true"
                                         android:onClick="FnDestinationhotel">
 
@@ -116,14 +116,12 @@
                                             android:src="@drawable/searchf"
                                             app:tint="@color/cream" />
 
-                                        <Spinner
-                                            android:id="@+id/spDestination"
+                                        <EditText
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_marginStart="10dp"
                                             android:layout_toRightOf="@+id/ivSearch"
                                             android:fontFamily="@font/spartan"
-                                            android:gravity="center"
                                             android:hint="Noida"
                                             android:textSize="13sp" />
                                     </RelativeLayout>
@@ -149,9 +147,12 @@
                                     android:id="@+id/rvDateBus"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:padding="10dp"
-                                    android:background="@drawable/border">
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/border"
+                                    android:padding="10dp">
 
                                     <TextView
                                         android:id="@+id/tvChooseDateHotel"
@@ -175,27 +176,27 @@
                                             android:id="@+id/tvCheckIn"
                                             android:layout_width="wrap_content"
                                             android:layout_height="20dp"
-                                            android:layout_weight="1"
-                                            android:fontFamily="@font/regular"
-                                            android:text="Check In"
-                                            android:textSize="13sp"
                                             android:layout_marginTop="4dp"
                                             android:layout_marginBottom="4dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
                                             android:gravity="center"
-                                            android:textColor="@color/text_multiStop" />
+                                            android:text="Check In"
+                                            android:textColor="@color/text_multiStop"
+                                            android:textSize="13sp" />
 
                                         <TextView
                                             android:id="@+id/tvCheckOut"
                                             android:layout_width="wrap_content"
                                             android:layout_height="20dp"
-                                            android:layout_weight="1"
-                                            android:text="Check Out"
                                             android:layout_marginTop="4dp"
                                             android:layout_marginBottom="4dp"
-                                            android:textSize="13sp"
-                                            android:gravity="center"
+                                            android:layout_weight="1"
                                             android:fontFamily="@font/regular"
-                                            android:textColor="@color/text_multiStop" />
+                                            android:gravity="center"
+                                            android:text="Check Out"
+                                            android:textColor="@color/text_multiStop"
+                                            android:textSize="13sp" />
                                     </LinearLayout>
                                 </RelativeLayout>
 
@@ -226,52 +227,43 @@
                                         android:textSize="15sp" />
 
                                     <LinearLayout
-                                        android:id="@+id/llPerson"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@+id/tvPersonHotel"
-                                        android:layout_marginStart="25dp"
-                                        android:layout_marginLeft="4dp"
-                                        android:layout_marginTop="10dp"
+                                        android:layout_marginTop="20dp"
                                         android:orientation="horizontal">
 
                                         <ImageView
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
-                                            android:src="@drawable/audience"
-                                            app:tint="@color/cream" />
+                                            android:layout_marginLeft="4dp"
+                                            android:src="@drawable/audience" />
 
                                         <Spinner
                                             android:id="@+id/spPassangers"
-                                            android:layout_width="50dp"
-                                            android:layout_height="30dp"
-                                            android:layout_centerHorizontal="true" />
+                                            android:layout_width="60dp"
+                                            android:layout_height="match_parent" />
 
                                         <ImageView
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
-                                            android:layout_marginLeft="40dp"
-                                            android:src="@drawable/little"
-                                            app:tint="@color/cream" />
+                                            android:layout_marginLeft="20dp"
+                                            android:src="@drawable/little" />
 
                                         <Spinner
                                             android:id="@+id/spKids"
-                                            android:layout_width="30dp"
-                                            android:layout_height="30dp"
-                                            android:layout_centerHorizontal="true" />
+                                            android:layout_width="60dp"
+                                            android:layout_height="wrap_content" />
 
                                         <ImageView
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
-                                            android:layout_marginLeft="40dp"
-                                            android:src="@drawable/weight"
-                                            app:tint="@color/cream" />
+                                            android:layout_marginLeft="20dp"
+                                            android:src="@drawable/weight" />
 
                                         <Spinner
                                             android:id="@+id/spWeight"
-                                            android:layout_width="30dp"
-                                            android:layout_height="30dp"
-                                            android:layout_centerHorizontal="true" />
+                                            android:layout_width="60dp"
+                                            android:layout_height="wrap_content" />
                                     </LinearLayout>
                                 </RelativeLayout>
                                 <!--                            <View-->
@@ -288,10 +280,10 @@
                             android:id="@+id/rvRoomHotel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/border"
-                            android:layout_margin="10dp"
                             android:padding="10dp">
 
                             <TextView
@@ -300,13 +292,13 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/spartan"
                                 android:text="Room"
-                                android:textSize="15sp"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
 
                             <Spinner
                                 android:id="@+id/spRoom"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_below="@+id/tvRoom"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginRight="50dp" />
@@ -320,10 +312,10 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:background="@drawable/border"
-                            android:layout_margin="10dp"
                             android:padding="10dp">
 
                             <TextView
@@ -332,13 +324,13 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/spartan"
                                 android:text="Night"
-                                android:textSize="15sp"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
 
                             <Spinner
                                 android:id="@+id/spNight"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_below="@+id/tvNightHotel"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginRight="50dp" />
@@ -354,14 +346,14 @@
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
+                            android:layout_gravity="right"
                             android:padding="4dp"
                             app:cardBackgroundColor="#5B7FE3"
                             app:cardCornerRadius="5dp"
                             app:cardElevation="10dp"
                             app:cardMaxElevation="10dp"
                             app:cardPreventCornerOverlap="true"
-                            app:cardUseCompatPadding="true"
-                            android:layout_gravity="right">
+                            app:cardUseCompatPadding="true">
 
                             <TextView
                                 android:layout_width="wrap_content"

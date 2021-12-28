@@ -135,7 +135,8 @@
                                     android:textColor="@color/white"
                                     android:textSize="15sp" />
 
-                                <EditText
+                                <TextView
+                                    android:id="@+id/multiStopDate"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvDateMulti"
@@ -185,9 +186,10 @@
                                     android:textColor="@color/white"
                                     android:textSize="15sp" />
 
-                                <EditText
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <Spinner
+                                    android:id="@+id/spAdultMulti"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
                                     android:layout_below="@+id/tvAdultMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -210,9 +212,10 @@
                                     android:textColor="@color/white"
                                     android:textSize="15sp" />
 
-                                <EditText
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <Spinner
+                                    android:id="@+id/spChildMulti"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
                                     android:layout_below="@+id/tvChildrenMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -235,9 +238,10 @@
                                     android:textColor="@color/white"
                                     android:textSize="15sp" />
 
-                                <EditText
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <Spinner
+                                    android:id="@+id/spInfantMulti"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
                                     android:layout_below="@+id/tvInfantMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -281,9 +285,10 @@
                                     android:textColor="@color/white"
                                     android:textSize="15sp" />
 
-                                <EditText
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                <Spinner
+                                    android:id="@+id/spClassMulti"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
                                     android:layout_below="@+id/tvClassMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Economy Class"

@@ -29,50 +29,53 @@
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.cardview.widget.CardView
-        android:layout_width="250sp"
-        android:layout_height="350sp"
+        android:layout_width="350sp"
+        android:layout_height="450sp"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:clickable="true"
+        app:cardBackgroundColor="#7C8ADC"
         app:cardCornerRadius="7dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        android:layout_centerInParent="true"
-        app:cardBackgroundColor="#FFEA00">
+        app:cardUseCompatPadding="true">
+
         <LinearLayout
-            android:layout_width="250sp"
-            android:layout_height="350sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
-            android:paddingRight="30dp"
-            android:layout_marginTop="20dp">
+            android:paddingRight="30dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="20dp"
                 android:src="@drawable/icon"
                 app:civ_border_color="#673AB7"
                 app:civ_border_width="3dp" />
 
             <LinearLayout
-                android:layout_width="182dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/edittext_border"
+                android:background="#ECC58B"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:backgroundTint="@color/black"
                     android:background="@drawable/user" />
 
                 <EditText
@@ -84,11 +87,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="182dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:background="@drawable/edittext_border"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#ECC58B"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -111,6 +117,7 @@
                 android:layout_gravity="center"
                 android:clickable="true"
                 app:cardCornerRadius="5dp"
+                android:layout_marginStart="20dp"
                 app:cardElevation="10dp"
                 app:cardMaxElevation="10dp"
                 app:cardPreventCornerOverlap="true"
@@ -119,7 +126,7 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/blue">
+                    android:background="#FF8A65">
 
                     <TextView
                         android:layout_width="match_parent"

@@ -16,6 +16,9 @@ import com.example.panindia.databinding.ActivityFlightBinding
 
 class FlightActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var bindingFlightActivity: ActivityFlightBinding
+    var checkOne = false
+    var checkMulti = false
+    var checkRound = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +51,50 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.tvOneWay -> FragSwitch(OneWayFragment())
-            R.id.tvRoundTrip -> FragSwitch(RoundFragment())
-            R.id.tvMultiStop -> FragSwitch(MultiStopFragment())
-            else -> FragSwitch(MultiStopFragment())
+            R.id.tvOneWay -> {
+            checkOne = true
+            checkMulti = false
+            checkRound = false
+            FragSwitch(OneWayFragment())
+            changeColor()
+        }
+            R.id.tvRoundTrip ->{
+                checkOne = false
+                checkMulti = false
+                checkRound = true
+                FragSwitch(RoundFragment())
+                changeColor()
+            }
+            R.id.tvMultiStop ->{
+                checkOne = false
+                checkMulti = true
+                checkRound = false
+                FragSwitch(MultiStopFragment())
+                changeColor()
+            }
+            else -> {
+                checkOne = false
+                checkMulti = false
+                checkRound = false
+                FragSwitch(MultiStopFragment())
+            }
+        }
+    }
+    fun changeColor() {
+        if (checkOne) {
+            bindingFlightActivity.tvOneWay.setBackgroundColor(resources.getColor(R.color.cream))
+            bindingFlightActivity.tvMultiStop.setBackgroundColor(resources.getColor(R.color.white))
+            bindingFlightActivity.tvRoundTrip.setBackgroundColor(resources.getColor(R.color.white))
+        } else if(checkRound){
+            bindingFlightActivity.tvRoundTrip.setBackgroundColor(resources.getColor(R.color.cream))
+            bindingFlightActivity.tvMultiStop.setBackgroundColor(resources.getColor(R.color.white))
+            bindingFlightActivity.tvOneWay.setBackgroundColor(resources.getColor(R.color.white))
+
+        }
+        else if(checkMulti){
+            bindingFlightActivity.tvMultiStop.setBackgroundColor(resources.getColor(R.color.cream))
+            bindingFlightActivity.tvOneWay.setBackgroundColor(resources.getColor(R.color.white))
+            bindingFlightActivity.tvRoundTrip.setBackgroundColor(resources.getColor(R.color.white))
         }
     }
 }

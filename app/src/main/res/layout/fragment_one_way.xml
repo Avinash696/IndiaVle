@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -56,7 +57,7 @@
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
-                                <Spinner
+                                <EditText
                                     android:id="@+id/spFromOneWay"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -91,7 +92,7 @@
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
-                                <Spinner
+                                <EditText
                                     android:id="@+id/spToOneWay"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -171,12 +172,14 @@
                                     android:layout_toLeftOf="@+id/etRetunDate"
                                     android:src="@drawable/date_picker" />
 
-                                <EditText
+                                <TextView
                                     android:id="@+id/etRetunDate"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvReturn"
                                     android:layout_centerHorizontal="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
                                     android:hint="Select Date"
                                     android:textColor="@color/sf_green"
                                     android:textColorHint="@color/sf_green" />
@@ -197,7 +200,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="4dp"
                             android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
@@ -209,30 +211,30 @@
 
                             <Spinner
                                 android:id="@+id/spPassangers"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_marginLeft="40dp"
+                                android:layout_marginLeft="20dp"
                                 android:src="@drawable/little" />
 
                             <Spinner
                                 android:id="@+id/spKids"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:layout_marginLeft="40dp"
+                                android:layout_marginLeft="20dp"
                                 android:src="@drawable/weight" />
 
                             <Spinner
                                 android:id="@+id/spWeight"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -253,10 +255,10 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
+                                    android:id="@+id/tvEconomy"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"
-                                    android:layout_centerVertical="true"
                                     android:text="Economy" />
                             </RelativeLayout>
 
@@ -273,6 +275,7 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
+                                    android:id="@+id/tvBussiness"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerVertical="true"
@@ -293,7 +296,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerVertical="true"
-                                    android:text="Elite" />
+                                    android:text="Elite"
+                                    android:id="@+id/tvElite"/>
                             </RelativeLayout>
                         </LinearLayout>
 

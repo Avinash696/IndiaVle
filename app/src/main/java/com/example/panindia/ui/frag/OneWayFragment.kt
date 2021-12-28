@@ -31,12 +31,26 @@ class OneWayFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    var checkElite = false
+    var checkBussiness = false
+    var checkEconomy = false
+
     var items = arrayOf("1", "2", "3")
     val destination = arrayOf("Noida", "Lucknow")
     lateinit var viewlayout: View
-    lateinit var spFromOneWay: Spinner
-    lateinit var spToOneWay: Spinner
+
+    //    lateinit var spFromOneWay: Spinner
+//    lateinit var spToOneWay: Spinner
+    lateinit var spWeight: Spinner
+    lateinit var spPassanger: Spinner
+    lateinit var spKids: Spinner
     lateinit var etDepartDate: TextView
+    lateinit var etRetunDate: TextView
+
+    //class
+    lateinit var tvEconomy: TextView
+    lateinit var tvBussiness: TextView
+    lateinit var tvElite: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +59,7 @@ class OneWayFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,31 +67,79 @@ class OneWayFragment : Fragment() {
         // Inflate the layout for this fragment
         viewlayout = inflater.inflate(R.layout.fragment_one_way, container, false)
         init()
-        val spFromOneWay: Spinner = viewlayout.findViewById(R.id.spFromOneWay)
         val LTRadapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, destination)
         LTRadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        spFromOneWay.adapter = LTRadapter
+        //number
+        val numberOfDate =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
+        numberOfDate.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+//        spFromOneWay.adapter = LTRadapter
 //        spToOneWay.adapter = LTRadapter
-        etDepartDate
+
+        spPassanger.adapter = numberOfDate
+        spKids.adapter = numberOfDate
+        spWeight.adapter = numberOfDate
+
+//class define
+
         return viewlayout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         etDepartDate.setOnClickListener {
-            DatecheckOut()
+            DateDepart()
+        }
+        etRetunDate.setOnClickListener {
+            DateReturn()
+        }
+        //changing color
+        tvElite.setOnClickListener {
+            checkEconomy = false
+            checkBussiness = false
+            checkElite = true
+            changeColor()
+        }
+        tvEconomy.setOnClickListener {
+            checkEconomy = true
+            checkBussiness = false
+            checkElite = false
+            changeColor()
+        }
+        tvBussiness.setOnClickListener {
+            checkEconomy = false
+            checkBussiness = true
+            checkElite = false
+            changeColor()
         }
         super.onViewCreated(view, savedInstanceState)
     }
 
-    fun DatecheckOut() {
+    fun changeColor() {
+        if (checkElite) {
+            tvElite.setBackgroundColor(resources.getColor(R.color.cream))
+            tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
+            tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
+        } else if (checkEconomy) {
+            tvEconomy.setBackgroundColor(resources.getColor(R.color.cream))
+            tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
+            tvElite.setBackgroundColor(resources.getColor(R.color.white))
+
+        } else if (checkBussiness) {
+            tvBussiness.setBackgroundColor(resources.getColor(R.color.cream))
+            tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
+            tvElite.setBackgroundColor(resources.getColor(R.color.white))
+        }
+    }
+
+    fun DateDepart() {
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 cal.set(Calendar.YEAR, year)
                 cal.set(Calendar.MONTH, monthOfYear)
                 cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                updateDateCheckOut()
+                updateDateDepart()
             }
         DatePickerDialog(
             requireContext(), dateSetListener,
@@ -86,17 +149,47 @@ class OneWayFragment : Fragment() {
         ).show()
     }
 
-    fun updateDateCheckOut() {
+    private fun updateDateDepart() {
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         etDepartDate!!.text = sdf.format(cal.getTime())
     }
 
+    fun updateDateReturn() {
+        val myFormat = "dd/MM/yyyy"
+        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        etRetunDate!!.text = sdf.format(cal.getTime())
+    }
+
+    fun DateReturn() {
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateReturn()
+            }
+        DatePickerDialog(
+            requireContext(), dateSetListener,
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
+    }
+
     fun init() {
 //        tvFrom =  viewlayout.findViewById(R.id.tvFrom)
-        spFromOneWay = viewlayout.findViewById(R.id.spFromOneWay)
-        spToOneWay = viewlayout.findViewById(R.id.spToOneWay)
+//        spFromOneWay = viewlayout.findViewById(R.id.spFromOneWay)
+//        spToOneWay = viewlayout.findViewById(R.id.spToOneWay)
         etDepartDate = viewlayout.findViewById(R.id.etDepartDate)
+        etRetunDate = viewlayout.findViewById(R.id.etRetunDate)
+        spPassanger = viewlayout.findViewById(R.id.spPassangers)
+        spKids = viewlayout.findViewById(R.id.spKids)
+        spWeight = viewlayout.findViewById(R.id.spWeight)
+        //class filter
+        tvEconomy = viewlayout.findViewById(R.id.tvEconomy)
+        tvBussiness = viewlayout.findViewById(R.id.tvBussiness)
+        tvElite = viewlayout.findViewById(R.id.tvElite)
     }
 
     companion object {

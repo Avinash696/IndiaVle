@@ -1,12 +1,19 @@
 package com.example.indiavle.ui.frag
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.panindia.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,13 +30,26 @@ class RoundFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var spWeight: Spinner
+    lateinit var spPassanger: Spinner
+    lateinit var spKids: Spinner
+    lateinit var spClass :Spinner
+    var items = arrayOf("1", "2", "3")
+    var itemsClass = arrayOf("Economy", "Bussiness", "Elite")
+
+    //    lateinit var etDepartDate: EditText
+    lateinit var etDepartDate: TextView
+    lateinit var tvReturnDate: TextView
+    lateinit var viewlayout: View
+    var checkElite = false
+    var checkBussiness = false
+    var checkEconomy = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
         }
     }
 
@@ -38,11 +58,88 @@ class RoundFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_round, container, false)
+        viewlayout = inflater.inflate(R.layout.fragment_round, container, false)
+        return viewlayout
+    }
+
+    fun init() {
+
+        etDepartDate = viewlayout.findViewById(R.id.etDepartDate)
+        tvReturnDate = viewlayout.findViewById(R.id.tvReturnDate)
+        spPassanger = viewlayout.findViewById(R.id.spPassangers)
+        spKids = viewlayout.findViewById(R.id.spKids)
+        spWeight = viewlayout.findViewById(R.id.spWeight)
+        //class filter
+        spClass= viewlayout.findViewById(R.id.Round_class)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        init()
+        //number
+        val numberOfDate =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
+        numberOfDate.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        //class
+        val classSelection =
+            ArrayAdapter(requireContext(), R.layout.text_center, itemsClass)
+        numberOfDate.setDropDownViewResource(R.layout.text_center)
+
+        spPassanger.adapter = numberOfDate
+        spKids.adapter = numberOfDate
+        spWeight.adapter = numberOfDate
+        spClass.adapter =classSelection
+        etDepartDate.setOnClickListener {
+            DateDepart()
+        }
+        tvReturnDate.setOnClickListener {
+//            DateReturn()
+            DateReturn()
+        }
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun DateReturn() {
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateReturn()
+            }
+        DatePickerDialog(
+            requireContext(), dateSetListener,
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
+    }
+
+    private fun updateDateReturn() {
+        val myFormat = "dd/MM/yyyy"
+        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        tvReturnDate!!.text = sdf.format(cal.getTime())
+    }
+
+    fun DateDepart() {
+        val dateSetListener =
+            DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateDepart()
+            }
+        DatePickerDialog(
+            requireContext(), dateSetListener,
+            cal.get(Calendar.YEAR),
+            cal.get(Calendar.MONTH),
+            cal.get(Calendar.DAY_OF_MONTH)
+        ).show()
+    }
+
+    private fun updateDateDepart() {
+        val myFormat = "dd/MM/yyyy"
+        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        etDepartDate!!.text = sdf.format(cal.getTime())
     }
 
     companion object {

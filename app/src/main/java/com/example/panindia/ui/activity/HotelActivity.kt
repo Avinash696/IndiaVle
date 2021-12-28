@@ -9,6 +9,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.panindia.R
@@ -21,7 +22,13 @@ class HotelActivity : AppCompatActivity() ,View.OnClickListener{
     lateinit var binding: ActivityHotelBinding
     val destination = arrayOf("Noida", "Lucknow")
     val personHotel = arrayOf(1, 2, 3, 4, 5)
+    lateinit var room:Spinner
+    lateinit var night:Spinner
+    lateinit var spWeight: Spinner
+    lateinit var spPassanger: Spinner
+    lateinit var spKids: Spinner
     var cal = Calendar.getInstance()
+    lateinit var viewLayout:View
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,8 +44,8 @@ class HotelActivity : AppCompatActivity() ,View.OnClickListener{
         }
         //spinner set
         var spAdapter: ArrayAdapter<Int> =
-            ArrayAdapter(this, android.R.layout.simple_list_item_1, personHotel)
-        spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            ArrayAdapter(this, R.layout.text_center, personHotel)
+        spAdapter.setDropDownViewResource(R.layout.text_center)
 
         //spinner all var set
         binding.spPassangers.adapter = spAdapter
@@ -46,11 +53,11 @@ class HotelActivity : AppCompatActivity() ,View.OnClickListener{
         binding.spWeight.adapter = spAdapter
         binding.spRoom.adapter = spAdapter
         binding.spNight.adapter = spAdapter
-        //Destination
+        //Destination  -- no use
         var spAdapterDes: ArrayAdapter<String> =
-            ArrayAdapter(this, R.layout.text_center, destination)
-        spAdapterDes.setDropDownViewResource(R.layout.text_center)
-        binding.spDestination.adapter = spAdapterDes
+            ArrayAdapter(this, android.R.layout.simple_list_item_1, destination)
+        spAdapterDes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        binding.spDestination.adapter = spAdapterDes
     }
 
     fun init() {
@@ -117,6 +124,4 @@ class HotelActivity : AppCompatActivity() ,View.OnClickListener{
     override fun onClick(p0: View?) {
         TODO("Not yet implemented")
     }
-
-
 }

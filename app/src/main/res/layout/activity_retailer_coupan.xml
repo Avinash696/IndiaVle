@@ -1,46 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#B3E5FC"
-    tools:context=".ui.activity.RetailerCoupanActivity">
-    <com.google.android.material.appbar.AppBarLayout
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/trans"
-        android:id="@+id/ab">
-        <androidx.appcompat.widget.Toolbar
+        android:layout_height="match_parent"
+        android:background="#B3E5FC"
+        tools:context=".ui.activity.RetailerCoupanActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/back"
-                app:tint="@color/black"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Retailer Coupan"
-                android:fontFamily="@font/lato"
-                android:textSize="24sp"
-                android:layout_marginLeft="50dp"
-                android:textColor="@color/black"/>
+            android:layout_height="wrap_content"
+            android:background="@color/trans"
+            android:id="@+id/ab">
 
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_below="@+id/materialCard"-->
-<!--        android:id="@+id/cv"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:layout_marginBottom="30dp"-->
-<!--        android:padding="4dp"-->
-<!--        app:cardBackgroundColor="#E1F5FE"-->
-<!--        app:cardCornerRadius="5dp">-->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/back"
+                    app:tint="@color/greenish_grey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Retailer Coupan"
+                    android:fontFamily="@font/lato"
+                    android:textSize="24sp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/black" />
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--    <androidx.cardview.widget.CardView-->
+        <!--        android:layout_below="@+id/materialCard"-->
+        <!--        android:id="@+id/cv"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_margin="20dp"-->
+        <!--        android:layout_marginBottom="30dp"-->
+        <!--        android:padding="4dp"-->
+        <!--        app:cardBackgroundColor="#E1F5FE"-->
+        <!--        app:cardCornerRadius="5dp">-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,216 +82,218 @@
                 android:text="2 -E-coupon : Only Electronic Pan Card send in your Email" />
         </LinearLayout>
 
-<!--    </androidx.cardview.widget.CardView>-->
+        <!--    </androidx.cardview.widget.CardView>-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCard"
-        style="@style/CustomCardCorners"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ab"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        app:cardBackgroundColor="#E1F5FE"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCard"
+            style="@style/CustomCardCorners"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:padding="5dp">
+            android:layout_below="@id/ab"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            app:cardBackgroundColor="#E1F5FE"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/spartan"
-                android:text="User Id :"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
 
-            <View
-                android:layout_width="70dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/blue" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/user" />
-
-                <EditText
-                    android:layout_width="180dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:autofillHints="name"
-                    android:background="@drawable/edit_border"
-                    android:gravity="center"
-                    android:hint="User Id" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/fatface"
-                android:text="Select Coupon type :"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
-
-            <View
-                android:layout_width="140dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/blue" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/coupon_type" />
-
-                <EditText
-                    android:layout_width="180dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:autofillHints="name"
-                    android:background="@drawable/edit_border"
-                    android:gravity="center"
-                    android:hint="Coupon Type" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/fatface"
-                android:text="No. Of Coupon :"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
-
-            <View
-                android:layout_width="100dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/blue" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/coupon" />
-
-                <EditText
-                    android:layout_width="180dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:autofillHints="name"
-                    android:background="@drawable/edit_border"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:hint="No. of Coupon" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/fatface"
-                android:text="Mobile No. :"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
-
-            <View
-                android:layout_width="70dp"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/blue" />
-
-            <LinearLayout
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/smartph" />
-
-                <EditText
-                    android:layout_width="180dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:autofillHints="name"
-                    android:background="@drawable/edit_border"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:hint="Mobile No." />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp">
-
-                <androidx.cardview.widget.CardView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="180dp"
-                    android:layout_marginTop="20dp"
-                    app:cardBackgroundColor="@color/blue"
-                    app:cardCornerRadius="3dp"
-                    app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true">
+                    android:fontFamily="@font/spartan"
+                    android:text="User Id :"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
 
-                    <TextView
-                        android:layout_width="70dp"
-                        android:layout_height="25dp"
-                        android:layout_margin="5dp"
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/user" />
+
+                    <EditText
+                        android:layout_width="180dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:autofillHints="name"
+                        android:background="@drawable/edit_border"
                         android:gravity="center"
-                        android:text="Pay Now "
-                        android:textColor="@color/white" />
+                        android:hint="User Id" />
+                </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fatface"
+                    android:text="Select Coupon type :"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="140dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/coupon_type" />
+
+                    <Spinner
+                        android:id="@+id/spCopanType"
+                        android:layout_width="180dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:autofillHints="name"
+                        android:background="@drawable/edit_border"
+                        android:gravity="center"
+                        android:hint="Coupon Type" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fatface"
+                    android:text="No. Of Coupon :"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/coupon" />
+
+                    <EditText
+                        android:layout_width="180dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:autofillHints="name"
+                        android:background="@drawable/edit_border"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:hint="No. of Coupon" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fatface"
+                    android:text="Mobile No. :"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/blue" />
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/smartph" />
+
+                    <EditText
+                        android:layout_width="180dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:autofillHints="name"
+                        android:background="@drawable/edit_border"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:hint="Mobile No." />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="180dp"
+                        android:layout_marginTop="20dp"
+                        app:cardBackgroundColor="@color/blue"
+                        app:cardCornerRadius="3dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:text="Pay Now "
+                            android:textColor="@color/white" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <!--        <Button-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:text="Pay Now" />-->
             </LinearLayout>
-
-            <!--        <Button-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:text="Pay Now" />-->
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>
