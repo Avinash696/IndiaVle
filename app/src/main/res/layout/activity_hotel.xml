@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gob">
+        android:background="@drawable/hotel_background">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/ab"
@@ -52,7 +52,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="40dp"
                 android:padding="10dp"
-                app:cardBackgroundColor="@color/trans"
+                app:cardBackgroundColor="#E8F5E9"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="10dp"
                 app:cardMaxElevation="10dp"
@@ -240,29 +240,28 @@
 
                                         <Spinner
                                             android:id="@+id/spPassangers"
-                                            android:layout_width="60dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="match_parent" />
 
                                         <ImageView
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
-                                            android:layout_marginLeft="20dp"
                                             android:src="@drawable/little" />
 
                                         <Spinner
                                             android:id="@+id/spKids"
-                                            android:layout_width="60dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content" />
 
                                         <ImageView
                                             android:layout_width="30dp"
                                             android:layout_height="30dp"
-                                            android:layout_marginLeft="20dp"
-                                            android:src="@drawable/weight" />
+                                            android:layout_marginLeft="5dp"
+                                            android:src="@drawable/babyboy" />
 
                                         <Spinner
                                             android:id="@+id/spWeight"
-                                            android:layout_width="60dp"
+                                            android:layout_width="wrap_content"
                                             android:layout_height="wrap_content" />
                                     </LinearLayout>
                                 </RelativeLayout>

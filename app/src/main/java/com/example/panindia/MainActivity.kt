@@ -2,8 +2,6 @@ package com.example.panindia
 
 import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
@@ -15,9 +13,6 @@ import androidx.databinding.DataBindingUtil
 import com.example.indiavle.ui.activity.*
 import com.example.panindia.databinding.ActivityMainBinding
 import com.example.panindia.ui.activity.*
-import android.view.LayoutInflater
-
-
 
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener{
@@ -114,7 +109,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.rvCropingLogin -> startActivity(Intent(this,CropingToolsActivity::class.java))
             R.id.rvCouponRetailer -> startActivity(Intent(this,RetailerCoupanActivity::class.java))
             R.id.rvCouponAdmin -> startActivity(Intent(this,AdminCoupanActivity::class.java))
-            R.id.menuLogin -> startActivity(Intent(this,LoginActivity::class.java))
+            R.id.menuLogin -> startActivity(Intent(this, LoginActivity::class.java))
             R.id.menuRegister -> startActivity(Intent(this,RegisterActivity::class.java))
         }
     }

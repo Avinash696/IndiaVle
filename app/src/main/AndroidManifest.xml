@@ -13,13 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PanIndia">
         <activity
+            android:name=".ui.activity.PanCardAdminActivity"
+            android:exported="true"
+            android:label="@string/title_activity_pan_card_admin"
+            android:theme="@style/Theme.PanIndia.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.test.Drawablectivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.test.TransparentActivity"
             android:exported="true">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.activity.CropingToolsActivity"
@@ -40,22 +56,23 @@
             android:name=".ui.activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.indiavle.ui.activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.example.indiavle.ui.activity.FlightActivity"
             android:exported="true">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name="com.example.indiavle.ui.activity.HotelActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity" >
-        </activity>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name="com.example.indiavle.ui.activity.BusActivity"
             android:exported="false"

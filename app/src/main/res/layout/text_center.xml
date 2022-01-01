@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <CheckedTextView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
-        android:text="2222"
-        android:gravity="center"
-        android:textColor="@color/red"
-        android:layout_centerHorizontal="true"
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E3F2FD"
     android:textAlignment="center"
-    android:textSize="17sp"/>
+    android:paddingLeft="14dp"
+    android:paddingTop="12dp"
+    android:paddingRight="14dp"
+    android:paddingBottom="15dp"
+    android:text="2222"
+    android:textColor="#1D3A47"
+    android:textSize="12sp" />
 
 

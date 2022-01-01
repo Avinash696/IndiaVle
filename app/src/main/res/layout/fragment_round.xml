@@ -10,7 +10,8 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp">
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/CustomCardCorners"
@@ -71,7 +72,7 @@
                             app:tint="@color/cream" />
 
                         <View
-                            android:layout_width="3dp"
+                            android:layout_width="2dp"
                             android:layout_height="35dp"
                             android:background="@color/greenish_grey" />
 
@@ -88,7 +89,10 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                       android:id="@+id/llRoundDepart"
+                        android:clickable="true"
+                        android:weightSum="4">
 
                         <ImageView
                             android:layout_width="70dp"
@@ -106,7 +110,7 @@
                         <TextView
                             android:id="@+id/etDepartDate"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="3"
                             android:hint="Select Depart Date"
@@ -118,7 +122,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:id="@+id/llReturnDate">
 
                         <ImageView
                             android:layout_width="70dp"
@@ -157,39 +162,40 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:text="ADULT(12+ YRS)"
-                            android:textColor="@color/white"
-                            android:layout_margin="4dp"/>
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:text="CHILDREN(2-11 YRS)"
-                            android:textColor="@color/white"
-                            android:layout_margin="4dp"/>
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
                             android:text="INFANT(0-2 YRS)"
-                            android:textColor="@color/white"
-                            android:layout_margin="4dp"/>
+                            android:textColor="@color/white" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/llWeight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/llWeight">
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="4dp"
-                            android:src="@drawable/audience" />
+                            android:src="@drawable/audience"
+                            app:tint="@color/cream" />
 
                         <Spinner
                             android:id="@+id/spPassangers"
@@ -200,7 +206,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/little" />
+                            android:src="@drawable/little"
+                            app:tint="@color/cream" />
 
                         <Spinner
                             android:id="@+id/spKids"
@@ -211,7 +218,8 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="20dp"
-                            android:src="@drawable/weight" />
+                            android:src="@drawable/babyboy"
+                            app:tint="@color/cream" />
 
                         <Spinner
                             android:id="@+id/spWeight"
@@ -221,9 +229,9 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="7dp">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal">
 
                         <ImageView
                             android:layout_width="40dp"
@@ -240,9 +248,8 @@
 
                         <Spinner
                             android:id="@+id/Round_class"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
                             android:layout_weight="3"
                             android:hint="Economy Class"
                             android:textColor="@color/cream"

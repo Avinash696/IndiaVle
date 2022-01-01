@@ -31,6 +31,14 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
         bindingFlightActivity.tvRoundTrip.setOnClickListener(this)
         bindingFlightActivity.tvMultiStop.setOnClickListener(this)
 
+        DefaultFrag()
+    }
+    fun DefaultFrag(){
+        checkOne = true
+        checkMulti = false
+        checkRound = false
+        FragSwitch(OneWayFragment())
+        changeColor()
     }
     fun hideTopBar(){
         supportActionBar?.hide()

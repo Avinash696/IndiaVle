@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.panindia.ui.activity.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+        <fragment
+        android:id="@+id/nav_buyCoupon"
+        android:name="com.example.panindia.ui.frag.PanBuyCouponFragment"
+        android:label="fragment_pan_buy_coupon"
+        tools:layout="@layout/fragment_pan_buy_coupon" />
+    <fragment
+        android:id="@+id/nav_distributeCoupon"
+        android:name="com.example.panindia.ui.frag.DistributePanCouponFragment"
+        android:label="fragment_distribute_pan_coupon"
+        tools:layout="@layout/fragment_distribute_pan_coupon" />
+    <fragment
+        android:id="@+id/nav_summary"
+        android:name="com.example.panindia.ui.frag.PanCouponSummaryFragment"
+        android:label="fragment_pan_coupon_summary"
+        tools:layout="@layout/fragment_pan_coupon_summary" />
+    <fragment
+        android:id="@+id/nav_reset"
+        android:name="com.example.panindia.ui.frag.PsaPasswordResetFragment"
+        android:label="fragment_psa_password_reset"
+        tools:layout="@layout/fragment_psa_password_reset" />
+    <fragment
+        android:id="@+id/nav_couponPrice"
+        android:name="com.example.panindia.ui.frag.ChangeCouponPriceFragment"
+        android:label="fragment_change_coupon_price"
+        tools:layout="@layout/fragment_change_coupon_price" />
+    <fragment
+        android:id="@+id/nav_verify"
+        android:name="com.example.panindia.ui.frag.PanOrderIdVerifyFragment"
+        android:label="fragment_pan_order_id_verify"
+        tools:layout="@layout/fragment_pan_order_id_verify" />
+    <fragment
+        android:id="@+id/createAdminFragment"
+        android:name="com.example.panindia.CreateAdminFragment"
+        android:label="fragment_create_admin"
+        tools:layout="@layout/fragment_create_admin" />
+</navigation>

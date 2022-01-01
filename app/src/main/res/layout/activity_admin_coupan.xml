@@ -187,7 +187,8 @@
                         android:src="@drawable/coupon_type"
                         app:tint="@color/admin_tint" />
 
-                    <EditText
+                    <Spinner
+                        android:id="@+id/spCopanTypeAdmin"
                         android:layout_width="190dp"
                         android:layout_height="35dp"
                         android:layout_margin="10dp"
@@ -195,8 +196,10 @@
                         android:autofillHints="name"
                         android:background="@drawable/edit_border"
                         android:gravity="center"
-                        android:hint="P-Coupon"
+                        android:hint="No. of Coupon"
+                        android:inputType="number"
                         android:textColorHint="@color/admin_tint" />
+
                 </LinearLayout>
 
                 <TextView
@@ -227,9 +230,7 @@
                         android:layout_weight="1"
                         android:src="@drawable/coupon"
                         app:tint="@color/admin_tint" />
-
-                    <Spinner
-                        android:id="@+id/spCopanTypeAdmin"
+                    <EditText
                         android:layout_width="190dp"
                         android:layout_height="35dp"
                         android:layout_margin="10dp"
@@ -238,8 +239,8 @@
                         android:background="@drawable/edit_border"
                         android:gravity="center"
                         android:hint="No. of Coupon"
-                        android:inputType="number"
                         android:textColorHint="@color/admin_tint" />
+
                 </LinearLayout>
 
                 <TextView

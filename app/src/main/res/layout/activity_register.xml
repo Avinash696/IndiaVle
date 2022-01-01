@@ -969,11 +969,33 @@
                                 <!--                                android:layout_width="wrap_content"-->
                                 <!--                                android:layout_height="wrap_content"-->
                                 <!--                                android:text="Sign Up" />-->
-                                <ImageView
-                                    android:layout_width="140dp"
-                                    android:layout_height="100dp"
-                                    android:layout_centerInParent="true"
-                                    android:src="@drawable/signup" />
+<!--                                <ImageView-->
+<!--                                    android:layout_width="140dp"-->
+<!--                                    android:layout_height="100dp"-->
+<!--                                    android:layout_centerInParent="true"-->
+<!--                                    android:src="@drawable/signup" />-->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="130dp"
+                                    android:layout_height="70dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="right"
+                                    android:padding="4dp"
+                                    app:cardBackgroundColor="#5B7FE3"
+                                    app:cardCornerRadius="5dp"
+                                    app:cardElevation="10dp"
+                                    app:cardMaxElevation="10dp"
+                                    app:cardPreventCornerOverlap="true"
+                                    app:cardUseCompatPadding="true">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="Search Hotel"
+                                        android:textColor="#6200EA"
+                                        android:textSize="15sp" />
+                                </androidx.cardview.widget.CardView>
                             </RelativeLayout>
 
                             <!--                <Button-->

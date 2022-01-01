@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
         app:cardBackgroundColor="@color/white"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
@@ -28,12 +29,12 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/dark_grey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/dark_grey">
+                    app:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -105,12 +106,12 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/dark_grey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/dark_grey">
+                    app:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -141,6 +142,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvDateMulti"
                                     android:layout_marginStart="20dp"
+                                    android:gravity="center"
                                     android:hint="DD/MM/YYYY"
                                     android:textColor="@color/onclick_multiStop"
                                     android:textColorHint="@color/textHead_multiStop" />
@@ -151,15 +153,579 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivAddReturnDate"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/add" />
+
+                    <ImageView
+                        android:id="@+id/ivRemoveReturnDate"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/negative" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cvReturnDate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvFromMulti1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="From"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvFromMulti1"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Origin"
+                                        android:text="India"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/text_multiStop" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvToMulti1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="To"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvToMulti1"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Destination"
+                                        android:inputType="text"
+                                        android:maxLines="1"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_below="@+id/cv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tvDateMulti1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="Depart Date"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/multiStopDate1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvDateMulti1"
+                                        android:layout_marginStart="20dp"
+                                        android:gravity="center"
+                                        android:hint="DD/MM/YYYY"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cvReturnDate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvFromMulti2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="From"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvFromMulti2"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Origin"
+                                        android:text="India"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/text_multiStop" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvToMulti2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="To"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvToMulti2"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Destination"
+                                        android:inputType="text"
+                                        android:maxLines="1"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_below="@+id/cv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tvDateMulti2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="Depart Date"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/multiStopDate2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvDateMulti2"
+                                        android:layout_marginStart="20dp"
+                                        android:gravity="center"
+                                        android:hint="DD/MM/YYYY"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cvReturnDate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvFromMulti3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="From"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvFromMulti3"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Origin"
+                                        android:text="India"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/text_multiStop" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvToMulti3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="To"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvToMulti3"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Destination"
+                                        android:inputType="text"
+                                        android:maxLines="1"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_below="@+id/cv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tvDateMulti3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="Depart Date"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/multiStopDate3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvDateMulti3"
+                                        android:layout_marginStart="20dp"
+                                        android:gravity="center"
+                                        android:hint="DD/MM/YYYY"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cvReturnDate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvFromMulti4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="From"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvFromMulti4"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Origin"
+                                        android:text="India"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/text_multiStop" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:id="@id/tvToMulti4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="To"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <EditText
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvToMulti4"
+                                        android:layout_marginStart="20dp"
+                                        android:hint="Enter Destination"
+                                        android:inputType="text"
+                                        android:maxLines="1"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_below="@+id/cv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/dark_grey"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp"
+                        app:cardMaxElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/tvDateMulti4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:fontFamily="@font/fatface"
+                                        android:text="Depart Date"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:id="@+id/multiStopDate4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvDateMulti4"
+                                        android:layout_marginStart="20dp"
+                                        android:gravity="center"
+                                        android:hint="DD/MM/YYYY"
+                                        android:textColor="@color/onclick_multiStop"
+                                        android:textColorHint="@color/textHead_multiStop" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/dark_grey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/dark_grey">
+                    app:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -189,7 +755,7 @@
                                 <Spinner
                                     android:id="@+id/spAdultMulti"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvAdultMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -215,7 +781,7 @@
                                 <Spinner
                                     android:id="@+id/spChildMulti"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvChildrenMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -241,7 +807,7 @@
                                 <Spinner
                                     android:id="@+id/spInfantMulti"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvInfantMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Select Passangers"
@@ -255,12 +821,12 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/dark_grey"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/dark_grey">
+                    app:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -288,7 +854,7 @@
                                 <Spinner
                                     android:id="@+id/spClassMulti"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvClassMulti"
                                     android:layout_marginStart="20dp"
                                     android:hint="Economy Class"

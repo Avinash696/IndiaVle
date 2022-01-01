@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Spinner
 import com.example.panindia.R
-import com.example.panindia.databinding.FragmentOneWayBinding
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import java.text.SimpleDateFormat
 import java.util.*
@@ -51,6 +51,8 @@ class OneWayFragment : Fragment() {
     lateinit var tvEconomy: TextView
     lateinit var tvBussiness: TextView
     lateinit var tvElite: TextView
+    lateinit var departDate :ImageView
+    lateinit var returnDate :ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,12 +70,12 @@ class OneWayFragment : Fragment() {
         viewlayout = inflater.inflate(R.layout.fragment_one_way, container, false)
         init()
         val LTRadapter =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, destination)
-        LTRadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+            ArrayAdapter(requireContext(), R.layout.text_center, destination)
+        LTRadapter.setDropDownViewResource(R.layout.text_center)
         //number
         val numberOfDate =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
-        numberOfDate.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        numberOfDate.setDropDownViewResource(R.layout.text_center)
 //        spFromOneWay.adapter = LTRadapter
 //        spToOneWay.adapter = LTRadapter
 
@@ -91,7 +93,13 @@ class OneWayFragment : Fragment() {
         etDepartDate.setOnClickListener {
             DateDepart()
         }
+        departDate.setOnClickListener {
+            DateDepart()
+        }
         etRetunDate.setOnClickListener {
+            DateReturn()
+        }
+        returnDate.setOnClickListener{
             DateReturn()
         }
         //changing color
@@ -190,6 +198,8 @@ class OneWayFragment : Fragment() {
         tvEconomy = viewlayout.findViewById(R.id.tvEconomy)
         tvBussiness = viewlayout.findViewById(R.id.tvBussiness)
         tvElite = viewlayout.findViewById(R.id.tvElite)
+        departDate = viewlayout.findViewById(R.id.ivDepartOneWay)
+        returnDate = viewlayout.findViewById(R.id.ivReturnOneWay)
     }
 
     companion object {

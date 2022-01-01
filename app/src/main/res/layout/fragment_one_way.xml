@@ -8,12 +8,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/CustomCardCorners"
@@ -22,7 +21,8 @@
                 android:layout_centerInParent="true"
                 app:cardBackgroundColor="@color/white"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="40dp">
 
 
                 <RelativeLayout
@@ -127,7 +127,8 @@
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
-                                <androidx.constraintlayout.utils.widget.ImageFilterView
+                                <ImageView
+                                    android:id="@+id/ivDepartOneWay"
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
                                     android:layout_below="@+id/tvDepart"
@@ -165,7 +166,8 @@
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
-                                <androidx.constraintlayout.utils.widget.ImageFilterView
+                                <ImageView
+                                    android:id="@+id/ivReturnOneWay"
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
                                     android:layout_below="@+id/tvReturn"
@@ -229,7 +231,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_marginLeft="20dp"
-                                android:src="@drawable/weight" />
+                                android:src="@drawable/babyboy" />
 
                             <Spinner
                                 android:id="@+id/spWeight"

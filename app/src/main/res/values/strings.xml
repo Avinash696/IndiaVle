@@ -12,6 +12,26 @@
     <string name="passangers_luggage"><![CDATA[Passangers & Luggage]]></string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>>
+    //open close
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_pan_card_admin">PanCardAdminActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
 
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    //admin
+    <string name="menu_home">Home</string>
+    <string name="menu_pan_buy_Coupan">Pan Buy Coupon</string>
+    <string name="menu_pan_DistributeCoupon">Distribute Pan Coupon</string>
+    <string name="menu_pan_Coupon_Summary">Pan Coupon Summary</string>
+    <string name="menu_pan_Password_Reset">PSA Password Reset</string>
+    <string name="menu_Coupon_price">Change Coupon Price</string>
+    <string name="menu_pan_order_id_verify">Pan Order Id Verify</string>
 </resources>

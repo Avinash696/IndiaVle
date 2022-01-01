@@ -26,8 +26,8 @@ class BusActivity : AppCompatActivity() {
         var spAdapterDes: ArrayAdapter<String> =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, destination)
         spAdapterDes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.etFromBus.adapter = spAdapterDes
-        binding.etToBus.adapter = spAdapterDes
+//        binding.etFromBus.adapter = spAdapterDes
+//        binding.etToBus.adapter = spAdapterDes
 
     }
 

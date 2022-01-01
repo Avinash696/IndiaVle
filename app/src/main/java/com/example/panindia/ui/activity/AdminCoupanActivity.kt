@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.databinding.DataBindingUtil
 import com.example.panindia.R
 import com.example.panindia.databinding.ActivityAdminCoupanBinding
 
@@ -14,7 +15,7 @@ class AdminCoupanActivity : AppCompatActivity() {
     val arrCoupan = arrayOf("P - Type","E - Type")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_admin_coupan)
+       binding=DataBindingUtil.setContentView(this,R.layout.activity_admin_coupan)
         hideTopBar()
         //copons
         val coupanSelection =

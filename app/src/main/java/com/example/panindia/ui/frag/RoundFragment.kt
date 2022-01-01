@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.panindia.R
 import java.text.SimpleDateFormat
@@ -34,6 +31,8 @@ class RoundFragment : Fragment() {
     lateinit var spPassanger: Spinner
     lateinit var spKids: Spinner
     lateinit var spClass :Spinner
+    lateinit var llRoundDepart:LinearLayout
+    lateinit var llReturnDate:LinearLayout
     var items = arrayOf("1", "2", "3")
     var itemsClass = arrayOf("Economy", "Bussiness", "Elite")
 
@@ -71,6 +70,8 @@ class RoundFragment : Fragment() {
         spWeight = viewlayout.findViewById(R.id.spWeight)
         //class filter
         spClass= viewlayout.findViewById(R.id.Round_class)
+        llRoundDepart= viewlayout.findViewById(R.id.llRoundDepart)
+        llReturnDate= viewlayout.findViewById(R.id.llReturnDate)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,10 +79,10 @@ class RoundFragment : Fragment() {
         //number
         val numberOfDate =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
-        numberOfDate.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        numberOfDate.setDropDownViewResource(R.layout.text_center)
         //class
         val classSelection =
-            ArrayAdapter(requireContext(), R.layout.text_center, itemsClass)
+            ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item, itemsClass)
         numberOfDate.setDropDownViewResource(R.layout.text_center)
 
         spPassanger.adapter = numberOfDate
@@ -91,10 +92,16 @@ class RoundFragment : Fragment() {
         etDepartDate.setOnClickListener {
             DateDepart()
         }
+        llRoundDepart.setOnClickListener{
+            DateDepart()
+        }
         tvReturnDate.setOnClickListener {
-//            DateReturn()
             DateReturn()
         }
+        llReturnDate.setOnClickListener {
+            DateReturn()
+        }
+
         super.onViewCreated(view, savedInstanceState)
     }
 
