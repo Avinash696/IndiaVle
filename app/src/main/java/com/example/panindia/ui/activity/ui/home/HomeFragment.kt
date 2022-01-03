@@ -40,14 +40,14 @@ class HomeFragment : Fragment() {
     }
     fun populatingData(){
         var arrayList = ArrayList<adminModel>()
-        arrayList.add(adminModel("Create Admin", R.drawable.admin_icon))
-        arrayList.add(adminModel("Create Super Distributer", R.drawable.admin_icon))
-        arrayList.add(adminModel("Create Distributer", R.drawable.admin_icon))
-        arrayList.add(adminModel("Create Retailer", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Create Admin", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Create Super Distributer", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Create Distributer", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Create Retailer", R.drawable.admin_icon))
+        arrayList.add(adminModel("Home  Page", R.drawable.admin_icon))
         //set adapter
         val adminHome = AdminHomeAdpter(requireContext(),arrayList)
         _binding?.lvAdmin?.adapter =adminHome
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

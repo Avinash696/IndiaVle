@@ -10,8 +10,8 @@ import android.widget.TextView
 import com.example.panindia.R
 
 class ExpandableListAdapter : BaseExpandableListAdapter {
-     var mContext: Context
-     var listTitle: List<String>
+     private lateinit var mContext: Context
+    private var listTitle: List<String>
      var listItem: Map<String, List<String>>
 
     constructor(
@@ -19,7 +19,6 @@ class ExpandableListAdapter : BaseExpandableListAdapter {
         listTitle: List<String>,
         listItem: Map<String, List<String>>
     ) : super() {
-        this.mContext = mContext
         this.listTitle = listTitle
         this.listItem = listItem
     }
@@ -53,24 +52,26 @@ class ExpandableListAdapter : BaseExpandableListAdapter {
         return false
     }
 //p2 - convert view
-    override fun getGroupView(p0: Int, p1: Boolean, p2: View?, p3: ViewGroup?): View {
+    override fun getGroupView(p0: Int, p1: Boolean, p2: View?, p3: ViewGroup?): View? {
         var title :String = getGroup(p0) as String
-        if(p2 == null){
-            p2 = LayoutInflater.from(mContext).inflate(R.layout.list_group,null)
+    var convertView : View? = p2
+        if(convertView == null){
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.list_group,p3,false)
         }
         val textView = p2?.findViewById<TextView>(R.id.list_item)
          textView?.text = title
-        return null
+        return convertView
     }
 
-    override fun getChildView(p0: Int, p1: Int, p2: Boolean, p3: View?, p4: ViewGroup?): View {
-        var title :String = getGroup(p0,p1) as String
+    override fun getChildView(p0: Int, p1: Int, p2: Boolean, p3: View?, p4: ViewGroup?): View? {
+        var title :String = getChild(p0,p1) as String
+        var convertView1 : View? = p3
         if(p2 == null){
-            p2 = LayoutInflater.from(mContext).inflate(R.layout.list_group,null)
+            convertView1 = LayoutInflater.from(mContext).inflate(R.layout.list_item,null)
         }
-        val textView = p2?.findViewById<TextView>(R.id.list_item)
-        textView?.text = title
-        return null
+        val textChild = convertView1?.findViewById<TextView>(R.id.tvExpandableList)
+        textChild?.text = title
+        return convertView1
     }
 
     override fun isChildSelectable(p0: Int, p1: Int): Boolean {

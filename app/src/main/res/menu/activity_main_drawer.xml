@@ -6,60 +6,60 @@
         <item
             android:id="@+id/nav_admin"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Admin">
-            <menu>
-                <group>
-                    <item
-                        android:icon="@drawable/ic_menu_camera"
-                        android:title="Create Admin" />
-                    <item
-                        android:icon="@drawable/ic_menu_camera"
-                        android:title="Create Super Distributer" />
-                    <item
-                        android:icon="@drawable/ic_menu_camera"
-                        android:title="Create Distributer" />
-                    <item
-                        android:icon="@drawable/ic_menu_camera"
-                        android:title="Create Retailer" />
-                </group>
-            </menu>
-        </item>
-        <item
-            android:id="@+id/nav_buyCoupon"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Joining List">
-            <menu>
-                <group>
-                    <item android:title="Admin" />
-                    <item android:title="Super Distributer" />
-                    <item android:title="Distributer" />
-                    <item android:title="Retrailer" />
-                </group>
-            </menu>
-        </item>
-        <item
-            android:id="@+id/nav_distributeCoupon"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Accounts">
-            <menu>
-                <item android:title="Distribute Vaulet" />
-                <item android:title="Balance Upload" />
-                <item android:title="WL  Limit Distributer" />
-                <item android:title="Payout" />
-            </menu>
-        </item>
-        <item
-            android:id="@+id/nav_summary"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_pan_Coupon_Summary" />
-        <item
-            android:id="@+id/nav_reset"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_pan_Password_Reset" />
-        <item
-            android:id="@+id/nav_couponPrice"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_Coupon_price" />
+            android:title="Admin"></item>
+<!--            <menu>-->
+<!--                <group>-->
+<!--                    <item-->
+<!--                        android:icon="@drawable/ic_menu_camera"-->
+<!--                        android:title="Create Admin" />-->
+<!--                    <item-->
+<!--                        android:icon="@drawable/ic_menu_camera"-->
+<!--                        android:title="Create Super Distributer" />-->
+<!--                    <item-->
+<!--                        android:icon="@drawable/ic_menu_camera"-->
+<!--                        android:title="Create Distributer" />-->
+<!--                    <item-->
+<!--                        android:icon="@drawable/ic_menu_camera"-->
+<!--                        android:title="Create Retailer" />-->
+<!--                </group>-->
+<!--            </menu>-->
+<!--        </item>-->
+<!--        <item-->
+<!--            android:id="@+id/nav_buyCoupon"-->
+<!--            android:icon="@drawable/ic_menu_gallery"-->
+<!--            android:title="Joining List">-->
+<!--            <menu>-->
+<!--                <group>-->
+<!--                    <item android:title="Admin" />-->
+<!--                    <item android:title="Super Distributer" />-->
+<!--                    <item android:title="Distributer" />-->
+<!--                    <item android:title="Retrailer" />-->
+<!--                </group>-->
+<!--            </menu>-->
+<!--        </item>-->
+<!--        <item-->
+<!--            android:id="@+id/nav_distributeCoupon"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="Accounts">-->
+<!--            <menu>-->
+<!--                <item android:title="Distribute Vaulet" />-->
+<!--                <item android:title="Balance Upload" />-->
+<!--                <item android:title="WL  Limit Distributer" />-->
+<!--                <item android:title="Payout" />-->
+<!--            </menu>-->
+<!--        </item>-->
+<!--        <item-->
+<!--            android:id="@+id/nav_summary"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/menu_pan_Coupon_Summary" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_reset"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/menu_pan_Password_Reset" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_couponPrice"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/menu_Coupon_price" />-->
         <item
             android:id="@+id/nav_verify"
             android:icon="@drawable/ic_menu_slideshow"

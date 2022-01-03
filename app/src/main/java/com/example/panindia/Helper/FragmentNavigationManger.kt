@@ -4,15 +4,15 @@ import androidx.fragment.app.FragmentManager
 import com.example.panindia.Interface.NavigationManager
 import com.example.panindia.ui.activity.PanCardAdminActivity
 
-class FragmentNavigationManger :NavigationManager{
+public class FragmentNavigationManger :NavigationManager{
     lateinit var mFragmentNavigationManger:FragmentNavigationManger
     lateinit var mFragmentManger :FragmentManager
     lateinit var panCardAdminActivity: PanCardAdminActivity
 
-    fun getmInstance() :FragmentNavigationManger{
+      private fun  getmInstance() :FragmentNavigationManger{
         if(mFragmentNavigationManger == null){
             mFragmentNavigationManger = FragmentNavigationManger()
-        }
+          }
         return mFragmentNavigationManger
     }
     fun configure(panCardAdminActivity: PanCardAdminActivity){
