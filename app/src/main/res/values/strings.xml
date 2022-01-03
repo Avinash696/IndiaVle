@@ -34,4 +34,14 @@
     <string name="menu_pan_Password_Reset">PSA Password Reset</string>
     <string name="menu_Coupon_price">Change Coupon Price</string>
     <string name="menu_pan_order_id_verify">Pan Order Id Verify</string>
+    //listData
+    <string name="GroupAdmin">Admin</string>
+    <string-array name="GroupAdmin">
+        <item>Create Admin</item>
+        <item>Create Super Distributor</item>
+        <item>Create Distributor</item>
+        <item>Create Retailer</item>
+    </string-array>
+    <string name="title_activity_panard">PanardActivity</string>
+    <string name="title_activity_pan_card">PanCardActivity</string>
 </resources>

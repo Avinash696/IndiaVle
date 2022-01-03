@@ -11,8 +11,7 @@ import com.example.panindia.model.adminModel
 import kotlin.collections.ArrayList
 
 
-internal class AdminHomeAdpter  // invoke the suitable constructor of the ArrayAdapter class
-    (context: Context, arrayList: ArrayList<adminModel>) :
+internal class AdminHomeAdpter(context: Context, arrayList: ArrayList<adminModel>) :
     ArrayAdapter<adminModel?>(context, 0, arrayList as List<adminModel?>) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 

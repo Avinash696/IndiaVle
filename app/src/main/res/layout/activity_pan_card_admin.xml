@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
         <!--        <com.google.android.material.navigation.NavigationView-->
         <!--            android:id="@+id/nav_view"-->
         <!--            android:layout_width="wrap_content"-->
@@ -51,10 +52,9 @@
         <!--           -->
         <!--        </com.google.android.material.navigation.NavigationView>-->
         <ExpandableListView
-            android:id="@+id/navigation_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="192dp"
-            android:background="@android:color/white" />
+            android:id="@+id/elvMobiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ExpandableListView>
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

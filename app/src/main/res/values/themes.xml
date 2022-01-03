@@ -28,4 +28,6 @@
     <style name="Theme.PanIndia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PanIndia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>

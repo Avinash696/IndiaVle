@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ui.HomeMainActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E0F2F1"
+        android:columnCount="2">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnPanCard"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Pan Card"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/pan_card" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnAeps"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="AEPS"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/aeps" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnMoneyTransfer"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Money Transfer"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/money_transfer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnBBPS"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="BBPS"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/bbps" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnFlight"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Flight"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/flight_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnRecharge"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Recharge"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/recharge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnInsurance"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Insurance"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/insurance" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:onClick="fnOthers"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato"
+                android:text="Others"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/more" />
+        </LinearLayout>
+    </GridLayout>
+</RelativeLayout>
