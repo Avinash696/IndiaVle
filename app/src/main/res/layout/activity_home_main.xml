@@ -71,24 +71,25 @@
                     android:layout_below="@+id/ab"
                     android:layout_centerInParent="true"
                     android:layout_weight="1"
+                    android:background="@color/red"
                     android:padding="10dp"
                     app:cardBackgroundColor="#E8F5E9"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="10dp"
                     app:cardMaxElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:cardUseCompatPadding="true"
-                    android:background="@color/red">
+                    app:cardUseCompatPadding="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                       android:layout_margin="5dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:onClick="fnAeps"
-                        android:orientation="vertical"
-                        android:background="@color/white"
-                        android:layout_gravity="center">
+                        android:orientation="vertical">
+
                         <ImageView
                             android:layout_width="43dp"
                             android:layout_height="45dp"
@@ -145,8 +146,8 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/lato"
-                            android:text="Money Transfer"
                             android:gravity="center"
+                            android:text="Money Transfer"
                             android:textSize="16sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -317,7 +318,6 @@
         </LinearLayout>
 
 
-
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"
@@ -325,7 +325,7 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/aeps_menu"/>
+            app:menu="@menu/aeps_menu" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
