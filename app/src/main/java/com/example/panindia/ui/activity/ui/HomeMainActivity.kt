@@ -17,7 +17,6 @@ class HomeMainActivity : AppCompatActivity() {
     fun fnPanCard(view: View) {
         startActivity(Intent(this,PanCardActivity::class.java))
     }
-
     fun fnAeps(view: View) {
         startActivity(Intent(this,AepsActivity::class.java))
     }
@@ -37,6 +36,6 @@ class HomeMainActivity : AppCompatActivity() {
         startActivity(Intent(this,InsuranceActivity::class.java))
     }
     fun fnOthers(view: View) {
-        startActivity(Intent(this, OthersActivity::class.java))
+        startActivity(Intent(this,OthersActivity::class.java))
     }
 }
