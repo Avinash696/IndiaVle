@@ -22,7 +22,8 @@ class LoginActivity : AppCompatActivity() {
         binding.tvLogin.setOnClickListener {
             Toast.makeText( this, "ok", Toast.LENGTH_SHORT).show()
 //            startActivity(Intent(this,PanCardAdminActivity::class.java))
-            startActivity(Intent(this,PanAdminActivity::class.java))
+//            startActivity(Intent(this,PanAdminActivity::class.java))
+            startActivity(Intent(this,HomeMainActivity::class.java))
 //            startActivity(Intent(this,HomeMainActivity::class.java))
         }
     }

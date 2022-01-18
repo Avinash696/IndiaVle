@@ -9,15 +9,23 @@ import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.ExpandableListView.OnChildClickListener
 import android.widget.ExpandableListView.OnGroupExpandListener
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
+import com.example.panindia.ChangeCouponPriceFragment
 import com.example.panindia.ui.homeDrawable.OthersActivity
 import com.example.panindia.R
 import com.example.panindia.adapter.MyExpandableListAdapter
 import com.example.panindia.databinding.ActivityMainBinding
+import com.example.panindia.databinding.FragmentHome2Binding
 import com.example.panindia.databinding.NavHeaderBinding
 import com.example.panindia.ui.activity.JoiningListActivity
 import com.example.panindia.ui.activity.RegisterActivity
+import com.example.panindia.ui.activity.fragment.HomeFragment
+import com.example.panindia.ui.activity.fragment.JoiningFragment
+import com.example.panindia.ui.activity.fragment.RegisterAdminFragment
 import com.example.panindia.ui.homeDrawable.*
 import java.util.ArrayList
 import java.util.HashMap
@@ -30,15 +38,18 @@ class HomeMainActivity : AppCompatActivity() {
     lateinit var expandableListView: ExpandableListView
     var expandableListAdapter: ExpandableListAdapter? = null
     lateinit var navBinding: View
+    lateinit var vpHomeMain: ViewPager2
+    lateinit var frameLay :FrameLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_main)
-        navBinding =
-            LayoutInflater.from(applicationContext).inflate(R.layout.nav_header, null, false)
+        defaultLayout()
+        navBinding =LayoutInflater.from(applicationContext).inflate(R.layout.nav_header, null, false)
 
         createGroupList()
         createCollection()
         init()
+
         expandableListAdapter = MyExpandableListAdapter(this, groupList, mobileCollection)
         expandableListView.setAdapter(expandableListAdapter)
         expandableListView.setOnGroupExpandListener(object : OnGroupExpandListener {
@@ -60,55 +71,56 @@ class HomeMainActivity : AppCompatActivity() {
     }
 
     fun init() {
-        expandableListView = navBinding.findViewById(R.id.expList)
+        expandableListView = findViewById(R.id.expList)
+//        vpHomeMain = findViewById(R.id.vpHomeMainHost)
+        frameLay = findViewById(R.id.fragHost)
+    }
+    fun defaultLayout(){
+        val frag = supportFragmentManager
+        val fragtrans = frag.beginTransaction()
+        fragtrans.replace(R.id.fragHost, HomeFragment())
+        fragtrans.addToBackStack(null);
+        fragtrans.commit();
     }
 
-    fun fnPanCard(view: View) {
-        startActivity(Intent(this, PanCardActivity::class.java))
-    }
 
-    fun fnAeps(view: View) {
-        startActivity(Intent(this, AepsActivity::class.java))
-    }
-
-    fun fnMoneyTransfer(view: View) {
-        startActivity(Intent(this, MoneyTransferActivity::class.java))
-    }
-
-    fun fnBBPS(view: View) {
-        startActivity(Intent(this, BbpsActivity::class.java))
-    }
-
-    fun fnFlight(view: View) {
-        startActivity(Intent(this, FlightActivity::class.java))
-    }
-
-    fun fnRecharge(view: View) {
-        startActivity(Intent(this, RechargeActivity::class.java))
-    }
-
-    fun fnInsurance(view: View) {
-        startActivity(Intent(this, InsuranceActivity::class.java))
-    }
-
-    fun fnOthers(view: View) {
-        startActivity(Intent(this, OthersActivity::class.java))
-    }
 
     private fun onClickExpandableListView(selected: String) {
-        if (selected == "Create Admin") {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        } else if (selected == "Create Super Distributer") {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        } else if (selected == "Create Distributer") {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        } else if (selected == "Create Retailer") {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        } else if (selected == "Create Admin Join") {
-            startActivity(Intent(this, JoiningListActivity::class.java))
-        } else if (selected == "Home") {
-            startActivity(Intent(this, HomeMainActivity::class.java))
+
+        when (selected) {
+            "Create Admin" -> {
+                selectedLayoutShow(RegisterAdminFragment())
+    //            startActivity(Intent(this, RegisterActivity::class.java))
+            }
+            "Create Super Distributer" -> {
+//                startActivity(Intent(this, RegisterActivity::class.java))
+                selectedLayoutShow(RegisterAdminFragment())
+            }
+            "Create Distributer" -> {
+//                startActivity(Intent(this, RegisterActivity::class.java))
+                selectedLayoutShow(RegisterAdminFragment())
+            }
+            "Create Retailer" -> {
+//                startActivity(Intent(this, RegisterActivity::class.java))
+                selectedLayoutShow(RegisterAdminFragment())
+            }
+            "Create Admin Join" -> {
+//                startActivity(Intent(this, JoiningListActivity::class.java))
+                selectedLayoutShow(JoiningFragment())
+            }
+            "Home" -> {
+//                startActivity(Intent(this, HomeMainActivity::class.java))
+                selectedLayoutShow(HomeFragment())
+            }
         }
+    }
+
+    fun selectedLayoutShow(layoutData: Fragment) {
+        val frag = supportFragmentManager
+        val fragtrans = frag.beginTransaction()
+        fragtrans.replace(R.id.fragHost, layoutData)
+        fragtrans.addToBackStack(null);
+        fragtrans.commit();
     }
 
     private fun createCollection() {

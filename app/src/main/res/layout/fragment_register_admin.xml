@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.fragment.RegisterAdminFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="3dp"
+            android:background="@color/whitesh_grey">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/trans"
+                android:id="@+id/ab">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/back"
+                        app:tint="@color/black"
+                        android:id="@+id/ivBackToHome" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Registration"
+                        android:fontFamily="@font/lato"
+                        android:textSize="24sp"
+                        android:layout_marginLeft="50dp"
+                        android:textColor="@color/black" />
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/ab">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Join As "
+                    android:textSize="15sp"
+                    android:textColor="@color/red" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40sp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#CBC3E3"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp"
+                            app:cardMaxElevation="10dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardUseCompatPadding="true">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Name"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Name" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Father /Husband Name"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter F/H Name" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Date of Birth"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:clickable="true"
+                                            android:hint="Select DOB"
+                                            android:onClick="FnDOB" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Gender"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <RadioGroup
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1">
+
+                                            <RadioButton
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Male" />
+
+                                            <RadioButton
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="Female" />
+                                        </RadioGroup>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Contact No."
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint=" Contact No." />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Education"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Education" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Shop/Establishment Name"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Shop Name"
+                                            android:maxEms="1"
+                                            android:maxLines="1" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Pan Number"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Pan No." />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Alternate Phone No."
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Alt No." />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cvDetail"
+                            app:cardBackgroundColor="#98FB98"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp"
+                            app:cardMaxElevation="10dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardUseCompatPadding="true">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Office/Shop Address"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter office Address" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Landmark"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Landmarks" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="City"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter city" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Pin Code"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Pin Code" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="District"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter District" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="State"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Select your State" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/residence_shape"
+                                            android:text="Residence Address same as above" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Residence Address"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Residence Address" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Landmark"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Landmark" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="City"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter City" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="Pincode"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Pincode" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="District"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Enter Distrcit" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="@font/regular"
+                                            android:gravity="center_vertical"
+                                            android:text="State"
+                                            android:textSize="15sp" />
+
+                                        <View
+                                            android:layout_width="@dimen/view_width"
+                                            android:layout_height="match_parent"
+                                            android:layout_margin="@dimen/mid_color"
+                                            android:background="@color/seperator" />
+
+                                        <EditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:hint="Select State" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvkycDocment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cvAddress"
+                            app:cardBackgroundColor="#ffcccb"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp"
+                            app:cardMaxElevation="10dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="Proof Of Address"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="No file Chosen" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="Proof Of Identity(PAN)"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="No file Chosen" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvBankAccDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cvkycDocment"
+                            app:cardBackgroundColor="#FAFFFDD0"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="10dp"
+                            app:cardMaxElevation="10dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="Bank Name"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="Enter Bank Name" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="A/C Holder Name"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="Enter A/C Holer Name" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="A/C Type"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="Enter A/C Type" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="A/C Number"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="Enter A/C Number" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/regular"
+                                        android:gravity="center_vertical"
+                                        android:text="IFSC Code"
+                                        android:textSize="15sp" />
+
+                                    <View
+                                        android:layout_width="@dimen/view_width"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="@dimen/mid_color"
+                                        android:background="@color/seperator" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:hint="Enter IFSC Code" />
+                                </LinearLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:clickable="true">
+                                    <!--                            <TextView-->
+                                    <!--                                android:layout_centerInParent="true"-->
+                                    <!--                                android:id="@+id/tvSignUp"-->
+                                    <!--                                android:layout_width="wrap_content"-->
+                                    <!--                                android:layout_height="wrap_content"-->
+                                    <!--                                android:text="Sign Up" />-->
+                                    <!--                                <ImageView-->
+                                    <!--                                    android:layout_width="140dp"-->
+                                    <!--                                    android:layout_height="100dp"-->
+                                    <!--                                    android:layout_centerInParent="true"-->
+                                    <!--                                    android:src="@drawable/signup" />-->
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="130dp"
+                                        android:layout_height="70dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_gravity="right"
+                                        android:padding="4dp"
+                                        app:cardBackgroundColor="#5B7FE3"
+                                        app:cardCornerRadius="5dp"
+                                        app:cardElevation="10dp"
+                                        app:cardMaxElevation="10dp"
+                                        app:cardPreventCornerOverlap="true"
+                                        app:cardUseCompatPadding="true">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="Search Hotel"
+                                            android:textColor="#6200EA"
+                                            android:textSize="15sp" />
+                                    </androidx.cardview.widget.CardView>
+                                </RelativeLayout>
+
+                                <!--                <Button-->
+                                <!--                    android:layout_width="wrap_content"-->
+                                <!--                    android:layout_height="wrap_content"-->
+                                <!--                    android:text="Sign Up"-->
+                                <!--                    android:id="@+id/btnSignUp"-->
+                                <!--                    android:background="@color/seperator"-->
+                                <!--                    android:layout_margin="10dp"/>-->
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>
