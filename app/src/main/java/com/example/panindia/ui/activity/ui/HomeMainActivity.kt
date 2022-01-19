@@ -14,19 +14,11 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.panindia.ChangeCouponPriceFragment
-import com.example.panindia.ui.homeDrawable.OthersActivity
 import com.example.panindia.R
 import com.example.panindia.adapter.MyExpandableListAdapter
-import com.example.panindia.databinding.ActivityMainBinding
-import com.example.panindia.databinding.FragmentHome2Binding
-import com.example.panindia.databinding.NavHeaderBinding
-import com.example.panindia.ui.activity.JoiningListActivity
-import com.example.panindia.ui.activity.RegisterActivity
 import com.example.panindia.ui.activity.fragment.HomeFragment
 import com.example.panindia.ui.activity.fragment.JoiningFragment
 import com.example.panindia.ui.activity.fragment.RegisterAdminFragment
-import com.example.panindia.ui.homeDrawable.*
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -82,9 +74,6 @@ class HomeMainActivity : AppCompatActivity() {
         fragtrans.addToBackStack(null);
         fragtrans.commit();
     }
-
-
-
     private fun onClickExpandableListView(selected: String) {
 
         when (selected) {
