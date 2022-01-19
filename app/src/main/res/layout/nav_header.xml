@@ -7,12 +7,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#FFEBEE"
             android:orientation="horizontal">
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/user"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvName"
+                    android:text="Select Your Choice"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/spartan"
+                    android:textColor="#0091EA"
+                    android:textSize="17sp"/>
         </LinearLayout>
 </layout>
