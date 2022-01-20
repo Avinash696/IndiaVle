@@ -8,14 +8,15 @@
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.homeDrawable.PanCardActivity"
-        android:id="@+id/drawer_layout">
+        tools:context=".ui.homeDrawable.PanCardActivity">
+
         <FrameLayout
+            android:id="@+id/fragApesHost"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragApesHost"/>
+            android:layout_height="match_parent" />
 
         <include
             android:id="@+id/app_bar_main"
@@ -30,6 +31,12 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/aeps_menu"/>
+            app:menu="@menu/aeps_menu">
+<!--            <ListView-->
+<!--                android:id="@+id/lvAeps"-->
+<!--                android:layout_marginTop="55dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+        </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

@@ -2,9 +2,11 @@ package com.example.panindia.ui.homeDrawable
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -18,15 +20,17 @@ import com.example.panindia.R
 import com.example.panindia.databinding.ActivityAepsBinding
 import com.example.panindia.databinding.ActivityPanCardBinding
 import com.example.panindia.databinding.FragmentHome2Binding
+import com.example.panindia.ui.frag.ApesTransitionFragment
 import com.google.android.material.navigation.NavigationView
 
-class AepsActivity : AppCompatActivity() {
+class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListener{
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAepsBinding
-    lateinit var fragHost :Fragment
+    lateinit var fragApesHost: FrameLayout
+    lateinit var listData :ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         binding = ActivityAepsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarMain.toolbar)
@@ -34,6 +38,7 @@ class AepsActivity : AppCompatActivity() {
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         init()
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -45,26 +50,61 @@ class AepsActivity : AppCompatActivity() {
         layoutApesChange(ChangeCouponPriceFragment())
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+//        populatingData()
+//        listData.setOnItemClickListener { adapterView, view, i, l ->
+//            Toast.makeText(this, ""+i, Toast.LENGTH_SHORT).show()
+//        }
     }
-    fun init(){
-//        fragHost = binding.fragApesHost
+    fun init() {
+        fragApesHost = findViewById(R.id.fragApesHost)
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-
-        }
-        return super.onOptionsItemSelected(item)
-    }
-    fun layoutApesChange(fragData :Fragment){
+    private fun layoutApesChange(fragData: Fragment) {
         val frag = supportFragmentManager
-        val ft :FragmentTransaction = frag.beginTransaction()
-        ft.replace(R.id.fragApesHost,fragData)
+        val ft: FragmentTransaction = frag.beginTransaction()
+        ft.replace(R.id.fragApesHost, fragData)
         ft.addToBackStack(null)
         ft.commit()
+    }
+
+//    override fun onMenuItemClick(item: MenuItem?): Boolean {
+//        when (item?.itemId) {
+//            R.id.menu_transition -> Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+//            R.id.menu_mini_statement ->Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+//        }
+//        return true
+//    }
+
+    //right on item click
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.aeps_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+////        when (item?.itemId) {
+////            R.id.menu_transition -> Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+////            R.id.menu_mini_statement -> Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
+////        }
+//        if(item.itemId == R.id.menu_transition){
+//            Toast.makeText(applicationContext, "ok", Toast.LENGTH_SHORT).show()
+//        }
+//        return true
+//    }
+
+    private fun populatingData(){
+        val arrayData = arrayOf("h","jj")
+        val arrayAdapter =ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arrayData)
+        listData.adapter = arrayAdapter
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+       when(item.itemId){
+           R.id.menu_transition -> Toast.makeText(applicationContext, "koko", Toast.LENGTH_SHORT).show()
+       }
+        return true
     }
 }
