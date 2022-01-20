@@ -16,9 +16,11 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.panindia.R
 import com.example.panindia.adapter.MyExpandableListAdapter
+import com.example.panindia.databinding.ActivityHomeMainBinding
 import com.example.panindia.ui.activity.fragment.HomeFragment
 import com.example.panindia.ui.activity.fragment.JoiningFragment
 import com.example.panindia.ui.activity.fragment.RegisterAdminFragment
+import com.google.android.material.appbar.AppBarLayout
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -32,16 +34,18 @@ class HomeMainActivity : AppCompatActivity() {
     lateinit var navBinding: View
     lateinit var vpHomeMain: ViewPager2
     lateinit var frameLay :FrameLayout
+     lateinit var binding:ActivityHomeMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_main)
+        binding=DataBindingUtil.setContentView(this,R.layout.activity_home_main)
+
         defaultLayout()
         navBinding =LayoutInflater.from(applicationContext).inflate(R.layout.nav_header, null, false)
 
         createGroupList()
         createCollection()
         init()
-
+//        setSupportActionBar(binding.appBarHome.toolbar)
         expandableListAdapter = MyExpandableListAdapter(this, groupList, mobileCollection)
         expandableListView.setAdapter(expandableListAdapter)
         expandableListView.setOnGroupExpandListener(object : OnGroupExpandListener {

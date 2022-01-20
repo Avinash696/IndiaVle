@@ -2,25 +2,38 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_apes"
+        android:orderInCategory="100"
+        android:title="APES"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_transition"
         android:orderInCategory="100"
         android:title="Transition"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_mini_statement"
         android:orderInCategory="100"
         android:title="Mini Statement"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_apes_distribution"
         android:orderInCategory="100"
         android:title="APES Distribute"
-        app:showAsAction="never" /> <item
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_activate"
         android:orderInCategory="100"
         android:title="Activate"
-        app:showAsAction="never" /> <item
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_limited_history"
         android:orderInCategory="100"
         android:title="Limited History"
-        app:showAsAction="never" /> <item
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_markup_setting"
         android:orderInCategory="100"
         android:title="Markup Setting"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 </menu>

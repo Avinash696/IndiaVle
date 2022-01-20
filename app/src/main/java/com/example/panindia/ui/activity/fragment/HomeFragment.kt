@@ -6,10 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridView
 import androidx.databinding.DataBindingUtil
 import com.example.panindia.R
+import com.example.panindia.adapter.AdminHomeAdpter
 import com.example.panindia.databinding.FragmentHome2Binding
+
+import com.example.panindia.model.adminModel
 import com.example.panindia.ui.homeDrawable.*
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemClickListener
+import android.widget.Toast
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,8 +53,36 @@ class HomeFragment : Fragment(), View.OnClickListener {
         return binding.root
     }
 
+//    fun populatingData(){
+//        var arrayList = ArrayList<adminModel>()
+////        arrayList.add(adminModel("Create Super Distributer", R.drawable.admin_icon))
+////        arrayList.add(adminModel("Create Distributer", R.drawable.admin_icon))
+////        arrayList.add(adminModel("Create Retailer", R.drawable.admin_icon))
+//        arrayList.add(adminModel("AEPS(Paysprint)", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Aadhar Pay(Paysprint)", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Money Transfer DMT(Paysprint)", R.drawable.admin_icon))
+//        arrayList.add(adminModel("MATM (Paysprint)", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Mobile Recharge", R.drawable.admin_icon))
+//        arrayList.add(adminModel("DTH", R.drawable.admin_icon))
+//        arrayList.add(adminModel("BBPS", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Payout", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Hotel Booking", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Flight Booking", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Bus Ticket", R.drawable.admin_icon))
+//        arrayList.add(adminModel("PAN", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Cash Management Service", R.drawable.admin_icon))
+//        arrayList.add(adminModel("UPI Wallet Topup(ICICI)", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Paytm Wallet Topup", R.drawable.admin_icon))
+//        arrayList.add(adminModel("PG", R.drawable.admin_icon))
+//        arrayList.add(adminModel("Ecommerce", R.drawable.admin_icon))
+//        //set adapter
+//        val adminHome = AdminHomeAdpter(requireContext(),arrayList)
+//        binding?.gridView?.adapter =adminHome
+//    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        populatingData()
         binding.llPanCard.setOnClickListener {
             startActivity(
                 Intent(
@@ -111,7 +147,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         }
-        binding.llothers2.setOnClickListener {
+        binding.llAadharPay.setOnClickListener {
             startActivity(
                 Intent(
                     requireContext(),
@@ -119,6 +155,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         }
+
+
+//        binding.gridView.onItemClickListener = OnItemClickListener { parent, view, position, id ->
+//            Toast.makeText(requireContext(), "position"+position, Toast.LENGTH_SHORT).show()
+//        }
     }
 
     companion object {
@@ -150,7 +191,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 //           R.id.llbbps ->{startActivity(Intent(requireContext(), BbpsActivity::class.java))}
 //           R.id.llflight ->{startActivity(Intent(requireContext(), FlightActivity::class.java))}
 //           R.id.llRecharge ->{ startActivity(Intent(requireContext(), RechargeActivity::class.java))}
-//           R.id.llInsurance ->{ startActivity(Intent(requireContext(), InsuranceActivity::class.java))}
+//                 R.id.llInsurance ->{ startActivity(Intent(requireContext(), InsuranceActivity::class.java))}
 //           R.id.llOthers ->{ startActivity(Intent(requireContext(), OthersActivity::class.java))}
 //           R.id.llothers2 ->{ startActivity(Intent(requireContext(), OthersActivity::class.java))}
         }
