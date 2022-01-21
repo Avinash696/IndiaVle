@@ -20,23 +20,25 @@ import com.example.panindia.R
 import com.example.panindia.databinding.ActivityAepsBinding
 import com.example.panindia.databinding.ActivityPanCardBinding
 import com.example.panindia.databinding.FragmentHome2Binding
+import com.example.panindia.ui.frag.ApesFragment
 import com.example.panindia.ui.frag.ApesTransitionFragment
+import com.example.panindia.ui.frag.TransitionHistoryFragment
 import com.google.android.material.navigation.NavigationView
 
 class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListener{
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAepsBinding
     lateinit var fragApesHost: FrameLayout
-    lateinit var listData :ListView
+//    lateinit var listData :ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityAepsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.appBarMain.toolbar)
+//        setSupportActionBar(binding.appBarMain.toolbar)
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
         init()
 
         // Passing each menu ID as a set of Ids because each
@@ -48,15 +50,27 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
         )
         //change layout
         layoutApesChange(ChangeCouponPriceFragment())
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+//        navView.setupWithNavController(navController)
 //        populatingData()
 //        listData.setOnItemClickListener { adapterView, view, i, l ->
 //            Toast.makeText(this, ""+i, Toast.LENGTH_SHORT).show()
 //        }
+        navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.menu_apes ->layoutApesChange(ApesFragment())
+                R.id.menu_transition ->layoutApesChange(TransitionHistoryFragment())
+            }
+            return@OnNavigationItemSelectedListener true
+        })
     }
     fun init() {
         fragApesHost = findViewById(R.id.fragApesHost)
+    }
+    fun layoutCheck( frag :Fragment){
+        val fragManager = supportFragmentManager
+        val ft = fragManager.beginTransaction()
+        ft.replace(R.id.fragApesHost,frag)
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -69,14 +83,6 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
         ft.addToBackStack(null)
         ft.commit()
     }
-
-//    override fun onMenuItemClick(item: MenuItem?): Boolean {
-//        when (item?.itemId) {
-//            R.id.menu_transition -> Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
-//            R.id.menu_mini_statement ->Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show()
-//        }
-//        return true
-//    }
 
     //right on item click
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -98,7 +104,7 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
     private fun populatingData(){
         val arrayData = arrayOf("h","jj")
         val arrayAdapter =ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arrayData)
-        listData.adapter = arrayAdapter
+//        listData.adapter = arrayAdapter
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

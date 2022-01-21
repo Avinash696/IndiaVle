@@ -44,4 +44,6 @@
     </string-array>
     <string name="title_activity_panard">PanardActivity</string>
     <string name="title_activity_pan_card">PanCardActivity</string>
+    <string name="terms_and_condition">I Confirm and accept all terms and conditions</string>
+    <string name="scan_sumbit">Scan Fingerprint And Submit</string>
 </resources>
