@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.frag.ApesMiniSatementFragment">
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mini Statement"
+                android:layout_centerHorizontal="true"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:id="@+id/header" />
+
+            <TextView
+                android:id="@+id/tvDescMini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:text="@string/statement_desc"
+                android:layout_centerHorizontal="true"
+                android:background="#A5D6A7"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"/>
+
+            <GridView
+                android:id="@+id/gvMiniStatement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDescMini"
+                android:numColumns="2"
+                android:layout_marginTop="70dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gvMiniStatement"
+                android:id="@+id/llPrint"
+                android:padding="5dp">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btPrint"
+                    android:text="Print"
+                    android:backgroundTint="@color/cyan"
+                    android:textColor="@color/black"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btDownloadPdf"
+                    android:text="Download Pdf"
+                    android:backgroundTint="@color/cyan"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="30dp"/>
+            </LinearLayout>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvListMini"
+                android:layout_below="@+id/llPrint"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp" />
+        </RelativeLayout>
+<!--        </ScrollView>-->
+    </FrameLayout>
+</layout>

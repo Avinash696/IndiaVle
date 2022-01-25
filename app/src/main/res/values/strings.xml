@@ -46,4 +46,5 @@
     <string name="title_activity_pan_card">PanCardActivity</string>
     <string name="terms_and_condition">I Confirm and accept all terms and conditions</string>
     <string name="scan_sumbit">Scan Fingerprint And Submit</string>
+    <string name="statement_desc">Aeps Transaction for Mini Statement has been completely successfully.</string>
 </resources>

@@ -1,10 +1,12 @@
 package com.example.panindia.ui.frag
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.adapter.ApesHistoryEntry
 
@@ -15,6 +17,7 @@ import com.example.panindia.model.TranHistoryModel
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+ const val  TAG ="###"
 
 class TransitionHistoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -59,13 +62,17 @@ class TransitionHistoryFragment : Fragment() {
     }
     private fun  populatingData(){
         val arrayData = ArrayList<TranHistoryModel>()
+        Log.d(TAG, "populatingData: ")
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
    //adapter set
-        val arrayAdapter = ApesHistoryEntry(arrayData,requireContext())
-        binding.rvTranHistory.adapter =arrayAdapter
+        val apesAdapter = ApesHistoryEntry(arrayData,requireContext())
+        binding.rvTranHistory.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvTranHistory.adapter =apesAdapter
+        apesAdapter.notifyDataSetChanged()
+        Log.d(TAG, "setAdapter: ")
     }
 }

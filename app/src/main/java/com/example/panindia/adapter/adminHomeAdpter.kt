@@ -27,6 +27,7 @@ internal class AdminHomeAdpter(context: Context, arrayList: ArrayList<adminModel
         // get the position of the view from the ArrayAdapter
         val currentNumberPosition = getItem(position)
 
+
         // then according to the position of the view assign the desired image for the same
         val numbersImage = currentItemView!!.findViewById<ImageView>(R.id.ivAdmin)
         assert(currentNumberPosition != null)

@@ -7,27 +7,35 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvDateTrans" />
+                    android:id="@+id/tvDateTrans"
+                    android:text="Date"
+                    android:textSize="17sp"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
 
                 <TextView
+                    android:id="@+id/tvBeneficiary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvBeneficiary" />
-            </RelativeLayout>
+                    android:layout_toRightOf="@+id/tvDateTrans"
+                    android:text="Benficiary"
+                    android:textSize="17sp"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+            </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 </layout>
