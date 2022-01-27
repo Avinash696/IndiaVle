@@ -41,8 +41,7 @@
             android:theme="@style/Theme.PanIndia.NoActionBar"/>
         <activity
             android:name=".ui.homeDrawable.AepsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.PanIndia.NoActionBar"/>
+            android:exported="false"/>
         <activity
             android:name=".ui.homeDrawable.PanCardActivity"
             android:exported="false"

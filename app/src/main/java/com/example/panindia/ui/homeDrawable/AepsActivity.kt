@@ -56,11 +56,15 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
 //        }
         binding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.menu_apes ->layoutApesChange(ApesFragment())
+                R.id.menu_apes ->{layoutApesChange(ApesFragment())
+                binding.drawerLayout.close()}
                 R.id.menu_transition ->layoutApesChange(TransitionHistoryFragment())
                 R.id.menu_mini_statement ->layoutApesChange(ApesMiniSatementFragment())
                 R.id.menu_apes_distribution ->layoutApesChange(AepsDistributeFragment())
-                else -> layoutApesChange(ApesFragment())
+                R.id.menu_activate ->layoutApesChange(ActiviateAepsFragment())
+                R.id.menu_limited_history ->layoutApesChange(AepsLimitHistoryFragment())
+                R.id.menu_markup_setting ->layoutApesChange(AepsMarkupSettingFragment())
+//                else -> layoutApesChange(ApesFragment())
             }
             return@OnNavigationItemSelectedListener true
         })

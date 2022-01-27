@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/tvActivateCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/hamston"
+        android:layout_gravity="center"
+        android:text="200"
+        android:textColor="#AA00FF"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tvBooked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/hamston"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#AA00FF"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tvActivated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/hamston"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#AA00FF"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tvLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/hamston"
+        android:gravity="center"
+        android:text="200"
+        android:textColor="#AA00FF"
+        android:textSize="14sp"
+        android:textStyle="normal" />
+</LinearLayout>
