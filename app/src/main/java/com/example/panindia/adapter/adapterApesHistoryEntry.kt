@@ -1,6 +1,8 @@
 package com.example.panindia.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +10,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
-import com.example.panindia.adapter.ApesHistoryEntry.*
-import com.example.panindia.databinding.AdapterTransHistoryBinding
+import com.example.panindia.adapter.adapterApesHistoryEntry.*
 import com.example.panindia.model.TranHistoryModel
+import com.example.panindia.ui.activity.TransactionFullDetailActivity
 
-class ApesHistoryEntry(  val apesData :ArrayList<TranHistoryModel>, var context :Context):
+class adapterApesHistoryEntry(val apesData :ArrayList<TranHistoryModel>, var context :Context):
     RecyclerView.Adapter<ViewHolder>() {
     private  val TAG = "###"
 
@@ -22,6 +24,7 @@ class ApesHistoryEntry(  val apesData :ArrayList<TranHistoryModel>, var context 
         return ViewHolder(view)
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d(TAG, "onBindViewHolder: ")
        val data = apesData[position]
@@ -29,6 +32,12 @@ class ApesHistoryEntry(  val apesData :ArrayList<TranHistoryModel>, var context 
 //        data.transDate
         holder.tvDateTrans.text = data.transDate
         holder.tvBeneficiary.text = data.beneficiaryAcc
+        if(position % 2 == 0){
+            holder.itemView.setBackgroundColor(R.color.cream)
+        }
+        holder.itemView.setOnClickListener {
+            context.startActivity(Intent(context,TransactionFullDetailActivity::class.java))
+        }
     }
 
     override fun getItemCount(): Int {

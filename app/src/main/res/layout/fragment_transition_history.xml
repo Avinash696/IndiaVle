@@ -9,7 +9,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.frag.TransitionHistoryFragment">
+        tools:context=".ui.frag.TransitionHistoryFragment"
+        android:background="#E3F2FD">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -41,7 +42,8 @@
             android:layout_height="match_parent"
             android:id="@+id/rvTranHistory"
             android:layout_below="@+id/llHistory"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:padding="5dp"/>
         </RelativeLayout>
     </FrameLayout>
 </layout>

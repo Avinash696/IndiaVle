@@ -23,11 +23,12 @@ import com.example.panindia.databinding.FragmentHome2Binding
 import com.example.panindia.ui.frag.*
 import com.google.android.material.navigation.NavigationView
 
-class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListener{
+class AepsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityAepsBinding
     lateinit var fragApesHost: FrameLayout
-//    lateinit var listData :ListView
+
+    //    lateinit var listData :ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,33 +56,56 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
 //            Toast.makeText(this, ""+i, Toast.LENGTH_SHORT).show()
 //        }
         binding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.menu_apes ->{layoutApesChange(ApesFragment())
-                binding.drawerLayout.close()}
-                R.id.menu_transition ->layoutApesChange(TransitionHistoryFragment())
-                R.id.menu_mini_statement ->layoutApesChange(ApesMiniSatementFragment())
-                R.id.menu_apes_distribution ->layoutApesChange(AepsDistributeFragment())
-                R.id.menu_activate ->layoutApesChange(ActiviateAepsFragment())
-                R.id.menu_limited_history ->layoutApesChange(AepsLimitHistoryFragment())
-                R.id.menu_markup_setting ->layoutApesChange(AepsMarkupSettingFragment())
-//                else -> layoutApesChange(ApesFragment())
+            when (it.itemId) {
+                R.id.menu_apes -> {
+                    layoutApesChange(ApesFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_transition -> {
+                    layoutApesChange(TransitionHistoryFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_mini_statement -> {
+                    layoutApesChange(ApesMiniSatementFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_apes_distribution -> {
+                    layoutApesChange(AepsDistributeFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_activate -> {
+                    layoutApesChange(ActiviateAepsFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_limited_history -> {
+                    layoutApesChange(AepsLimitHistoryFragment())
+                    binding.drawerLayout.close()
+                }
+                R.id.menu_markup_setting -> {
+                    layoutApesChange(AepsMarkupSettingFragment())
+                    binding.drawerLayout.close()
+                }
+                else -> layoutApesChange(ApesFragment())
             }
             return@OnNavigationItemSelectedListener true
         })
     }
+
     fun init() {
         fragApesHost = findViewById(R.id.fragApesHost)
     }
 
-    fun layoutCheck( frag :Fragment){
+    fun layoutCheck(frag: Fragment) {
         val fragManager = supportFragmentManager
         val ft = fragManager.beginTransaction()
-        ft.replace(R.id.fragApesHost,frag)
+        ft.replace(R.id.fragApesHost, frag)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
     private fun layoutApesChange(fragData: Fragment) {
         val frag = supportFragmentManager
         val ft: FragmentTransaction = frag.beginTransaction()
@@ -107,16 +131,18 @@ class AepsActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
 //        return true
 //    }
 
-    private fun populatingData(){
-        val arrayData = arrayOf("h","jj")
-        val arrayAdapter =ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arrayData)
+    private fun populatingData() {
+        val arrayData = arrayOf("h", "jj")
+        val arrayAdapter =
+            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, arrayData)
 //        listData.adapter = arrayAdapter
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-       when(item.itemId){
-           R.id.menu_transition -> Toast.makeText(applicationContext, "koko", Toast.LENGTH_SHORT).show()
-       }
+        when (item.itemId) {
+            R.id.menu_transition -> Toast.makeText(applicationContext, "koko", Toast.LENGTH_SHORT)
+                .show()
+        }
         return true
     }
 }

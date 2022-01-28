@@ -7,34 +7,44 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
+
                 <TextView
+                    android:id="@+id/tvDateTrans"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tvDateTrans"
-                    android:text="Date"
-                    android:textSize="17sp"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Date"
+                    android:textSize="17sp" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/cream" />
 
                 <TextView
                     android:id="@+id/tvBeneficiary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/tvDateTrans"
-                    android:text="Benficiary"
-                    android:textSize="17sp"
                     android:layout_weight="1"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Benficiary"
+                    android:textSize="17sp" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

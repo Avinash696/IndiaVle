@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.panindia.adapter.ApesHistoryEntry
+import com.example.panindia.adapter.adapterApesHistoryEntry
 
 import com.example.panindia.databinding.FragmentTransitionHistoryBinding
 import com.example.panindia.model.TranHistoryModel
@@ -69,7 +69,7 @@ class TransitionHistoryFragment : Fragment() {
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
         arrayData.add(TranHistoryModel("24/12/2020 12:00:00","1028364534373848 Shubham Kumar"))
    //adapter set
-        val apesAdapter = ApesHistoryEntry(arrayData,requireContext())
+        val apesAdapter = adapterApesHistoryEntry(arrayData,requireContext())
         binding.rvTranHistory.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTranHistory.adapter =apesAdapter
         apesAdapter.notifyDataSetChanged()

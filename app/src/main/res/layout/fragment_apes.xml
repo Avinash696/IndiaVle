@@ -10,6 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="4dp"
         tools:context=".ui.frag.ApesFragment">
 
         <ScrollView
@@ -23,8 +24,8 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/aeps_back"
@@ -35,18 +36,20 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:orientation="vertical"
-                    android:padding="3dp">
+                    android:padding="3dp"
+                    android:layout_marginTop="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Select Your Service"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
+                        android:id="@+id/spMiniStaement"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/spMiniStaement" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -58,9 +61,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Select Device Type"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                     <Spinner
+                        android:id="@+id/spDeviceType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -74,11 +79,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Enter Customer Mobile Number"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
-                    <Spinner
+                    <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:inputType="number" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -90,7 +98,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Enter Aadhhar Number/Virtual Id"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -98,6 +107,7 @@
                         android:layout_weight="2">
 
                         <Spinner
+                            android:id="@+id/spType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1" />
@@ -107,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="Your ID " />
+                            android:hint="Your ID " />
                     </LinearLayout>
 
                     <LinearLayout
@@ -119,11 +129,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Enter Amount Withdraw/Select"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
 
-                        <Spinner
+                        <EditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:hint="#####"
+                            android:inputType="number" />
                     </LinearLayout>
 
                     <TextView
@@ -133,42 +146,48 @@
                         android:fontFamily="@font/spartan"
                         android:padding="4dp"
                         android:text="OR"
+                        android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <GridLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:columnCount="3"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        android:columnCount="3">
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
                             android:text="500" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
                             android:text="1000" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
                             android:text="2000" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
                             android:text="3000" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
                             android:text="4000" />
                     </GridLayout>
 
@@ -181,9 +200,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Select Bank"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
 
                         <Spinner
+                            android:id="@+id/spSelectBank"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -195,59 +216,51 @@
                         android:fontFamily="@font/spartan"
                         android:padding="4dp"
                         android:text="OR"
-                        android:textSize="16sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Select Bank"
-                            android:textSize="16sp" />
-
-                        <Spinner
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
+                        android:textSize="16sp"
+                        android:textColor="@color/black"/>
 
                     <GridLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:columnCount="3">
-
-
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
-                            android:text="Bank of Baroda + Vijay Bank" />
+                        android:columnCount="2"
+                        android:layout_gravity="center">
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
-                            android:text="UCO Bank" />
+                            android:id="@+id/btB1"
+                            android:layout_width="170dp"
+                            android:layout_height="60dp"
+                            android:text="Bank of Baroda \n + Vijay Bank "
+                            android:layout_margin="@dimen/btn_margin"
+                            android:backgroundTint="@color/cream"
+                            android:fontFamily="@font/regular"/>
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
-                            android:text="State Bank Of India" />
+                            android:layout_width="170dp"
+                            android:layout_height="60dp"
+                            android:backgroundTint="@color/cream"
+                            android:text="UCO Bank \n ."
+                            android:layout_margin="@dimen/btn_margin" />
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
-                            android:text="Indian Overseas Bank" />
+                            android:layout_width="170dp"
+                            android:layout_height="60dp"
+                            android:backgroundTint="@color/cream"
+                            android:text="State Bank \n Of India"
+                            android:layout_margin="@dimen/btn_margin"/>
 
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/red"
-                            android:text="Canara BAnk" />
+                            android:layout_width="170dp"
+                            android:layout_height="60dp"
+                            android:backgroundTint="@color/cream"
+                            android:text="Indian Overseas \n Bank"
+                            android:layout_margin="@dimen/btn_margin"/>
+
+                        <Button
+                            android:layout_width="170dp"
+                            android:layout_height="60dp"
+                            android:backgroundTint="@color/cream"
+                            android:text="Canara Bank"
+                            android:layout_margin="@dimen/btn_margin"/>
                     </GridLayout>
 
                     <LinearLayout
@@ -256,18 +269,16 @@
 
                         <RadioButton
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"></RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/terms_and_condition" />
+                            android:text="@string/terms_and_condition"
+                            android:textColor="@color/black"/>
                     </LinearLayout>
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/scan_sumbit" />
+                        android:text="@string/scan_sumbit"
+                        android:backgroundTint="@color/LightBlue"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

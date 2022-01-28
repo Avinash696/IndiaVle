@@ -36,7 +36,6 @@ class ApesFragment : Fragment() {
         binding = FragmentApesBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     private fun init() {
         miniStatement = binding.spMiniStaement
     }
@@ -55,6 +54,9 @@ class ApesFragment : Fragment() {
 
         //setadapter
         binding.spMiniStaement.adapter = spAdapter
+        binding.spDeviceType.adapter = spAdapter
+        binding.spType.adapter = spAdapter
+        binding.spSelectBank.adapter = spAdapter
     }
     companion object {
         @JvmStatic
