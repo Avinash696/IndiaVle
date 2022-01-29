@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.frag.AepsLimitHistoryFragment">
+    tools:context=".ui.frag.AepsLimitHistoryFragment"
+    android:background="#E1F5FE">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,20 +13,25 @@
         <LinearLayout
             android:id="@+id/llDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="20dp">
 
-            <EditText
-                android:id="@+id/etStartDate"
+            <TextView
+                android:id="@+id/tvStartDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                android:background="@drawable/border"
+                android:gravity="center"
                 android:hint="mm/dd/yyyy" />
 
-            <EditText
-                android:id="@+id/etEndDate"
+            <TextView
+                android:id="@+id/tvEndDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_weight="1"
+                android:background="@drawable/border"
+                android:gravity="center"
                 android:hint="mm/dd/yyyy" />
         </LinearLayout>
 
@@ -36,14 +42,47 @@
             android:layout_below="@+id/llDate"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
             android:backgroundTint="@color/purple_500"
             android:text="Search" />
+
+        <LinearLayout
+            android:id="@+id/llHeaderLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btSearch"
+            android:layout_marginLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Date" />
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/grey"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Role"
+                android:layout_marginLeft="3dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:layout_below="@+id/llHeaderLimit"
+            android:layout_margin="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHistoryAeps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btSearch"
-            android:layout_marginTop="10dp" />
+            android:layout_below="@id/llHeaderLimit"
+            android:layout_marginTop="10dp"
+            android:padding="4dp" />
     </RelativeLayout>
 </FrameLayout>

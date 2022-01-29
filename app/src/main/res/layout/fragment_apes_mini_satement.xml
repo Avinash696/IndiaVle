@@ -9,10 +9,11 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#D8D5D5"
         tools:context=".ui.frag.ApesMiniSatementFragment">
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">-->
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,62 +21,114 @@
             android:padding="4dp">
 
             <TextView
+                android:id="@+id/header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mini Statement"
                 android:layout_centerHorizontal="true"
-                android:textSize="17sp"
+                android:text="Mini Statement"
                 android:textColor="@color/black"
-                android:id="@+id/header" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvDescMini"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/header"
-                android:text="@string/statement_desc"
                 android:layout_centerHorizontal="true"
-                android:background="#A5D6A7"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:background="#66BB6A"
+                android:text="@string/statement_desc"
+                android:textColor="@color/white" />
 
             <GridView
                 android:id="@+id/gvMiniStatement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvDescMini"
-                android:numColumns="2"
-                android:layout_marginTop="70dp"/>
+                android:layout_marginTop="40dp"
+                android:numColumns="2" />
+
             <LinearLayout
+                android:id="@+id/llPrint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/gvMiniStatement"
-                android:id="@+id/llPrint"
                 android:padding="5dp">
+
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/btPrint"
-                    android:text="Print"
-                    android:backgroundTint="@color/cyan"
-                    android:textColor="@color/black"/>
-                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/light_blue_A200"
+                    android:text="Print"
+                    android:textColor="@color/white" />
+
+                <Button
                     android:id="@+id/btDownloadPdf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:backgroundTint="@color/light_blue_A200"
                     android:text="Download Pdf"
-                    android:backgroundTint="@color/cyan"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="30dp"/>
+                    android:textColor="@color/white" />
             </LinearLayout>
-            <ListView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/lvListMini"
                 android:layout_below="@+id/llPrint"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp" />
+                android:id="@+id/llBottomHeader">
+
+                <TextView
+                    android:id="@+id/tvFullSno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="S.No"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/tvfullmini"/>
+
+                <TextView
+                    android:id="@+id/tvFullDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/tvfullmini"/>
+
+                <TextView
+                    android:id="@+id/tvFullCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Debit/ \n Credit"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/tvfullmini"/>
+
+                <TextView
+                    android:id="@+id/tvFullRemark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Remark"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/tvfullmini"/>
+
+                <TextView
+                    android:id="@+id/tvFullAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Amount"
+                    android:textColor="@color/black"
+                    android:layout_margin="@dimen/tvfullmini"/>
+            </LinearLayout>
+            <ListView
+                android:id="@+id/lvListMini"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llBottomHeader" />
         </RelativeLayout>
-<!--        </ScrollView>-->
+        <!--        </ScrollView>-->
     </FrameLayout>
 </layout>

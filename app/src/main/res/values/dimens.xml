@@ -10,4 +10,5 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="btn_margin">3dp</dimen>
+    <dimen name="tvfullmini">3dp</dimen>
 </resources>

@@ -12,6 +12,7 @@ import com.example.panindia.adapter.adapterFullListMini
 import com.example.panindia.adapter.adapterMini
 import com.example.panindia.databinding.FragmentApesMiniSatementBinding
 
+
 import com.example.panindia.model.ApesMiniStatementModel
 import com.example.panindia.model.miniStatementListModel
 
@@ -63,8 +64,8 @@ class ApesMiniSatementFragment : Fragment() {
     }
     private fun populatingListData(){
         val arrayList = ArrayList<miniStatementListModel>()
-        arrayList.add(miniStatementListModel("1","20-09-2022","Debit","To Transfer 0000000009753","- Rs 300.00"))
-        arrayList.add(miniStatementListModel("2","20-09-2022","Credit  ","To Transfer 0000000009753","+Rs 200.00"))
+        arrayList.add(miniStatementListModel("1","20-09-2021","Debit","0000000009753","- Rs 300.00"))
+        arrayList.add(miniStatementListModel("2","20-09-2021","Credit  ","0000000009753","+Rs 200.00"))
         val miniData = adapterFullListMini(requireContext(),arrayList)
         binding.lvListMini.adapter = miniData
     }
