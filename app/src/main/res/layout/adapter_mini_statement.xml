@@ -4,38 +4,44 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="5dp"
-    android:background="@color/greenish_grey">
+    android:background="@color/grey">
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_width="180dp"
+        android:layout_height="140dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="@color/cream"
+        app:cardBackgroundColor="@color/white"
         app:cardMaxElevation="10dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         android:focusable="true"
         android:layout_centerInParent="true">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:gravity="center">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Available Balance"
-                android:id="@+id/tvMiniName"/>
+                android:id="@+id/tvMiniName"
+                android:textColor="@color/black"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs. 6000.32"
+                android:textColor="@color/green"
                 android:id="@+id/tvMiniValue"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20 April 2021 : 05:00:00"
-                android:id="@+id/tvMiniDate"/>
-
+                android:id="@+id/tvMiniDate"
+                android:textColor="@color/grey"
+                android:gravity="center"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.panindia.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.model.limitHistoryModel
+import com.example.panindia.ui.activity.TransactionFullDetailActivity
 
 class adapterLimitHistory(private val apesData: ArrayList<limitHistoryModel>, var context: Context) :
     RecyclerView.Adapter<adapterLimitHistory.CustomViewHolder>() {
@@ -21,6 +23,9 @@ class adapterLimitHistory(private val apesData: ArrayList<limitHistoryModel>, va
         val apesData = apesData[position]
         holder.dateTxt.text = apesData.date
         holder.roleTxt.text = apesData.role
+        holder.itemView.setOnClickListener {
+            context.startActivity(Intent(context,TransactionFullDetailActivity::class.java))
+        }
     }
 
     override fun getItemCount(): Int {
