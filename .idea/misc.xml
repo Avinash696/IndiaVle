@@ -37,7 +37,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_joining_list.xml" value="0.165625" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_login.xml" value="0.165" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_main.xml" value="0.165" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_money_transfer.xml" value="0.165625" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_money_transfer.xml" value="0.125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_others.xml" value="0.165625" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_pan_admin.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_pan_card.xml" value="0.1" />
@@ -92,9 +92,12 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_pan_coupon_summary.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_pan_order_id_verify.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_psa_password_reset.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_raise_transaction_ticket.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_register_admin.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_round.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_transaction_history.xml" value="0.11979166666666667" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_transaction_status_m_t.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_transaction_ticket_status.xml" value="0.11979166666666667" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_transition_history.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/group_item.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/history_trans_apes.xml" value="0.1796875" />

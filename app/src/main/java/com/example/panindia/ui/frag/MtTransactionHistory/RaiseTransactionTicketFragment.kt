@@ -1,25 +1,26 @@
-package com.example.panindia.ui.frag
+package com.example.panindia.ui.frag.MtTransactionHistory
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.panindia.adapter.adapterMtTransactionHistory
-import com.example.panindia.databinding.FragmentMtTranactionHistoryBinding
+import com.example.panindia.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class MtTranactionHistoryFragment : Fragment() {
+/**
+ * A simple [Fragment] subclass.
+ * Use the [RaiseTransactionTicketFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class RaiseTransactionTicketFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-//    lateinit var tabLayout:TabLayout
-//    lateinit var viewPager : ViewPager
-     lateinit var binding : FragmentMtTranactionHistoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,37 +29,32 @@ class MtTranactionHistoryFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        init()
-        setAdapterMtThree()
-        super.onViewCreated(view, savedInstanceState)
-    }
-    private fun init(){
-//         tabLayout = binding.tl
-//         viewPager = binding.vpMtTransactionThree
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMtTranactionHistoryBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_raise_transaction_ticket, container, false)
     }
 
     companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment RaiseTransactionTicketFragment.
+         */
+        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MtTranactionHistoryFragment().apply {
+            RaiseTransactionTicketFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-    private fun setAdapterMtThree(){
-        binding.vpMtTransactionThree.adapter = adapterMtTransactionHistory(requireActivity().supportFragmentManager)
-        binding.tl.setupWithViewPager(binding.vpMtTransactionThree)
     }
 }

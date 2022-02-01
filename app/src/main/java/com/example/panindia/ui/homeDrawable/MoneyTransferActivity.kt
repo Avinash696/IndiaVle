@@ -2,36 +2,68 @@ package com.example.panindia.ui.homeDrawable
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.FrameLayout
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.panindia.R
 import com.example.panindia.databinding.ActivityMoneyTransferBinding
-import com.example.panindia.databinding.ActivityPanCardBinding
+import com.example.panindia.ui.frag.AepsDistributeFragment
+import com.example.panindia.ui.frag.MoneyTransferFragment
 import com.google.android.material.navigation.NavigationView
 
-class MoneyTransferActivity : AppCompatActivity() {
-    private lateinit var appBarConfiguration: AppBarConfiguration
+class MoneyTransferActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var vp: FrameLayout
+    private lateinit var tb: Toolbar
+    private lateinit var drawer: DrawerLayout
+    lateinit var navView: NavigationView
     private lateinit var binding: ActivityMoneyTransferBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMoneyTransferBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.appBarMain.toolbar)
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_home,R.id.nav_buyCoupon),drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_money_transfer)
+        init()
+
+        setSupportActionBar(tb)
+
+        toggle = ActionBarDrawerToggle(this, drawer, tb, R.string.open, R.string.close)
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+
+        navView.setNavigationItemSelectedListener(this)
     }
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+
+    fun init() {
+        vp = binding.vpMoneyTransf
+        tb = binding.toolbar
+        drawer = binding.drawerLayout
+        navView = binding.navView
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_mt -> {
+                fragmentLayout(MoneyTransferFragment())
+                drawer.close()
+            }
+            R.id.action_dmt -> {
+                fragmentLayout(AepsDistributeFragment())
+                drawer.close()
+            }
+        }
+        return true
+    }
+
+    private fun fragmentLayout(frag: Fragment) {
+        val fragManager = supportFragmentManager
+        val ft = fragManager.beginTransaction()
+        ft.replace(R.id.vpMoneyTransf, frag)
+        ft.commit()
     }
 }

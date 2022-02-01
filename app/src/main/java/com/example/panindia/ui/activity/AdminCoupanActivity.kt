@@ -22,6 +22,7 @@ class AdminCoupanActivity : AppCompatActivity() {
             ArrayAdapter(this, android.R.layout.simple_spinner_item, arrCoupan)
         coupanSelection.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         binding.spCopanTypeAdmin.adapter = coupanSelection
+
     }
     fun hideTopBar(){
         supportActionBar?.hide()

@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.panindia.R
+import com.example.panindia.adapter.adapterMt
 import com.google.android.material.tabs.TabLayout
 
 // TODO: Rename parameter arguments, choose names that match
@@ -14,18 +16,13 @@ import com.google.android.material.tabs.TabLayout
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MoneyTransferFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MoneyTransferFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var layView :View
-    lateinit var tabLayout :TabLayout
-    lateinit var viewPager :ViewPager
+    private lateinit var layView: View
+    lateinit var tabLayout: TabLayout
+    lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,35 +37,35 @@ class MoneyTransferFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        layView= inflater.inflate(R.layout.fragment_money_transfer, container, false)
+        layView = inflater.inflate(R.layout.fragment_money_transfer, container, false)
         return layView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         init()
-        tabLayout.addTab(tabLayout.newTab().setText("first"))
-        tabLayout.addTab(tabLayout.newTab().setText("second"))
-        tabLayout.addTab(tabLayout.newTab().setText("third"))
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-
+        setAdapter()
         super.onViewCreated(view, savedInstanceState)
     }
-    private fun init(){
-         tabLayout  = layView.findViewById(R.id.tabLayout)
-         viewPager  = layView.findViewById(R.id.viewPager)
+
+    private fun init() {
+        tabLayout = layView.findViewById(R.id.tabLayout)
+        viewPager = layView.findViewById(R.id.vpMt)
     }
 
+    private fun setAdapter() {
+//        val adapterData = adapterMt(requireActivity().supportFragmentManager,
+//            FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+//        adapterData.addFragment(MtHomeFragment(), "Home")
+//        adapterData.addFragment(MtSearchKycFragment(), "Seach Kyc")
+//        adapterData.addFragment(MtTranactionHistoryFragment(), "Transaction History")
+//        adapterData.addFragment(MtTransactionStatusFragment(), "Transaction Status")
+//        adapterData.addFragment(MtHowItWorksFragment(), "How It Works")
+        viewPager.adapter = adapterMt(requireActivity().supportFragmentManager)
+        tabLayout.setupWithViewPager(viewPager)
+//        viewPager.adapter = adapterData
+    }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MoneyTransferFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             MoneyTransferFragment().apply {

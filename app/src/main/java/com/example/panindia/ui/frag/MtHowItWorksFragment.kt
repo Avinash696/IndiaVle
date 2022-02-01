@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.example.indiavle.ui.frag.viewlayout
 import com.example.panindia.R
+import com.example.panindia.databinding.FragmentMtHowItWorksBinding
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,6 +21,7 @@ private const val ARG_PARAM2 = "param2"
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var viewLayout:View
+    lateinit var binding :FragmentMtHowItWorksBinding
     lateinit var sp :Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +37,8 @@ private const val ARG_PARAM2 = "param2"
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        viewlayout =  inflater.inflate(R.layout.fragment_mt_how_it_works, container, false)
-        return  viewlayout
+        binding =  FragmentMtHowItWorksBinding.inflate(inflater, container, false)
+        return  binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,21 +47,22 @@ private const val ARG_PARAM2 = "param2"
         super.onViewCreated(view, savedInstanceState)
     }
     fun spinnerSet(){
-//        val arrayList = ArrayList<String>()
-//        arrayList.add("NEFT")
-//        arrayList.add("IMPS")
-//        val arrayAdapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,arrayList)
-//        sp.adapter = arrayAdapter
-
-        val spinnerArrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item,)
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        val spinner = viewlayout.findViewById(R.id.spChoice) as Spinner
-        spinner.adapter = spinnerArrayAdapter
+        val arrayList = ArrayList<String>()
+        arrayList.add("NEFT")
+        arrayList.add("IMPS")
+        val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_item,arrayList)
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spChoice.adapter = arrayAdapter
+//
+    //        val spinnerArrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item,)
+    //        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+    //
+    //        val spinner = binding.spChoice
+    //        spinner.adapter = spinnerArrayAdapter
     }
 
     fun init(){
-         sp = viewLayout.findViewById(R.id.spChoice)
+//         sp = viewLayout.findViewById(R.id.spChoice)
     }
     companion object {
         @JvmStatic
