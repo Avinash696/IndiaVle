@@ -108,7 +108,7 @@ class HomeMainActivity : AppCompatActivity() {
         }
     }
 
-    fun selectedLayoutShow(layoutData: Fragment) {
+    private fun selectedLayoutShow(layoutData: Fragment) {
         val frag = supportFragmentManager
         val fragtrans = frag.beginTransaction()
         fragtrans.replace(R.id.fragHost, layoutData)

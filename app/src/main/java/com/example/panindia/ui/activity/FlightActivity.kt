@@ -88,7 +88,7 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-    fun changeColor() {
+    private fun changeColor() {
         if (checkOne) {
             bindingFlightActivity.tvOneWay.setBackgroundColor(resources.getColor(R.color.cream))
             bindingFlightActivity.tvMultiStop.setBackgroundColor(resources.getColor(R.color.white))

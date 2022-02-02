@@ -2,15 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-
+        android:id="@+id/menu_bookingFlight"
         android:orderInCategory="100"
         android:title="Booking Flight"
-        app:showAsAction="never" />  <item
-
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_summaryFlight"
         android:orderInCategory="100"
         android:title="Summary"
-        app:showAsAction="never" />  <item
-
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_airTicketFlight"
         android:orderInCategory="100"
         android:title="Air ticket"
         app:showAsAction="never" />

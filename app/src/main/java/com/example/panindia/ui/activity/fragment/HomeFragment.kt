@@ -6,17 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
-import androidx.databinding.DataBindingUtil
-import com.example.panindia.R
-import com.example.panindia.adapter.AdminHomeAdpter
+//import com.example.indiavle.ui.activity.FlightActivity
 import com.example.panindia.databinding.FragmentHome2Binding
-
-import com.example.panindia.model.adminModel
 import com.example.panindia.ui.homeDrawable.*
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.Toast
 
 
 // TODO: Rename parameter arguments, choose names that match
