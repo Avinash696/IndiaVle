@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-//import com.example.indiavle.ui.activity.FlightActivity
+import com.example.indiavle.ui.activity.BusActivity
+import com.example.indiavle.ui.activity.HotelActivity
 import com.example.panindia.databinding.FragmentHome2Binding
+import com.example.panindia.ui.activity.FlightActivity
+import com.example.panindia.ui.activity.FlightAfterLoginActivity
+
 import com.example.panindia.ui.homeDrawable.*
 
 
@@ -111,7 +115,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             startActivity(
                 Intent(
                     requireContext(),
-                    FlightActivity::class.java
+                    FlightAfterLoginActivity::class.java
                 )
             )
         }
@@ -127,7 +131,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             startActivity(
                 Intent(
                     requireContext(),
-                    InsuranceActivity::class.java
+                        InsuranceActivity::class.java
                 )
             )
         }
@@ -147,6 +151,22 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 )
             )
         }
+        binding.llBusTicket.setOnClickListener{
+            startActivity(
+                Intent(
+                    requireContext(),
+                    BusActivity::class.java
+                )
+            )
+        }
+        binding.llHotelBooking.setOnClickListener {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    HotelActivity::class.java
+                )
+            )
+        }
 
 
 //        binding.gridView.onItemClickListener = OnItemClickListener { parent, view, position, id ->
@@ -155,15 +175,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             HomeFragment().apply {

@@ -15,5 +15,15 @@
         android:id="@+id/menu_airTicketFlight"
         android:orderInCategory="100"
         android:title="Air ticket"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_flightMarkupSetting"
+        android:orderInCategory="100"
+        android:title="Flight Markup Setting"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_Visa"
+        android:orderInCategory="100"
+        android:title="Air ticket"
+        app:showAsAction="never"/>
 </menu>

@@ -10,21 +10,21 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.homeDrawable.PanCardActivity"
-        android:id="@+id/drawer_layout">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#EDE7F6"
-            android:id="@+id/flRechargeHost"/>
+        tools:context=".ui.activity.FlightAfterLoginActivity"
+        android:id="@+id/dl_afterLogin">
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="#EDE7F6"
+           android:id="@+id/fragHostAfterLogin"/>
 
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+            android:id="@+id/nav_flightAfterLogin"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/recharge_menu"/>
+            app:menu="@menu/flight_menu" />
+
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

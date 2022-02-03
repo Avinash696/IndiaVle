@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PanIndia">
         <activity
+            android:name=".ui.activity.FlightAfterLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.TransactionFullDetailActivity"
             android:exported="false" />
         <activity
@@ -41,7 +44,8 @@
         <activity
             android:name=".ui.homeDrawable.MoneyTransferActivity"
             android:exported="true"
-            android:theme="@style/Theme.PanIndia.NoActionBar" >
+            android:theme="@style/Theme.PanIndia.NoActionBar">
+
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 
@@ -61,12 +65,10 @@
             android:name=".ui.activity.ui.HomeMainActivity"
             android:exported="true"
             android:theme="@style/Theme.PanIndia.NoActionBar">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".ui.activity.ui.PanAdminActivity"
@@ -114,14 +116,16 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name="com.example.indiavle.ui.activity.FlightActivity"
+            android:name=".ui.activity.FlightActivity"
             android:exported="true"
             android:theme="@style/Theme.PanIndia.NoActionBar">
 
@@ -142,7 +146,14 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
     </application>
 
 </manifest>

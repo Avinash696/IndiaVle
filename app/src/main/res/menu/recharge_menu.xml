@@ -1,4 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_mobileRecharge"
+        android:icon="@drawable/phone_menu"
+        android:title="Mobile Recharge" />
+    <item
+        android:id="@+id/menu_DthRecharge"
+        android:icon="@drawable/dth_recharge"
+        android:title="DTH Recharge"
+        android:iconTint="#00B8D4" />
+    <item
+        android:id="@+id/menu_LandlineBillsPay"
+        android:icon="@drawable/test_img"
+        android:title="Landline Bills Payment" />
+    <item
+        android:id="@+id/menu_Electricity"
+        android:icon="@drawable/light_bulb"
+        android:title="Electricity Bill" />
+    <item
+        android:id="@+id/menu_LpgCylinder"
+        android:icon="@drawable/gas"
+        android:title="LPG Cylinder" />
+    <item
+        android:id="@+id/menu_mobilePostpaid"
+        android:icon="@drawable/mobile_postpaid"
+        android:title="Mobile Postpaid"/>
+    <item
+        android:id="@+id/menu_broadband"
+        android:icon="@drawable/broadband"
+        android:title="BroadBand"/>
+    <item
+        android:id="@+id/menu_fastTagRecharge"
+        android:icon="@drawable/fasttag_recharge"
+        android:title="Fast Tag Recharge" />
+    <item
+        android:id="@+id/menu_educationFees"
+        android:icon="@drawable/education"
+        android:title="Education Fees" />
+    <item
+        android:id="@+id/menu_hospital"
+        android:icon="@drawable/hospital"
+        android:title="Hospital" />
+    <item
+        android:id="@+id/menu_lifeInsurance"
+        android:icon="@drawable/life_insurance"
+        android:title="Life Insurance" />
+    <item
+        android:id="@+id/menu_loanRepayment"
+        android:icon="@drawable/loan_replayment"
+        android:title="Loan Repayment" />
+    <item
+        android:id="@+id/menu_gasPipeline"
+        android:icon="@drawable/pipeline"
+        android:title="Gas PipeLine" />
+    <item
+        android:id="@+id/menu_water"
+        android:icon="@drawable/water"
+        android:title="Water" />
+    <item
+        android:id="@+id/menu_cableTv"
+        android:icon="@drawable/cable_tv"
+        android:title="Cable Tv" />
+    <item
+        android:id="@+id/menu_housingSociety"
+        android:icon="@drawable/housing_colony"
+        android:title="Housing Society" />
+    <item
+        android:id="@+id/menu_muncipalTaxes"
+        android:icon="@drawable/taxes"
+        android:title="Municipal Taxes" />
+    <item
+        android:id="@+id/menu_Subscription"
+        android:icon="@drawable/subcription"
+        android:title="Subscription" />
+    <item
+        android:id="@+id/menu_creditCard"
+        android:icon="@drawable/credit_card"
+        android:title="Credit Card" />
+    <item
+        android:id="@+id/menu_healthInsurance"
+        android:icon="@drawable/health_insurance"
+        android:title="HealthInsurance" />
 
 </menu>

@@ -34,20 +34,6 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         binding.rvCropingLogin.setOnClickListener(this)
         binding.rvCouponAdmin.setOnClickListener(this)
         binding.rvCouponRetailer.setOnClickListener(this)
-
-
-//        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("3F51B5")))
-//        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.gob_blue)))
-//        supportActionBar?.hide()
-//        actionBar?.hide()
-//        binding.tb.inflateMenu(R.menu.entry_menu)
-
-//        binding.tb.setOnMenuItemClickListener(Toolbar.OnMenuItemClickListener {
-//            when(it.itemId){
-//                R.id.menuLogin -> startActivity(Intent(this, LoginActivity::class.java))
-//            }
-//            return @OnMenuItemClickListener
-//        })
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

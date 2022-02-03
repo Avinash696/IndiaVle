@@ -57,7 +57,7 @@ class HomeMainActivity : AppCompatActivity() {
                 lastExpandedPosition = i
             }
         })
-        expandableListView.setOnChildClickListener { expandableListView, view, i, i1, l ->
+        expandableListView.setOnChildClickListener { _, _, i, i1, _ ->
             val selected =
                 (expandableListAdapter as MyExpandableListAdapter).getChild(i, i1).toString()
             onClickExpandableListView(selected)
@@ -152,7 +152,7 @@ class HomeMainActivity : AppCompatActivity() {
             ) else if (group == "History") loadChild(vivoModels) else if (group == "Setting") loadChild(
                 nokiaModels
             ) else loadChild(motorolaModels)
-            (mobileCollection as HashMap<String, List<String>>).put(group, childList!!)
+            (mobileCollection as HashMap<String, List<String>>)[group] = childList!!
         }
     }
 

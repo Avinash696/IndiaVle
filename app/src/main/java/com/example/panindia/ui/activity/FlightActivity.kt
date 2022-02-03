@@ -1,4 +1,4 @@
-package com.example.indiavle.ui.activity
+package com.example.panindia.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,7 +24,7 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         hideTopBar()
         bindingFlightActivity = DataBindingUtil.setContentView(this, R.layout.activity_flight)
-        supportActionBar?.setTitle("Flight")
+        supportActionBar?.title = "Flight"
 
 
         bindingFlightActivity.tvOneWay.setOnClickListener(this)
