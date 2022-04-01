@@ -4,11 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.indiavle.ui.frag.MultiStopFragment
-import com.example.indiavle.ui.frag.OneWayFragment
+import com.example.panindia.ui.frag.OneWayFragment
 import com.example.indiavle.ui.frag.RoundFragment
-import com.example.panindia.ui.frag.MtTransactionHistory.RaiseTransactionTicketFragment
 import com.example.panindia.ui.frag.MtTransactionHistory.TransactionHistoryFragment
-import com.example.panindia.ui.frag.MtTransactionHistory.TransactionTicketStatusFragment
 
 class adapterBookingFlight (fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int {

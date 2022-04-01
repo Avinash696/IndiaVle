@@ -1,58 +1,66 @@
-package com.example.indiavle.ui.frag
+package com.example.panindia.ui.frag
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Spinner
-import com.example.panindia.R
 import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.Spinner
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.example.panindia.R
+import com.example.panindia.adapter.adapterSeachList
+import com.example.panindia.api.ApiService
+import com.example.panindia.api.RetrofitHelper
+import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.ResponceFlightSeachModel
+import com.example.panindia.model.searchFlightModel.sendModel.FlightSearchSendModel
+import com.example.panindia.model.searchFlightModel.sendModel.Segment
+import com.example.panindia.viewModel.LoginViewModel
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.panindia.ui.activity.JoiningListActivity
+import com.example.panindia.ui.activity.searchAdapterList.SearchListActivity
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 var cal = Calendar.getInstance()
 
-/**
- * A simple [Fragment] subclass.
- * Use the [OneWayFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class OneWayFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     private var param1: String? = null
     private var param2: String? = null
     var checkElite = false
     var checkBussiness = false
     var checkEconomy = false
+    lateinit var loginViewModel: LoginViewModel
 
     var items = arrayOf("1", "2", "3")
     val destination = arrayOf("Noida", "Lucknow")
     lateinit var viewlayout: View
 
-    //    lateinit var spFromOneWay: Spinner
-//    lateinit var spToOneWay: Spinner
-    lateinit var spWeight: Spinner
-    lateinit var spPassanger: Spinner
+    private lateinit var spWeight: Spinner
+    private lateinit var spPassanger: Spinner
     lateinit var spKids: Spinner
     lateinit var etDepartDate: TextView
     lateinit var etRetunDate: TextView
 
+    //textview
+    lateinit var tvSeachFlight:TextView
     //class
     lateinit var tvEconomy: TextView
     lateinit var tvBussiness: TextView
     lateinit var tvElite: TextView
-    lateinit var departDate :ImageView
-    lateinit var returnDate :ImageView
+    lateinit var departDate: ImageView
+    lateinit var returnDate: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +72,7 @@ class OneWayFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         viewlayout = inflater.inflate(R.layout.fragment_one_way, container, false)
@@ -76,30 +84,30 @@ class OneWayFragment : Fragment() {
         val numberOfDate =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
         numberOfDate.setDropDownViewResource(R.layout.text_center)
-//        spFromOneWay.adapter = LTRadapter
-//        spToOneWay.adapter = LTRadapter
 
         spPassanger.adapter = numberOfDate
         spKids.adapter = numberOfDate
         spWeight.adapter = numberOfDate
 
-//class define
-
+        //class define
         return viewlayout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         etDepartDate.setOnClickListener {
             DateDepart()
         }
+        tvSeachFlight.setOnClickListener {
+            startActivity(Intent(requireContext(),SearchListActivity::class.java))
+        }
+
         departDate.setOnClickListener {
             DateDepart()
         }
         etRetunDate.setOnClickListener {
             DateReturn()
         }
-        returnDate.setOnClickListener{
+        returnDate.setOnClickListener {
             DateReturn()
         }
         //changing color
@@ -124,24 +132,30 @@ class OneWayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    fun changeColor() {
-        if (checkElite) {
-            tvElite.setBackgroundColor(resources.getColor(R.color.cream))
-            tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
-            tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
-        } else if (checkEconomy) {
-            tvEconomy.setBackgroundColor(resources.getColor(R.color.cream))
-            tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
-            tvElite.setBackgroundColor(resources.getColor(R.color.white))
 
-        } else if (checkBussiness) {
-            tvBussiness.setBackgroundColor(resources.getColor(R.color.cream))
-            tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
-            tvElite.setBackgroundColor(resources.getColor(R.color.white))
+
+    private fun changeColor() {
+        when {
+            checkElite -> {
+                tvElite.setBackgroundColor(resources.getColor(R.color.cream))
+                tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
+                tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
+            }
+            checkEconomy -> {
+                tvEconomy.setBackgroundColor(resources.getColor(R.color.cream))
+                tvBussiness.setBackgroundColor(resources.getColor(R.color.white))
+                tvElite.setBackgroundColor(resources.getColor(R.color.white))
+
+            }
+            checkBussiness -> {
+                tvBussiness.setBackgroundColor(resources.getColor(R.color.cream))
+                tvEconomy.setBackgroundColor(resources.getColor(R.color.white))
+                tvElite.setBackgroundColor(resources.getColor(R.color.white))
+            }
         }
     }
 
-    fun DateDepart() {
+    private fun DateDepart() {
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 cal.set(Calendar.YEAR, year)
@@ -163,13 +177,13 @@ class OneWayFragment : Fragment() {
         etDepartDate!!.text = sdf.format(cal.getTime())
     }
 
-    fun updateDateReturn() {
+    private fun updateDateReturn() {
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         etRetunDate!!.text = sdf.format(cal.getTime())
     }
 
-    fun DateReturn() {
+    private fun DateReturn() {
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 cal.set(Calendar.YEAR, year)
@@ -186,9 +200,9 @@ class OneWayFragment : Fragment() {
     }
 
     fun init() {
-//        tvFrom =  viewlayout.findViewById(R.id.tvFrom)
-//        spFromOneWay = viewlayout.findViewById(R.id.spFromOneWay)
-//        spToOneWay = viewlayout.findViewById(R.id.spToOneWay)
+        //textview btn
+        tvSeachFlight = viewlayout.findViewById(R.id.tvSeachFlight)
+
         etDepartDate = viewlayout.findViewById(R.id.etDepartDate)
         etRetunDate = viewlayout.findViewById(R.id.etRetunDate)
         spPassanger = viewlayout.findViewById(R.id.spPassangers)
@@ -200,18 +214,10 @@ class OneWayFragment : Fragment() {
         tvElite = viewlayout.findViewById(R.id.tvElite)
         departDate = viewlayout.findViewById(R.id.ivDepartOneWay)
         returnDate = viewlayout.findViewById(R.id.ivReturnOneWay)
+
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OneWayFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             OneWayFragment().apply {

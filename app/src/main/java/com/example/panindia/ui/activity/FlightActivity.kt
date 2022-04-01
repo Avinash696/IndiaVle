@@ -2,20 +2,21 @@ package com.example.panindia.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.indiavle.ui.frag.MultiStopFragment
-import com.example.indiavle.ui.frag.OneWayFragment
+import com.example.panindia.ui.frag.OneWayFragment
 import com.example.indiavle.ui.frag.RoundFragment
 import com.example.panindia.R
 import com.example.panindia.databinding.ActivityFlightBinding
+import com.example.panindia.viewModel.SeachFlightViewModel
 
 class FlightActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var bindingFlightActivity: ActivityFlightBinding
+    lateinit var searchViewModel:SeachFlightViewModel
     var checkOne = false
     var checkMulti = false
     var checkRound = false
@@ -26,14 +27,18 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
         bindingFlightActivity = DataBindingUtil.setContentView(this, R.layout.activity_flight)
         supportActionBar?.title = "Flight"
 
-
         bindingFlightActivity.tvOneWay.setOnClickListener(this)
         bindingFlightActivity.tvRoundTrip.setOnClickListener(this)
         bindingFlightActivity.tvMultiStop.setOnClickListener(this)
 
         DefaultFrag()
+
+        //view model set
+        searchViewModel= ViewModelProvider(this)[SeachFlightViewModel::class.java]
+        bindingFlightActivity.lifecycleOwner = this
+
     }
-    fun DefaultFrag(){
+    private fun DefaultFrag(){
         checkOne = true
         checkMulti = false
         checkRound = false
@@ -45,9 +50,6 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
-    }
-    fun init(){
-
     }
 
     fun FragSwitch(fragment: Fragment) {
@@ -105,4 +107,5 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
             bindingFlightActivity.tvRoundTrip.setBackgroundColor(resources.getColor(R.color.white))
         }
     }
+
 }

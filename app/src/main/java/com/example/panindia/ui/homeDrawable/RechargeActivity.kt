@@ -25,7 +25,7 @@ class RechargeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recharge)
         binding.navView.setNavigationItemSelectedListener(this)
-
+        //defalut layout
         rechargeChangeLayout(MobileRechargeFragment())
     }
 
@@ -34,7 +34,6 @@ class RechargeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         ft.replace(R.id.flRechargeHost, frag)
         ft.commit()
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

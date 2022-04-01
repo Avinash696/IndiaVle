@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="searchViewModel"
+            type="com.example.panindia.viewModel.SeachFlightViewModel" />
     </data>
 
     <RelativeLayout
@@ -19,10 +22,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true"
-                android:layout_marginTop="40dp">
+                app:cardUseCompatPadding="true">
 
 
                 <RelativeLayout
@@ -295,11 +298,11 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
+                                    android:id="@+id/tvElite"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerVertical="true"
-                                    android:text="Elite"
-                                    android:id="@+id/tvElite"/>
+                                    android:text="Elite" />
                             </RelativeLayout>
                         </LinearLayout>
 
@@ -313,6 +316,7 @@
                             app:cardCornerRadius="40dp">
 
                             <TextView
+                                android:id="@+id/tvSeachFlight"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -325,295 +329,6 @@
             </com.google.android.material.card.MaterialCardView>
 
         </ScrollView>
-<!--        </androidx.cardview.widget.CardView>-->
-        <!--        <ScrollView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content">-->
-        <!--            <androidx.cardview.widget.CardView-->
-        <!--                android:id="@+id/cvDetail"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                app:cardCornerRadius="5dp"-->
-        <!--                app:cardElevation="10dp"-->
-        <!--                app:cardMaxElevation="10dp"-->
-        <!--                app:cardPreventCornerOverlap="true"-->
-        <!--                app:cardUseCompatPadding="true"-->
-        <!--                android:padding="10dp">-->
-        <!--                <LinearLayout-->
-        <!--                    android:layout_width="match_parent"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:orientation="vertical"-->
-        <!--                    android:padding="4dp"-->
-        <!--                    android:background="@drawable/gradiant">-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/lobster"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textColor="@color/red"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="20sp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="From"/>&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator"/> &ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="Enter Origin"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="To"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="Enter To Destination"-->
-        <!--                            android:autofillHints="Enter To Destination"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="Depart"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="Enter Depart DD/MM/YYYY"-->
-        <!--                            android:autofillHints="Enter Depart DD/MM/YYYY"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="Class"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="Enter Economy Class"-->
-        <!--                            android:autofillHints="Enter Economy Class"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="Adult(12+YRS)"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="No Of Adult Passangers"-->
-        <!--                            android:autofillHints="No Of Adult Passangers"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="Childeren(2-11 YRS)"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="No. Of Children Passenger"-->
-        <!--                            android:autofillHints="No. Of Children Passenger"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--&lt;!&ndash;                        <TextView&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_marginLeft="5dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_weight="1"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:fontFamily="@font/regular"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:gravity="center_vertical"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:text="INFANT(0-2 YRS)"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:textSize="15sp" />&ndash;&gt;-->
-
-        <!--&lt;!&ndash;                        <View&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_width="@dimen/view_width"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:layout_margin="@dimen/mid_color"&ndash;&gt;-->
-        <!--&lt;!&ndash;                            android:background="@color/seperator" />&ndash;&gt;-->
-
-        <!--                        <EditText-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            android:layout_weight="1"-->
-        <!--                            android:hint="No. Of Infant Passenger"-->
-        <!--                            android:autofillHints="No. Of Infant Passenger"-->
-        <!--                            android:fontFamily="@font/lato"/>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="wrap_content"-->
-        <!--                        android:orientation="horizontal">-->
-        <!--                        <RelativeLayout-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="match_parent">-->
-        <!--                        <androidx.cardview.widget.CardView-->
-        <!--                            android:layout_width="130dp"-->
-        <!--                            android:layout_height="70dp"-->
-        <!--                            app:cardBackgroundColor="@color/cyan"-->
-        <!--                            app:cardCornerRadius="5dp"-->
-        <!--                            app:cardElevation="10dp"-->
-        <!--                            app:cardMaxElevation="10dp"-->
-        <!--                            app:cardPreventCornerOverlap="true"-->
-        <!--                            app:cardUseCompatPadding="true"-->
-        <!--                           android:layout_alignParentRight="true"-->
-        <!--                            android:padding="4dp">-->
-
-        <!--                            <TextView-->
-        <!--                                android:layout_width="wrap_content"-->
-        <!--                                android:layout_height="wrap_content"-->
-        <!--                                android:layout_gravity="center"-->
-        <!--                                android:text="Search Bus"-->
-        <!--                                android:textColor="@color/red"-->
-        <!--                                android:textSize="15sp" />-->
-        <!--                        </androidx.cardview.widget.CardView>-->
-        <!--                        </RelativeLayout>-->
-        <!--                    </LinearLayout>-->
-
-        <!--                    <LinearLayout-->
-        <!--                        android:layout_width="match_parent"-->
-        <!--                        android:layout_height="match_parent"-->
-        <!--                        android:orientation="horizontal">-->
-
-        <!--                        <RadioGroup-->
-        <!--                            android:layout_width="wrap_content"-->
-        <!--                            android:layout_height="wrap_content">-->
-
-        <!--                            <RadioButton-->
-        <!--                                android:layout_width="wrap_content"-->
-        <!--                                android:layout_height="wrap_content"-->
-        <!--                                android:text="Search Preferred Carrier" />-->
-
-        <!--                            <RadioButton-->
-        <!--                                android:layout_width="wrap_content"-->
-        <!--                                android:layout_height="wrap_content"-->
-        <!--                                android:text="Show DIrect Flight Only" />-->
-
-        <!--                            <RadioButton-->
-        <!--                                android:layout_width="wrap_content"-->
-        <!--                                android:layout_height="wrap_content"-->
-        <!--                                android:text="Re-Fundable Flight Only" />-->
-        <!--                        </RadioGroup>-->
-        <!--                    </LinearLayout>-->
-        <!--                </LinearLayout>-->
-        <!--            </androidx.cardview.widget.CardView>-->
-        <!--        </ScrollView>-->
 
     </RelativeLayout>
 </layout>
