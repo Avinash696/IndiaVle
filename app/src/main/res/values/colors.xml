@@ -57,4 +57,5 @@
     <color name="black_overlay">#66000000</color>
     <color name="green">#69F0AE</color>
     <color name="yellow">#FBC02D</color>
+    <color name="orange">#FF6D00</color>
 </resources>

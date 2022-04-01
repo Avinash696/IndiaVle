@@ -1,0 +1,12 @@
+package com.example.panindia.api.model.responceModel
+
+data class Member(
+    val AgencyId: Int,
+    val Email: String,
+    val FirstName: String,
+    val LastName: String,
+    val LoginDetails: String,
+    val LoginName: String,
+    val MemberId: Int,
+    val isPrimaryAgent: Boolean
+)

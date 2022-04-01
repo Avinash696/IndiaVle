@@ -17,7 +17,6 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class FlightAfterLoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var layoutView:View
@@ -54,8 +53,8 @@ class FlightAfterLoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-         tl = layoutView.findViewById<TabLayout>(R.id.tl)
-         vp = layoutView.findViewById<ViewPager>(R.id.tl)
+         tl = layoutView.findViewById(R.id.tl)
+         vp = layoutView.findViewById(R.id.vpFlightAfterLogin)
         setAdapter()
 //        tl.setOnClickListener {
 //            when(it.id){
@@ -65,7 +64,7 @@ class FlightAfterLoginFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
     }
-    fun setAdapter(){
+    private fun setAdapter(){
         vp.adapter = adapterMtTransactionHistory(requireActivity().supportFragmentManager)
         tl.setupWithViewPager(vp)
     }
