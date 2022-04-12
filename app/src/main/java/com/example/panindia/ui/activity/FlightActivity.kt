@@ -2,6 +2,7 @@ package com.example.panindia.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
@@ -16,10 +17,11 @@ import com.example.panindia.viewModel.SeachFlightViewModel
 
 class FlightActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var bindingFlightActivity: ActivityFlightBinding
-    lateinit var searchViewModel: SeachFlightViewModel
+//    lateinit var searchViewModel: SeachFlightViewModel
     var checkOne = false
     var checkMulti = false
     var checkRound = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +33,16 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
         bindingFlightActivity.tvRoundTrip.setOnClickListener(this)
         bindingFlightActivity.tvMultiStop.setOnClickListener(this)
 
+        //getLogin Token
+        val intent = intent
+        val loginKeyToken = intent.getStringExtra("loginToken")
+        Log.d("justCheck", "onCreate:${loginKeyToken} ")    //works
+
         DefaultFrag()
 
         //view model set
-        searchViewModel = ViewModelProvider(this)[SeachFlightViewModel::class.java]
-        bindingFlightActivity.lifecycleOwner = this
+//        searchViewModel = ViewModelProvider(this)[SeachFlightViewModel::class.java]
+//        bindingFlightActivity.lifecycleOwner = this
 
     }
 

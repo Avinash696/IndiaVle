@@ -9,5 +9,5 @@ class LoginApplication : Application() {
 
     private var apiService: ApiService = RetrofitHelper.getRetroInstance().create(ApiService::class.java)
     var repositary: LoginRepositary = LoginRepositary(apiService)
-
+    
 }

@@ -15,6 +15,7 @@ import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.databinding.ActivityLoginBinding
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
 import com.example.panindia.ui.activity.ui.HomeMainActivity
+import com.example.panindia.ui.frag.OneWayFragment
 import com.example.panindia.viewModel.LoginViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -71,9 +72,9 @@ class LoginActivity : AppCompatActivity() {
             val result = call!!.body()
 
             if (result != null) {
-                Log.d(TAG, "hitApi: ${result.TokenId}")
+//                Log.d(TAG, "hitApi: ${result.TokenId}")
                 val intent = Intent(this@LoginActivity, FlightActivity::class.java)
-
+                    intent.putExtra("loginToken",result.TokenId)
                 startActivity(intent)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")

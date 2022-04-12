@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        tools:context=".ui.activity.FareRuleActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/blue"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivFlight"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/flight_icon" />
+
+                <TextView
+                    android:id="@+id/tvLocations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toRightOf="@+id/ivFlight"
+                    android:text="Indianapolis - Paris"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:padding="5dp"
+            android:weightSum="2"
+            android:layout_below="@+id/card_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AirLine"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight Type"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight Number"
+                    android:textColor="@color/blue" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvCancellation"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="Cancellation" />-->
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvFlightCharge"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="Flight Charge" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat and Baggage"
+                    android:textColor="@color/blue" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvInFlightFeatures"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="In Flight Features" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Base Fare"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taxes and Fees"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textColor="@color/blue" />
+
+                <!--            <Button-->
+                <!--                android:id="@+id/btBookNow"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:backgroundTint="@color/blue"-->
+                <!--                android:text=""/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAirline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AirLine" />
+
+                <TextView
+                    android:id="@+id/tvFlightType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight Type" />
+
+                <TextView
+                    android:id="@+id/tvFlightNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flight Number" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvCancellation"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="Cancellation" />-->
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvFlightCharge"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="Flight Charge" />-->
+
+                <TextView
+                    android:id="@+id/tvSeatAndBaggage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat and Baggage" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/tvInFlightFeatures"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:text="In Flight Features" />-->
+
+                <TextView
+                    android:id="@+id/tvBaseFare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Base Fare" />
+
+                <TextView
+                    android:id="@+id/tvTaxesAndFees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Taxes and Fees" />
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total" />
+
+                            <Button
+                                android:id="@+id/btBookNow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/red"
+                                android:text="Book"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFareRuleDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llMain"
+            android:layout_alignParentBottom="true"
+            android:text="Fare Rule Detail"
+            android:textColor="@color/black"
+            android:background="@color/white"/>
+
+    </RelativeLayout>
+    </ScrollView>
+</layout>
