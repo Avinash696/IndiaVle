@@ -7,27 +7,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.panindia.R
-import com.example.panindia.adapter.adapterSeachList
-import com.example.panindia.api.ApiService
-import com.example.panindia.api.RetrofitHelper
-import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.ResponceFlightSeachModel
-import com.example.panindia.model.searchFlightModel.sendModel.FlightSearchSendModel
-import com.example.panindia.model.searchFlightModel.sendModel.Segment
 import com.example.panindia.viewModel.LoginViewModel
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.panindia.ui.activity.JoiningListActivity
+import android.widget.AdapterView.OnItemSelectedListener
 import com.example.panindia.ui.activity.searchAdapterList.SearchListActivity
 
 private const val ARG_PARAM1 = "param1"
@@ -36,6 +22,7 @@ var cal = Calendar.getInstance()
 
 class OneWayFragment : Fragment() {
 
+
     private var param1: String? = null
     private var param2: String? = null
     var checkElite = false
@@ -43,7 +30,7 @@ class OneWayFragment : Fragment() {
     var checkEconomy = false
     lateinit var loginViewModel: LoginViewModel
 
-    var items = arrayOf("1", "2", "3")
+    var items = arrayOf("0","1", "2", "3")
     val destination = arrayOf("Noida", "Lucknow")
     lateinit var viewlayout: View
 
@@ -54,13 +41,35 @@ class OneWayFragment : Fragment() {
     lateinit var etRetunDate: TextView
 
     //textview
-    lateinit var tvSeachFlight:TextView
+    lateinit var tvSeachFlight: TextView
+
     //class
     lateinit var tvEconomy: TextView
     lateinit var tvBussiness: TextView
     lateinit var tvElite: TextView
     lateinit var departDate: ImageView
     lateinit var returnDate: ImageView
+
+    //autocomplteTv
+    lateinit var sourceTv: AutoCompleteTextView
+    lateinit var destinationTv: AutoCompleteTextView
+
+    //var to send using intent
+    lateinit var spPassangerString: String
+    lateinit var spkidsString: String
+    lateinit var spWeightString: String
+    val classSelect = 0
+
+    lateinit var adapterSource: ArrayAdapter<String>
+    lateinit var adapterDestination: ArrayAdapter<String>
+
+    var sourceTextView: AutoCompleteTextView? = null
+    var destinationTextView: AutoCompleteTextView? = null
+//    var array = arrayOf("Lucknow ", "Delhi", "Noida","Orissa","Kanai")
+    var array = arrayOf("DEL ", "BOM")
+    var adapterSour: ArrayAdapter<String>? = null
+    var adapterdesti: ArrayAdapter<String>? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,16 +98,53 @@ class OneWayFragment : Fragment() {
         spKids.adapter = numberOfDate
         spWeight.adapter = numberOfDate
 
+
+//        val spKidsString = spKids.selectedView.toString()
+//        val spWeightString = spWeight.selectedView.toString()
+//        Log.d(TAG, "Person : $result")
+//        Log.d(TAG, "kids : $spKidsString")
+//        Log.d(TAG, "weight : $spWeightString")
         //class define
+
         return viewlayout
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        sendOneWayData()
+        //adapter of autocomplte
+        sourceTextView = view.findViewById(R.id.spFromOneWay)
+
+        adapterSour = ArrayAdapter<String>(requireContext(),
+            android.R.layout.simple_list_item_1, array)
+
+        sourceTextView!!.setAdapter(adapterSour)
+
+        //destination spinner
+        destinationTextView = view.findViewById(R.id.spToOneWay)
+        adapterdesti = ArrayAdapter<String>(requireContext(),
+            android.R.layout.simple_list_item_1, array)
+
+        destinationTextView!!.setAdapter(adapterdesti)
+
         etDepartDate.setOnClickListener {
             DateDepart()
         }
         tvSeachFlight.setOnClickListener {
-            startActivity(Intent(requireContext(),SearchListActivity::class.java))
+            val intent = Intent(requireContext(),SearchListActivity::class.java)
+
+            val sk = sourceTextView!!.text
+            val dk = destinationTextView!!.text
+            intent.putExtra("SourceKey", sk.toString())
+            intent.putExtra("DestinationKey",dk.toString())
+            intent.putExtra("Departkey",etDepartDate.text)
+            intent.putExtra("Returnkey",etRetunDate.text)
+            intent.putExtra("Passengerkey",spPassangerString)
+            intent.putExtra("kidskey",spPassangerString)
+            intent.putExtra("Weightkey",spPassangerString)
+
+           val classSelect = getPreferedAirLine()
+            intent.putExtra("Classkey",classSelect.toString())
+            context?.startActivity(intent)
         }
 
         departDate.setOnClickListener {
@@ -131,7 +177,6 @@ class OneWayFragment : Fragment() {
         }
         super.onViewCreated(view, savedInstanceState)
     }
-
 
 
     private fun changeColor() {
@@ -172,15 +217,17 @@ class OneWayFragment : Fragment() {
     }
 
     private fun updateDateDepart() {
-        val myFormat = "dd/MM/yyyy"
+//        val myFormat = "dd/MM/yyyy"
+        val myFormat = "yyyy-MM-dd hh:mm:ss a"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        etDepartDate!!.text = sdf.format(cal.getTime())
+        etDepartDate.text = sdf.format(cal.time)
+        //date to send - sdf.format(cal.time)
     }
 
     private fun updateDateReturn() {
-        val myFormat = "dd/MM/yyyy"
+        val myFormat = "yyyy-MM-dd hh:mm:ss a"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        etRetunDate!!.text = sdf.format(cal.getTime())
+        etRetunDate.text = sdf.format(cal.time)
     }
 
     private fun DateReturn() {
@@ -214,7 +261,9 @@ class OneWayFragment : Fragment() {
         tvElite = viewlayout.findViewById(R.id.tvElite)
         departDate = viewlayout.findViewById(R.id.ivDepartOneWay)
         returnDate = viewlayout.findViewById(R.id.ivReturnOneWay)
-
+//autocomplete
+        sourceTv = viewlayout.findViewById(R.id.spFromOneWay)
+        destinationTv = viewlayout.findViewById(R.id.spToOneWay)
     }
 
     companion object {
@@ -226,5 +275,61 @@ class OneWayFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun sendOneWayData() {
+        spPassanger.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spPassangerString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "passangers: $spPassangerString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        spKids.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spkidsString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "kids: $spkidsString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        spWeight.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spWeightString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "weight: $spWeightString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+    }
+
+    private fun getPreferedAirLine(): Int {
+        var kk  = 0
+        if (!checkElite || !checkBussiness || checkEconomy) {
+            kk = 1
+        } else if (!checkElite || checkBussiness || !checkEconomy) {
+            kk = 2
+        } else if (checkElite || !checkBussiness || !checkEconomy) {
+            kk = 3
+        }
+        return kk
     }
 }

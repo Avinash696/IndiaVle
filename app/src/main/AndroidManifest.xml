@@ -19,13 +19,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".ui.activity.FareRuleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.searchAdapterList.SearchListActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".api.PresentActivity"
             android:exported="true" />
@@ -52,8 +50,8 @@
             android:theme="@style/Theme.PanIndia.NoActionBar" />
         <activity
             android:name=".ui.homeDrawable.FlightActivity"
-            android:exported="false"
-            android:theme="@style/Theme.PanIndia.NoActionBar" />
+            android:exported="true"
+            android:theme="@style/Theme.PanIndia.NoActionBar"></activity>
         <activity
             android:name=".ui.homeDrawable.BbpsActivity"
             android:exported="false"
@@ -90,7 +88,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.test.TransparentActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.activity.CropingToolsActivity"
             android:exported="false" />
@@ -111,12 +109,22 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="true" />
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity
             android:name=".ui.activity.FlightActivity"
             android:exported="true"
             android:theme="@style/Theme.PanIndia.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.indiavle.ui.activity.HotelActivity"

@@ -1,28 +1,32 @@
 package com.example.panindia.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
+import com.example.panindia.ui.activity.FareRuleActivity
 
-class adapterSeachList(
+class adapterSeachList(private val tokenValue:String,
+                       private val traceId:String,
     private val listSeachData :List<List<Result>>,
-//    private val listSeachData :List<testSingle>,
     private val context: Context?) : RecyclerView.Adapter<adapterSeachList.ViewHolder>()  {
 
     class ViewHolder( view : View):
         RecyclerView.ViewHolder(view) {
-        val tvSearchTakeOff: TextView = view.findViewById(R.id.tvSearchTakeOff)
-        val tvOneWayFlight: TextView = view.findViewById(R.id.tvOneWayFlight)
+        val tvTakeOff: TextView = view.findViewById(R.id.tvTakeOff)
+        val tvLanding: TextView = view.findViewById(R.id.tvFlightLanding)
+        val tvFlightName:TextView = view.findViewById(R.id.tvFlightName)
         val tvTotalTime: TextView = view.findViewById(R.id.tvTotalTime)
         val tvPrice: TextView = view.findViewById(R.id.tvPrice)
+//        val btnSelect :Button = view.findViewById(R.id.btnSelectNow)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,11 +44,21 @@ class adapterSeachList(
 //        Log.d("mozo", "data check:${data} ")
 ////        holder.takeOff.text = data[position].ResultIndex
 //
-        holder.tvTotalTime.text = data.AirlineCode
-        holder.tvOneWayFlight.text = data.Segments[0][0].Origin.DepTime
-        holder.tvPrice.text = data.ValidatingAirline
-        holder.tvSearchTakeOff.text =data.AirlineRemark
-        holder.tvTotalTime.text =data.AirlineCode
+        holder.tvTotalTime.text = data.Segments[0][0].AccumulatedDuration.toString()
+        holder.tvTakeOff.text = data.Segments[0][0].Origin.DepTime
+        holder.tvPrice.text = data.Fare.PublishedFare.toString()
+        holder.tvLanding.text =data.Segments[0][0].Destination.ArrTime
+        holder.tvFlightName.text =data.Segments[0][0].Airline.AirlineName
+
+        holder.itemView.findViewById<Button>(R.id.btnSelectNow).setOnClickListener {
+//            Toast.makeText(context, "ok selected $tokenValue", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context,FareRuleActivity::class.java)
+            intent.putExtra("authToken",tokenValue)
+            intent.putExtra("traceId",traceId)
+            intent.putExtra("resultIndex",data.ResultIndex)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+            context?.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

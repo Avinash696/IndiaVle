@@ -42,6 +42,7 @@
         <item>Create Distributor</item>
         <item>Create Retailer</item>
     </string-array>
+    <string name="loginTokenValue">key</string>
     <string name="title_activity_panard">PanardActivity</string>
     <string name="title_activity_pan_card">PanCardActivity</string>
     <string name="terms_and_condition">I Confirm and accept all terms and conditions</string>

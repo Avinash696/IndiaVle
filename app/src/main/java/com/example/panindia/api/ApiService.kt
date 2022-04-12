@@ -2,6 +2,8 @@ package com.example.panindia.api
 
 import com.example.panindia.model.authenticateModel.responceModel.ResponceModel
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
+import com.example.panindia.model.fareRule.receiveFareRule.PenaltyCharges
+import com.example.panindia.model.fareRule.sendFareRule.sendFareRuleModel
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.ResponceFlightSeachModel
 import com.example.panindia.model.searchFlightModel.sendModel.FlightSearchSendModel
 import retrofit2.Response
@@ -22,4 +24,7 @@ interface ApiService {
     suspend fun searchFn(@Body searchSendModel: FlightSearchSendModel)
             : Response<ResponceFlightSeachModel>
 
+    @POST("BookingEngineService_Air/AirService.svc/rest/FareRule")
+    suspend fun getFareRule(@Body sendFareRuleModel: sendFareRuleModel)
+                    :Response<PenaltyCharges>
 }
