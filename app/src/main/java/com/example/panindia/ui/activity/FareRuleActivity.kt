@@ -56,6 +56,10 @@ class FareRuleActivity : AppCompatActivity() {
         //btn book --- validation and null check pending
         binding.btBookNow.setOnClickListener {
                 val intent = Intent(this,TicketActivity::class.java)
+            intent.putExtra("TokenId",authToken)
+            intent.putExtra("TraceId",traceId)
+            intent.putExtra("ResultIndex",resultIndex)
+            startActivity(intent)
         }
     }
    private fun setViewData( airlineName:String,flightTypeInt:String,flightNumberInt:String,

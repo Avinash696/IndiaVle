@@ -26,10 +26,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.searchAdapterList.SearchListActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".api.PresentActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".ui.activity.FlightAfterLoginActivity"
             android:exported="false" />

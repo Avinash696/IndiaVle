@@ -1,5 +1,9 @@
 package com.example.panindia.api
 
+import com.example.panindia.model.FareQuote.ResponceFareQuote.ResponceFareQuoteModel
+import com.example.panindia.model.FareQuote.SendFareQuote.SendFareQuoteModel
+import com.example.panindia.model.TicketModel.ResponceTicketModel.ResponceTicketModel
+import com.example.panindia.model.TicketModel.SendTicketModel.SendTicketModel
 import com.example.panindia.model.authenticateModel.responceModel.ResponceModel
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
 import com.example.panindia.model.fareRule.receiveFareRule.FareRule
@@ -29,4 +33,12 @@ interface ApiService {
     @POST("BookingEngineService_Air/AirService.svc/rest/FareRule/")
     suspend fun getFareRule(@Body sendFareRuleModel: sendFareRuleModel)
                     :Response<fareRuleModel>
+
+    @POST("BookingEngineService_Air/AirService.svc/rest/FareQuote")
+    suspend fun getFareQuote(@Body sendFareQuoteMode:SendFareQuoteModel)
+            :Response<ResponceFareQuoteModel>
+
+    @POST("BookingEngineService_Air/AirService.svc/rest/Ticket")
+    suspend fun getTicketDetail(@Body sendTicketModel: SendTicketModel)
+                :Response<ResponceTicketModel>
 }

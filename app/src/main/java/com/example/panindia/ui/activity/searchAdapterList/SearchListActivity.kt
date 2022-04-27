@@ -71,7 +71,6 @@ class SearchListActivity : AppCompatActivity() {
         pDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         pDialog.show()
 
-
         hitAuthenticate()
     }
 
@@ -94,12 +93,11 @@ class SearchListActivity : AppCompatActivity() {
     ) {
         val d1 = Departkey + "T00: 00: 00 "
         val d2 = Returnkey + "T00: 00: 00 "
-//        Log.d("dName", " date we got $d1 $d2")
-//        Log.d("dName", "date we want 2022-12-07T00: 00: 00    2022-12-06T00: 00: 00")
-//        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
-        val segmentSeach = Segment(DestinationKey, Classkey, source, d2,
-            d1)
 
+        Log.d("dName", "date we want 2022-12-07T00: 00: 00    2022-12-06T00: 00: 00")
+//        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
+        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
+        Log.d("dName", " date we got $d1 $d2")
         val postDd = FlightSearchSendModel(
             Passengerkey,
             kidskey,
