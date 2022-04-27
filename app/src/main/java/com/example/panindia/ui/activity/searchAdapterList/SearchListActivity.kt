@@ -71,7 +71,6 @@ class SearchListActivity : AppCompatActivity() {
         pDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         pDialog.show()
 
-
         hitAuthenticate()
     }
 
