@@ -6,6 +6,8 @@ import com.example.panindia.model.TicketModel.ResponceTicketModel.ResponceTicket
 import com.example.panindia.model.TicketModel.SendTicketModel.SendTicketModel
 import com.example.panindia.model.authenticateModel.responceModel.ResponceModel
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
+import com.example.panindia.model.bookingDetail.bookingDetailReq.bookingDetailReqModel1
+import com.example.panindia.model.bookingDetail.bookingDetailResponce.bookingDetailResponceModel1
 import com.example.panindia.model.fareRule.receiveFareRule.FareRule
 import com.example.panindia.model.fareRule.receiveFareRule.PenaltyCharges
 import com.example.panindia.model.fareRule.receiveFareRule.fareRuleModel
@@ -41,4 +43,8 @@ interface ApiService {
     @POST("BookingEngineService_Air/AirService.svc/rest/Ticket")
     suspend fun getTicketDetail(@Body sendTicketModel: SendTicketModel)
                 :Response<ResponceTicketModel>
+
+    @POST("BookingEngineService_Air/AirService.svc/rest/GetBookingDetails")
+    suspend fun getBookingDetail(@Body bookingDetailReqModel1: bookingDetailReqModel1)
+    :Response<bookingDetailResponceModel1>
 }

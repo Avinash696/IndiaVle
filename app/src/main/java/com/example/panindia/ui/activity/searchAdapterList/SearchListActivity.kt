@@ -2,11 +2,14 @@ package com.example.panindia.ui.activity.searchAdapterList
 
 
 import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.View.VISIBLE
+import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,8 +29,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
 class SearchListActivity : AppCompatActivity() {
+    lateinit var searchField :SearchView
     lateinit var rv: RecyclerView
     private val TAG = "mozo"
     private lateinit var tvResultCount: TextView
@@ -79,6 +82,7 @@ class SearchListActivity : AppCompatActivity() {
     private fun init() {
         rv = findViewById(R.id.rvSearchFlight)
         tvResultCount = findViewById(R.id.tvResultCount)
+        searchField = findViewById(R.id.searchFlightFilter)
     }
 
     private fun hitIt(
@@ -96,7 +100,7 @@ class SearchListActivity : AppCompatActivity() {
         val d2 = Returnkey + "T00: 00: 00 "
 
         Log.d("dName", "date we want 2022-12-07T00: 00: 00    2022-12-06T00: 00: 00")
-//        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
+//      val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
         val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
         Log.d("dName", " date we got $d1 $d2")
         val postDd = FlightSearchSendModel(
@@ -139,6 +143,15 @@ class SearchListActivity : AppCompatActivity() {
             rv.layoutManager = LinearLayoutManager(this)
             rv.adapter = adapterRec
         })
+      searchField.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+          override fun onQueryTextSubmit(s: String): Boolean {
+              return false
+          }
+
+          override fun onQueryTextChange(s: String): Boolean {
+              return false
+          }
+      })
     }
 
     private fun hitAuthenticate() {

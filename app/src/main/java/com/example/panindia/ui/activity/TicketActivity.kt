@@ -42,7 +42,7 @@ class TicketActivity : AppCompatActivity() {
         val retroQuote = FareQuoteRepositary(apiCall)
         val retroTicket = TicketRepositary(apiCall)
         fareQuote = ViewModelProvider(this,
-            FareQuoteFactory(retroQuote))[FareQuoteTicketViewModel::class.java]
+            FareQuoteFactory(retroQuote,retroTicket))[FareQuoteTicketViewModel::class.java]
 
         hitFareQuote(tokenStr, traceIdStr, resultIndexStr)
         hitTicket(tokenStr, traceIdStr, resultIndexStr)

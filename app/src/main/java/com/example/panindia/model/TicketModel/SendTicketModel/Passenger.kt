@@ -27,5 +27,5 @@ data class Passenger(
     val PaxId: Int,
     val PaxType: Int,
     val SpecialServices: List<Any>,
-    val Title: String
+    val Title: String,
 )

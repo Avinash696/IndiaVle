@@ -15,7 +15,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.panindia.R
 import com.example.panindia.databinding.ActivityMoneyTransferBinding
 import com.example.panindia.ui.frag.AepsDistributeFragment
-import com.example.panindia.ui.frag.MoneyTransferFragment
+//import com.example.panindia.ui.frag.MoneyTransferFragment
 import com.google.android.material.navigation.NavigationView
 
 class MoneyTransferActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +49,7 @@ class MoneyTransferActivity : AppCompatActivity(), NavigationView.OnNavigationIt
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_mt -> {
-                fragmentLayout(MoneyTransferFragment())
+//                fragmentLayout(MoneyTransferFragment())
                 drawer.close()
             }
             R.id.action_dmt -> {
