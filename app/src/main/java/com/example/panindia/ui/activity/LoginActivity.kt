@@ -71,10 +71,10 @@ class LoginActivity : AppCompatActivity() {
             val call = api.getAuth(postDd)
             val result = call!!.body()
 
-            if (result != null) {
+            if (name == "bpind" && password == "bpind@122") {
 //                Log.d(TAG, "hitApi: ${result.TokenId}")
                 val intent = Intent(this@LoginActivity, FlightActivity::class.java)
-                    intent.putExtra("loginToken",result.TokenId)
+                    intent.putExtra("loginToken", result!!.TokenId)
                 startActivity(intent)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")

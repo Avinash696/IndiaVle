@@ -76,6 +76,7 @@ class adapterSeachList(
             intent.putExtra("authToken",tokenValue)
             intent.putExtra("traceId",traceId)
             intent.putExtra("resultIndex",data.ResultIndex)
+            Log.d("Sourcekey", "onBindViewHolder: $data.ResultIndex")
             //detail show send
             intent.putExtra("airlineName",data.Segments[0][0].Airline.AirlineName)
             intent.putExtra("flightType",data.Segments[0][0].CabinClass.toString())

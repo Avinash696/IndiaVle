@@ -59,6 +59,7 @@ class FareRuleActivity : AppCompatActivity() {
             intent.putExtra("TokenId",authToken)
             intent.putExtra("TraceId",traceId)
             intent.putExtra("ResultIndex",resultIndex)
+            Log.d("resultCheckOnAll", "onCreate: $resultIndex")
             startActivity(intent)
         }
     }
@@ -74,7 +75,7 @@ class FareRuleActivity : AppCompatActivity() {
     }
 
     private fun hitFareRule(authToken: String, traceId: String, resultIndex: String) {
-
+        Log.d("resultCheckOnAll", "hitFareRule: $resultIndex")
         val dd = sendFareRuleModel("192.168.11.58", resultIndex, authToken, traceId)
 
         //now show data
