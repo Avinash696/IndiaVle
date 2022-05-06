@@ -21,15 +21,17 @@ class FareQuoteTicketViewModel(val repoFareQuoteTicket: FareQuoteRepositary,
             repoFareQuoteTicket.fareQuote(sendFareQuoteModel)
         }
     }
-    fun hitTicketViewModel(sendTicketModel: SendTicketModel){
+    fun hitTicketViewModel(sendTicketModel: SendTicketModel) {
         viewModelScope.launch {
             repoTicket.getTicketFn(sendTicketModel)
         }
     }
+
 
     val repoLiveData: LiveData<ResponceFareQuoteModel>
         get() = repoFareQuoteTicket.fareQuoteData
 
     val repoTicketLiveData :LiveData<ResponceTicketModel>
     get() = repoTicket.ticketData
+
 }

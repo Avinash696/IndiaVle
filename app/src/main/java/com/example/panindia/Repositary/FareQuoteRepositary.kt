@@ -21,6 +21,8 @@ class FareQuoteRepositary(val apiFareQuote:ApiService) {
             Log.d(TAG, "fareQuote: ${result.errorBody()}")
         }
     }
-    val fareQuoteData:LiveData<ResponceFareQuoteModel>
+
+    val fareQuoteData: LiveData<ResponceFareQuoteModel>
         get() = fareQuoteLiveData
+
 }

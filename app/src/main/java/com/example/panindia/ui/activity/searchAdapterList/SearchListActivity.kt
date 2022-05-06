@@ -71,6 +71,7 @@ class SearchListActivity : AppCompatActivity() {
         pDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         pDialog.show()
 
+
         hitAuthenticate()
     }
 
@@ -99,11 +100,11 @@ class SearchListActivity : AppCompatActivity() {
         val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
         Log.d("dName", " date we got $d1 $d2")
         val postDd = FlightSearchSendModel(
-            Passengerkey,
-            kidskey,
+            1,
+            0,
             "false",
             "192.168.10.10",
-            Weightkey,
+            0,
             "1",
             "false",
             null,
