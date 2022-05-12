@@ -90,8 +90,8 @@ class adapterSeachList(
             intent.putExtra("taxesAndFees", data.FareBreakdown[0].Tax.toString())
             intent.putExtra("totalFare", data.Fare.PublishedFare.toString())
             //source and destination
-            intent.putExtra("srcInt", data.Segments[0][0].Origin.Airport.AirportName)
-            intent.putExtra("desInt", data.Segments[0][0].Destination.Airport.AirportName)
+            intent.putExtra("srcInt",data.Segments[0][0].Origin.Airport.AirportName)
+            intent.putExtra("desInt",data.Segments[0][0].Destination.Airport.AirportName)
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
             context?.startActivity(intent)
