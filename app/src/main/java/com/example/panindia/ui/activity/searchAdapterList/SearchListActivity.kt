@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.adapter.adapterSeachList
+//import com.example.panindia.adapter.searchListAdapter
 import com.example.panindia.api.ApiService
 import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
@@ -142,16 +143,21 @@ class SearchListActivity : AppCompatActivity() {
             val adapterRec = adapterSeachList(tokenData, traceId, arrayList, applicationContext)
             rv.layoutManager = LinearLayoutManager(this)
             rv.adapter = adapterRec
-        })
-      searchField.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-          override fun onQueryTextSubmit(s: String): Boolean {
-              return false
-          }
 
-          override fun onQueryTextChange(s: String): Boolean {
-              return false
-          }
-      })
+
+            searchField.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(s: String): Boolean {
+                    adapterRec.filter.filter(s)
+                    return false
+                }
+
+                override fun onQueryTextChange(s: String): Boolean {
+                    adapterRec.filter.filter(s)
+                    return false
+                }
+            })
+        })
+
     }
 
     private fun hitAuthenticate() {

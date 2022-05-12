@@ -18,8 +18,8 @@ import com.example.panindia.viewModel.bookingDetailViewModel.BookingDetailFactor
 import com.example.panindia.viewModel.bookingDetailViewModel.BookingDetailViewModel
 
 class GetBookingDetailActivity : AppCompatActivity() {
-    private lateinit var bookingViewModel :BookingDetailViewModel
-    private lateinit var binding:ActivityGetBookingDetailBinding
+    private lateinit var bookingViewModel: BookingDetailViewModel
+    private lateinit var binding: ActivityGetBookingDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_booking_detail)
@@ -41,12 +41,13 @@ class GetBookingDetailActivity : AppCompatActivity() {
 
 //        setBookingDetail(stTraceId!!,stPnr!!,stBookingId!!)
         Log.d("testBookApi", "onCreate:$stToken $stPnr $dddd")
-        setBookingDetail(stToken!!,stPnr!!,dddd!!)
+        setBookingDetail(stToken!!, stPnr!!, dddd!!)
     }
-    private  fun setBookingDetail( stToken:String,stPnr:String ,stBookingId:String){
-        val bookingDummyModel = bookingDetailReqModel1(stBookingId,"192.168.11.58",stPnr,stToken)
+
+    private fun setBookingDetail(stToken: String, stPnr: String, stBookingId: String) {
+        val bookingDummyModel = bookingDetailReqModel1(stBookingId, "192.168.11.58", stPnr, stToken)
         bookingViewModel.bookingDetailVM(bookingDummyModel)
-        bookingViewModel.repoBookingLiveData.observe(this,{
+        bookingViewModel.repoBookingLiveData.observe(this, {
             Log.d("bookingConfirm", "setBookingDetail: ${it.Response}")
             binding.tvBookingNumber.text = it.Response.FlightItinerary.BookingId.toString()
             binding.tvFirstName.text = it.Response.FlightItinerary.Passenger[0].FirstName.toString()

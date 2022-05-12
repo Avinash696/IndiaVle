@@ -1,19 +1,21 @@
 package com.example.panindia.adapter
 
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
+import android.widget.Button
+import android.widget.Filter
+import android.widget.Filterable
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
 import com.example.panindia.ui.activity.FareRuleActivity
+import com.google.gson.Gson
+
 
 class adapterSeachList(
     private val tokenValue: String,
@@ -21,8 +23,13 @@ class adapterSeachList(
     private val listSeachData: List<List<Result>>,
     private val context: Context?,
 ) : RecyclerView.Adapter<adapterSeachList.ViewHolder>(), Filterable {
-    var ListFiltered: List<List<Result>> = ArrayList()
-    var airlineFilterList :List<String> =ArrayList()
+
+    var mainList = ArrayList<Result>(listSeachData[0])
+    var backList = ArrayList<Result>(listSeachData[0])
+    init {
+        Log.d("sendList", ":${Gson().toJson(listSeachData[0])} ")
+        Log.d("setData", ":${Gson().toJson(mainList)} ")
+    }
 
     class ViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
@@ -42,14 +49,12 @@ class adapterSeachList(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d("mozo", "onBindViewHolder:")
-        val data = listSeachData[0][position]
-        Log.d("dataTest", "onBindViewHolder:${data} ")
-//        val factory = LayoutInflater.from(context)
-//        val dialogView: View = factory.inflate(R.layout.dialog_search_fight_detail, null)
-//        val deleteDialog: AlertDialog = AlertDialog.Builder(context!!).create()
-//
-//        deleteDialog.setView(dialogView)
-
+//        val data = backupList[position]
+        val data = mainList[position]
+        Log.d("viewMe", "onBindViewHolder: $backList")
+        val gs = Gson()
+        val tt = gs.toJson(mainList)
+        Log.d("realList", "onBindViewHolder:$tt")
 
         holder.tvTotalTime.text = data.Segments[0][0].AccumulatedDuration.toString()
         holder.tvTakeOff.text = data.Segments[0][0].Origin.DepTime
@@ -57,25 +62,7 @@ class adapterSeachList(
         holder.tvLanding.text = data.Segments[0][0].Destination.ArrTime
         holder.tvFlightName.text = data.Segments[0][0].Airline.AirlineName
 
-        //set all airline list
-        for (dd in data.Segments[0][0].Airline.AirlineName){
-//            airlineFilterList[0][0] = dd
-        }
-
-        //custom dialog var link
-//        dialogView.findViewById<TextView>(R.id.tvAirline).text = data.Segments[0][0].Airline.AirlineName
-//        dialogView.findViewById<TextView>(R.id.tvFlightType).text = data.Segments[0][0].CabinClass.toString()
-//        dialogView.findViewById<TextView>(R.id.tvFlightNumber).text = data.Segments[0][0].Airline.FlightNumber
-////            dialogView.findViewById<TextView>(R.id.tvSeatAndBaggage).text = data.Segments[0][1].CabinBaggage+"/"+data.Segments[0][1].Baggage
-//        dialogView.findViewById<TextView>(R.id.tvBaseFare).text = data.FareBreakdown[0].BaseFare.toString()
-//        dialogView.findViewById<TextView>(R.id.tvTaxesAndFees).text = data.FareBreakdown[0].Tax.toString()
-//        dialogView.findViewById<TextView>(R.id.tvpu).text = data.Fare.PublishedFare.toString()
-
         holder.itemView.findViewById<Button>(R.id.btnSelectNow).setOnClickListener {
-//            Toast.makeText(context, "ok selected $tokenValue", Toast.LENGTH_SHORT).show()
-//            val dialog = Dialog(context!!)
-
-//            deleteDialog.show()
 
             val intent = Intent(context, FareRuleActivity::class.java)
             intent.putExtra("authToken", tokenValue)
@@ -100,36 +87,50 @@ class adapterSeachList(
 
     override fun getItemCount(): Int {
         Log.d("mozo", "getItemCount: ${listSeachData.size}")
-        return listSeachData[0].size
+        return mainList.size
     }
 
     override fun getFilter(): Filter {
-        return filter
+        return filtersData
     }
 
-//    private val filtersData = object : Filter() {
-//        //on background thread
-//        override fun performFiltering(charSequence: CharSequence?): FilterResults {
-//            var filteredList: List<List<Result>> = ArrayList()
-//            filteredList = listSeachData
-//            if (charSequence.toString().isEmpty()) {
-//                filteredList = mutableListOf(ListFiltered) as List<List<Result>>
-//            } else {
-//                for (flightIt in filteredList) {
-////                    listSeachData[0][position]
-////                    data.Segments[0][0].Airline.AirlineName
-////                    if(listSeachData[0])
-//                }
-//            }
-//
-//        }
-//
-//        //run on ui thread
-//        override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults?) {
-//            TODO("Not yet implemented")
-//        }
-//
-//    }
+    private val filtersData = object : Filter() {
+        //on background thread
+        override fun performFiltering(charSequence: CharSequence?): FilterResults {
+            var filteredList: List<Result?> = ArrayList()
+            if (charSequence.toString().isEmpty()) {
+                Log.d("viewMe", "performFiltering: Filter List ${filteredList[0]} ")
+                filteredList = backList
+                Log.d("viewMe" ,"performFiltering BAckList: ${backList}")
+            } else {
+                var filterPattern = charSequence.toString().toLowerCase().trim()
+                Log.d("viewMe", "performFiltering: pattern $filterPattern")
+                for (item: Result in backList) {
+                    if (item.Segments[0][0].Airline.AirlineName.toLowerCase()
+                            .contains(filterPattern)
+                    ) {
+                        filteredList = arrayListOf(item)
+                    }
+                }
+            }
+            val results = FilterResults()
+            results.values = filteredList
+            return results
+        }
+
+        //run on ui thread
+        override fun publishResults(
+            charSequence: CharSequence?,
+            filterResults: FilterResults?,
+        ) {
+            //now make realList with filterList
+            mainList.clear()
+            Log.d("viewMe", "publishResults: $filterResults")
+            mainList.addAll(filterResults as ArrayList<Result>)
+            notifyDataSetChanged()
+        }
+    }
 }
+
 
 

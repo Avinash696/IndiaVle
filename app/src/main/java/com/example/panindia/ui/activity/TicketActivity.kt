@@ -33,8 +33,8 @@ class TicketActivity : AppCompatActivity() {
 
         intentData = intent
         tokenStr = intentData.getStringExtra("TokenId").toString()
-        traceIdStr = intentData.getStringExtra("TokenId").toString()
-        resultIndexStr = intentData.getStringExtra("TokenId").toString()
+        traceIdStr = intentData.getStringExtra("TraceId").toString()
+        resultIndexStr = intentData.getStringExtra("ResultIndex").toString()
 
         Log.d("ticketTokenCheck", "onCreate: $tokenStr $traceIdStr $resultIndexStr")
         //Both fn viewmodel obj

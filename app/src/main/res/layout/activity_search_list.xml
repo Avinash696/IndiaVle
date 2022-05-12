@@ -7,12 +7,12 @@
     android:layout_margin="5dp"
     tools:context=".ui.activity.searchAdapterList.SearchListActivity">
 
-        <SearchView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/searchFlightFilter"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"/>
+    <SearchView
+        android:id="@+id/searchFlightFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" />
 
 <TextView
     android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
     android:background="@color/red"
     android:textSize="18sp"
     android:layout_below="@+id/searchFlightFilter"
-    android:layout_alignParentRight="true"/>
+    android:layout_alignParentEnd="true"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

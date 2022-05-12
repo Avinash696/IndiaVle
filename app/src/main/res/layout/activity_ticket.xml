@@ -20,7 +20,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="#BBDEFB">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tl_name"
@@ -225,12 +227,12 @@
                     android:layout_marginEnd="@dimen/marginEnd"
                     android:text="Select Password Expiry Date" />
 
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:id="@+id/rgConditions">
+<!--                <RadioGroup-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:weightSum="2"-->
+<!--                    android:id="@+id/rgConditions">-->
 
                     <RadioButton
                         android:layout_width="wrap_content"
@@ -245,7 +247,7 @@
                         android:layout_weight="1"
                         android:text="Aggree ,Terms and Conditions"
                         android:textColor="@color/black"/>
-                </RadioGroup>
+<!--                </RadioGroup>-->
 
                 <Button
                     android:id="@+id/btConfirmTicket"

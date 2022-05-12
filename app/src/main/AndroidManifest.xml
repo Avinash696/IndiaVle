@@ -21,11 +21,11 @@
         <activity
             android:name=".ui.test.SearchListNewActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".ui.activity.TicketActivity"
@@ -87,9 +87,9 @@
         <activity
             android:name=".ui.activity.ui.PanAdminActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.test.expandableListTest.expActivity"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".ui.test.expandableListTest.expActivity"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".ui.activity.PanCardAdminActivity"
             android:exported="false"
@@ -122,11 +122,10 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.FlightActivity"
