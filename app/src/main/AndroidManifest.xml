@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.panindia">
+    package="com.example.panindia" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,15 +17,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PanIndia"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
+        tools:targetApi="m" >
+        <activity
+            android:name=".ui.activity.BookingActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.test.SearchListNewActivity"
             android:exported="true" >
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.activity.TicketActivity"
@@ -86,10 +96,9 @@
             android:theme="@style/Theme.PanIndia.NoActionBar" />
         <activity
             android:name=".ui.activity.ui.PanAdminActivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ui.test.expandableListTest.expActivity"-->
-<!--            android:exported="true" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".ui.test.expandableListTest.expActivity" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".ui.activity.PanCardAdminActivity"
             android:exported="false"
@@ -121,16 +130,17 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.FlightActivity"
             android:exported="true"
-            android:theme="@style/Theme.PanIndia.NoActionBar">
+            android:theme="@style/Theme.PanIndia.NoActionBar" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->

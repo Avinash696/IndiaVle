@@ -16,6 +16,16 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/green"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -259,6 +269,7 @@
                     android:textColor="@color/black"
                     android:layout_margin="10dp"/>
             </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </ScrollView>
     </RelativeLayout>
 </layout>

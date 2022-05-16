@@ -1,5 +1,7 @@
 package com.example.panindia.api
 
+import com.example.panindia.model.BookingForNLCC.BookingReq.BookingReqModel
+import com.example.panindia.model.BookingForNLCC.BookingResponce.BookingResponceModel
 import com.example.panindia.model.FareQuote.ResponceFareQuote.ResponceFareQuoteModel
 import com.example.panindia.model.FareQuote.SendFareQuote.SendFareQuoteModel
 import com.example.panindia.model.TicketModel.ResponceTicketModel.ResponceTicketModel
@@ -47,4 +49,8 @@ interface ApiService {
     @POST("BookingEngineService_Air/AirService.svc/rest/GetBookingDetails")
     suspend fun getBookingDetail(@Body bookingDetailReqModel1: bookingDetailReqModel1)
     :Response<bookingDetailResponceModel1>
+
+    @POST("BookingEngineService_Air/AirService.svc/rest/Book")
+    suspend fun getBooking(@Body bookingDetailReq:BookingReqModel)
+    :Response<BookingResponceModel>
 }

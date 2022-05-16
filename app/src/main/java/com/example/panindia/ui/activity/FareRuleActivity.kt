@@ -48,19 +48,32 @@ class FareRuleActivity : AppCompatActivity() {
         //source and desti
         val srcName = intent.getStringExtra("srcInt")
         val destiName = intent.getStringExtra("desInt")
+        val flightType = intent.extras!!.getBoolean("flightType")
 //        Log.d("fareDd", "onCreate: " +
 //                "$airlineNameInt $flightTypeInt $flightNumberInt $baseFareInt $taxesInt $totalFareInt")
         hitFareRule(authToken!!, traceId!!, resultIndex!!)
         setViewData(airlineNameInt!!,flightTypeInt!!,flightNumberInt!!,baseFareInt!!,
             taxesInt!!,totalFareInt!!,srcName!!,destiName!!)
-        //btn book --- validation and null check pending
-        binding.btBookNow.setOnClickListener {
+        //redirect acc to flight type
+        if(flightType){
+              //lcc
+            //btn book --- validation and null check pending
+            binding.btBookNow.setOnClickListener {
                 val intent = Intent(this,TicketActivity::class.java)
+                intent.putExtra("TokenId",authToken)
+                intent.putExtra("TraceId",traceId)
+                intent.putExtra("ResultIndex",resultIndex)
+//            Log.d("resultCheckOnAll", "onCreate: $resultIndex")
+                startActivity(intent)
+            }
+        }
+        else {
+            //non Lcc
+            val intent = Intent()
             intent.putExtra("TokenId",authToken)
+            intent.putExtra("resultIndex",resultIndex)
             intent.putExtra("TraceId",traceId)
-            intent.putExtra("ResultIndex",resultIndex)
-            Log.d("resultCheckOnAll", "onCreate: $resultIndex")
-            startActivity(intent)
+            startActivity(Intent(this,BookingActivity::class.java))
         }
     }
    private fun setViewData( airlineName:String,flightTypeInt:String,flightNumberInt:String,
@@ -75,7 +88,9 @@ class FareRuleActivity : AppCompatActivity() {
     }
 
     private fun hitFareRule(authToken: String, traceId: String, resultIndex: String) {
-        Log.d("resultCheckOnAll", "hitFareRule: $resultIndex")
+        //check if fight is lCC or non
+        val fightType :Boolean
+            Log.d("resultCheckOnAll", "hitFareRule: $resultIndex")
         val dd = sendFareRuleModel("192.168.11.58", resultIndex, authToken, traceId)
 
         //now show data
@@ -88,9 +103,11 @@ class FareRuleActivity : AppCompatActivity() {
         fareViewModel.repoLiveData.observe(this, {
             Log.d("myNight", "hitFareRule:${it.Response.FareRules[0].FareRuleDetail} ")
             binding.tvFareRuleDetail.text = it.Response.FareRules[0].FareRuleDetail
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 binding.tvFareRuleDetail.text =(Html.fromHtml(it.Response.FareRules[0].FareRuleDetail, Html.FROM_HTML_MODE_COMPACT))
             };
         })
+
     }
 }
