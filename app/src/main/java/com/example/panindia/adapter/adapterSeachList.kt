@@ -77,8 +77,9 @@ class adapterSeachList(
             intent.putExtra("taxesAndFees", data.FareBreakdown[0].Tax.toString())
             intent.putExtra("totalFare", data.Fare.PublishedFare.toString())
             //source and destination
-            intent.putExtra("srcInt", data.Segments[0][0].Origin.Airport.AirportName)
-            intent.putExtra("desInt", data.Segments[0][0].Destination.Airport.AirportName)
+            intent.putExtra("srcInt",data.Segments[0][0].Origin.Airport.AirportName)
+            intent.putExtra("desInt",data.Segments[0][0].Destination.Airport.AirportName)
+            intent.putExtra("flightType",data.IsLCC)
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
             context?.startActivity(intent)
@@ -97,19 +98,20 @@ class adapterSeachList(
     private val filtersData = object : Filter() {
         //on background thread
         override fun performFiltering(charSequence: CharSequence?): FilterResults {
-            var filteredList: List<Result?> = ArrayList()
+            var filteredList = ArrayList<Result>()
             if (charSequence.toString().isEmpty()) {
                 Log.d("viewMe", "performFiltering: Filter List ${filteredList[0]} ")
                 filteredList = backList
-                Log.d("viewMe" ,"performFiltering BAckList: ${backList}")
+                Log.d("viewMe" ,"performFiltering BAckList: $backList")
             } else {
                 var filterPattern = charSequence.toString().toLowerCase().trim()
                 Log.d("viewMe", "performFiltering: pattern $filterPattern")
                 for (item: Result in backList) {
-                    if (item.Segments[0][0].Airline.AirlineName.toLowerCase()
+                    if (item.Segments[0][0].Airline.AirlineName.toLowerCase().trim()
                             .contains(filterPattern)
                     ) {
-                        filteredList = arrayListOf(item)
+                        filteredList.add(item)
+                        Log.d("someList", "performFiltering: $filteredList")
                     }
                 }
             }

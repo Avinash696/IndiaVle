@@ -1,0 +1,30 @@
+package com.example.panindia.model.BookingForNLCC.BookingResponce
+
+data class FlightItinerary(
+    val AirlineCode: String,
+    val AirlineRemark: String,
+    val AirlineTollFreeNo: String,
+    val BaseCurrencyFare: BaseCurrencyFare,
+    val BookingAllowedForRoamer: Boolean,
+    val BookingHistory: List<BookingHistory>,
+    val BookingId: Int,
+    val CancellationCharges: Any,
+    val CreditNoteCreatedOn: Any,
+    val CreditNoteNo: Any,
+    val Destination: String,
+    val Fare: Fare,
+    val FareRules: List<FareRule>,
+    val FareType: String,
+    val IsDomestic: Boolean,
+    val IsLCC: Boolean,
+    val IsManual: Boolean,
+    val LastTicketDate: String,
+    val NonRefundable: Boolean,
+    val Origin: String,
+    val PNR: String,
+    val Passenger: List<Passenger>,
+    val Segments: List<Segment>,
+    val Source: Int,
+    val Status: Int,
+    val ValidatingAirlineCode: String
+)
