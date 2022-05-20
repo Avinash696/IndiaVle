@@ -14,16 +14,16 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="result Count"
-    android:id="@+id/tvResultCount"
-    android:textColor="@color/white"
-    android:background="@color/red"
-    android:textSize="18sp"
-    android:layout_below="@+id/searchFlightFilter"
-    android:layout_alignParentEnd="true"/>
+    <TextView
+        android:id="@+id/tvResultCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchFlightFilter"
+        android:layout_alignParentEnd="true"
+        android:background="@color/red"
+        android:text="result Count"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

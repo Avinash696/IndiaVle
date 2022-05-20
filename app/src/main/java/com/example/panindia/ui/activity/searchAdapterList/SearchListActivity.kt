@@ -139,8 +139,11 @@ class SearchListActivity : AppCompatActivity() {
     private fun populatingData(tokenData: String, traceId: String, arrayList: List<List<Result>>) {
         Log.d(TAG, "populatingData: ")
         runOnUiThread(Runnable {
-            tvResultCount.text = arrayList[0].size.toString()
+//            tvResultCount.text = arrayList[0].size.toString()
             val adapterRec = adapterSeachList(tokenData, traceId, arrayList, applicationContext)
+//            val count = adapterRec.itemCount
+//            Log.d("checkyrCount", "populatingData:$count ")
+//            tvResultCount.text = count.toString()
             rv.layoutManager = LinearLayoutManager(this)
             rv.adapter = adapterRec
 

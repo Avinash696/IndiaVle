@@ -15,6 +15,8 @@ import com.example.panindia.R
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
 import com.example.panindia.ui.activity.FareRuleActivity
 import com.google.gson.Gson
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class adapterSeachList(
@@ -24,7 +26,7 @@ class adapterSeachList(
     private val context: Context?,
 ) : RecyclerView.Adapter<adapterSeachList.ViewHolder>(), Filterable {
 
-    var mainList = ArrayList<Result>(listSeachData[0])
+    public var mainList = ArrayList<Result>(listSeachData[0])
     var backList = ArrayList<Result>(listSeachData[0])
     init {
         Log.d("sendList", ":${Gson().toJson(listSeachData[0])} ")
@@ -87,7 +89,8 @@ class adapterSeachList(
     }
 
     override fun getItemCount(): Int {
-        Log.d("mozo", "getItemCount: ${listSeachData.size}")
+        Log.d("mozo", "getItemCount: ${mainList.size}")
+
         return mainList.size
     }
 
@@ -101,13 +104,13 @@ class adapterSeachList(
             var filteredList = ArrayList<Result>()
             if (charSequence.toString().isEmpty()) {
                 Log.d("viewMe", "performFiltering: Filter List ${filteredList[0]} ")
-                filteredList = backList
+                filteredList.addAll(listSeachData[0])
                 Log.d("viewMe" ,"performFiltering BAckList: $backList")
             } else {
-                var filterPattern = charSequence.toString().toLowerCase().trim()
+                var filterPattern = charSequence.toString().lowercase(Locale.getDefault()).trim()
                 Log.d("viewMe", "performFiltering: pattern $filterPattern")
                 for (item: Result in backList) {
-                    if (item.Segments[0][0].Airline.AirlineName.toLowerCase().trim()
+                    if (item.Segments[0][0].Airline.AirlineName.lowercase(Locale.getDefault()).trim()
                             .contains(filterPattern)
                     ) {
                         filteredList.add(item)
@@ -128,7 +131,12 @@ class adapterSeachList(
             //now make realList with filterList
             mainList.clear()
             Log.d("viewMe", "publishResults: $filterResults")
-            mainList.addAll(filterResults as ArrayList<Result>)
+            if (filterResults!!.values != null) {
+                mainList.addAll(filterResults.values as ArrayList<Result>)
+            }
+            else{
+                mainList.addAll(listSeachData[0])
+            }
             notifyDataSetChanged()
         }
     }

@@ -15,13 +15,13 @@ import com.example.panindia.model.joiningModel
 
 class FilterWaliActivity : AppCompatActivity() {
     private lateinit var binding :ActivityFilterWaliBinding
-    private lateinit var adminHome:filterWalaAdapter
+//    private lateinit var adminHome:filterWalaAdapter
+    private lateinit var adpDante:DisplayFilterWaliAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFilterWaliBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("beauty", "onCreate: ")
-
 
 
         binding.svFilter.setOnQueryTextListener(object :SearchView.OnQueryTextListener,
@@ -32,7 +32,7 @@ class FilterWaliActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(s: String?): Boolean {
-                adminHome.filter.filter(s)
+                adpDante.filter.filter(s)
                 return false
             }
 
@@ -45,17 +45,17 @@ class FilterWaliActivity : AppCompatActivity() {
     }
     private fun populatingData(){
 
-        var arrayList = ArrayList<String>()
-    
-        arrayList.add("titan")
-        arrayList.add("hero")
-        arrayList.add("hitlar")
-        arrayList.add("Dibya")
+        var arrayList = ArrayList<filterModel>()
+        arrayList.add(filterModel("hi"))
+        arrayList.add(filterModel("titan"))
+        arrayList.add(filterModel("hero"))
+        arrayList.add(filterModel("hitlar"))
+        arrayList.add(filterModel("Dibya"))
 
         //set adapter
-         adminHome = filterWalaAdapter(applicationContext,arrayList)
+        adpDante = DisplayFilterWaliAdapter(arrayList,this)
         binding.rvTestFrag.layoutManager = LinearLayoutManager(this)
-        binding.rvTestFrag?.adapter = adminHome
+        binding.rvTestFrag?.adapter = adpDante
 
         Log.d("beauty", "populatingData: ")
     }
