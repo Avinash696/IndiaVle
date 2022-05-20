@@ -30,13 +30,6 @@
         <activity
             android:name=".ui.test.SearchListNewActivity"
             android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.activity.TicketActivity"
@@ -131,7 +124,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.LoginActivity"
-            android:exported="true">
+            android:exported="true" >
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -141,7 +134,7 @@
         <activity
             android:name=".ui.activity.FlightActivity"
             android:exported="true"
-            android:theme="@style/Theme.PanIndia.NoActionBar">
+            android:theme="@style/Theme.PanIndia.NoActionBar" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
