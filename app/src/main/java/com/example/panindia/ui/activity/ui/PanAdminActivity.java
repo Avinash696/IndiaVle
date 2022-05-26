@@ -25,6 +25,12 @@ public class PanAdminActivity extends AppCompatActivity {
     Map<String, List<String>> mobileCollection;
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

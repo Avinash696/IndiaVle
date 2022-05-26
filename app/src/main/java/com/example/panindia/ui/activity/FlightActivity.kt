@@ -61,7 +61,7 @@ class FlightActivity : AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 
-    fun FragSwitch(fragment: Fragment) {
+    private fun FragSwitch(fragment: Fragment) {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.frgFlightHost, fragment)
 //        ft.add(R.id.frgHostMain, fragment)

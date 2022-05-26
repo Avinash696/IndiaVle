@@ -82,11 +82,15 @@ class BookingActivity : AppCompatActivity() {
         "IN","2023-12-06T00:00:00","KJHHJKHKJH",1,"Mr"  )
         val dm = BookingReqModel("192.168.11.58", listOf(passanger),resultIndex,tokenID,TraceId)
 
-        bookViewModel.bookingVM(dm)
-
+        binding.btnBook.setOnClickListener {
+            bookViewModel.bookingVM(dm)
+            startActivity(Intent(this,TicketActivity::class.java))
+        }
         bookViewModel.repoBookingLiveData.observe(this,{
           //set ur value now
-            it.Response
+
+//            Toast.makeText(this, ""+it.Error.ErrorMessage
+//                                +""+it.Response.Status, Toast.LENGTH_SHORT).show()
         })
     }
 }

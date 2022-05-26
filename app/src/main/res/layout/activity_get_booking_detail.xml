@@ -71,11 +71,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="FIRST NAME" />
 
             <TextView
+                android:id="@+id/tvFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="ASDA"
-                android:id="@+id/tvFirstName"/>
+                android:text="ASDA" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,11 +90,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="LAST NAME" />
 
             <TextView
+                android:id="@+id/tvLastName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="HHH"
-                android:id="@+id/tvLastName"/>
+                android:text="HHH" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,11 +109,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="E-MAIL ADDRESS:" />
 
             <TextView
+                android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="SDFSDF22@GMAIL.COM"
-                android:id="@+id/tvEmail"/>
+                android:text="SDFSDF22@GMAIL.COM" />
         </LinearLayout>
 
         <LinearLayout
@@ -128,11 +128,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="STREET ADDRESS AND NUMBE" />
 
             <TextView
+                android:id="@+id/tvAddress"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="GURGAON"
-                android:id="@+id/tvAddress"/>
+                android:text="GURGAON" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,11 +147,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="TOWN / CITY" />
 
             <TextView
+                android:id="@+id/tvCity"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="GURGAON"
-                android:id="@+id/tvCity"/>
+                android:text="GURGAON" />
         </LinearLayout>
 
         <LinearLayout
@@ -166,11 +166,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="ZIP CODE:" />
 
             <TextView
+                android:id="@+id/tvZipCode"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="122001D"
-                android:id="@+id/tvZipCode"/>
+                android:text="122001D" />
         </LinearLayout>
 
         <LinearLayout
@@ -185,11 +185,11 @@ A confirmation email has been sent to your provided email address."
                 android:text="COUNTRY" />
 
             <TextView
+                android:id="@+id/tvCountry"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="IN"
-                android:id="@+id/tvCountry"/>
+                android:text="IN" />
         </LinearLayout>
 
         <TextView
