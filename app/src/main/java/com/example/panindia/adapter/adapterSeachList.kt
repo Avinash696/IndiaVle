@@ -50,7 +50,6 @@ class adapterSeachList(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.d("mozo", "onBindViewHolder:")
 //        val data = backupList[position]
         val data = mainList[position]
         Log.d("viewMe", "onBindViewHolder: $backList")
@@ -82,6 +81,7 @@ class adapterSeachList(
             intent.putExtra("srcInt",data.Segments[0][0].Origin.Airport.AirportName)
             intent.putExtra("desInt",data.Segments[0][0].Destination.Airport.AirportName)
             intent.putExtra("flightType",data.IsLCC)
+            Log.d("trader", "onBindViewHolder: ${data.IsLCC}")
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
             context?.startActivity(intent)

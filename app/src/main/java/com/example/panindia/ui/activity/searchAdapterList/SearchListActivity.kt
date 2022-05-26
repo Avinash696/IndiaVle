@@ -7,8 +7,10 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.view.View.VISIBLE
+import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
@@ -74,7 +76,8 @@ class SearchListActivity : AppCompatActivity() {
         pDialog.setProgressStyle(android.R.style.Widget_ProgressBar_Small)
         pDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         pDialog.show()
-
+        val ll = LinearLayout(this)
+        ll.gravity  = Gravity.CENTER
 
         hitAuthenticate()
     }

@@ -15,6 +15,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.AdapterView.OnItemSelectedListener
 import com.example.panindia.ui.activity.searchAdapterList.SearchListActivity
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import kotlin.collections.ArrayList
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -30,7 +33,7 @@ class OneWayFragment : Fragment() {
     var checkEconomy = false
     lateinit var loginViewModel: LoginViewModel
 
-    var items = arrayOf("0","1", "2", "3")
+    var items = arrayOf("0", "1", "2", "3")
     val destination = arrayOf("Noida", "Lucknow")
     lateinit var viewlayout: View
 
@@ -65,14 +68,16 @@ class OneWayFragment : Fragment() {
 
     var sourceTextView: AutoCompleteTextView? = null
     var destinationTextView: AutoCompleteTextView? = null
-//    var array = arrayOf("Lucknow ", "Delhi", "Noida","Orissa","Kanai")
-    var array = arrayOf("DEL ", "BOM")
+
+    //    var array = arrayOf("Lucknow ", "Delhi", "Noida","Orissa","Kanai")
+    var array = ArrayList<String>()
+    lateinit var arrayExcel: ArrayList<String>
     var adapterSour: ArrayAdapter<String>? = null
     var adapterdesti: ArrayAdapter<String>? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arrayExcel = arrayListOf()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -86,8 +91,9 @@ class OneWayFragment : Fragment() {
         // Inflate the layout for this fragment
         viewlayout = inflater.inflate(R.layout.fragment_one_way, container, false)
         init()
+        readDataExcel()
         val LTRadapter =
-            ArrayAdapter(requireContext(), R.layout.text_center, destination)
+            ArrayAdapter(requireContext(), R.layout.text_center, array)
         LTRadapter.setDropDownViewResource(R.layout.text_center)
         //number
         val numberOfDate =
@@ -97,14 +103,6 @@ class OneWayFragment : Fragment() {
         spPassanger.adapter = numberOfDate
         spKids.adapter = numberOfDate
         spWeight.adapter = numberOfDate
-
-
-//        val spKidsString = spKids.selectedView.toString()
-//        val spWeightString = spWeight.selectedView.toString()
-//        Log.d(TAG, "Person : $result")
-//        Log.d(TAG, "kids : $spKidsString")
-//        Log.d(TAG, "weight : $spWeightString")
-        //class define
 
         return viewlayout
     }
@@ -130,20 +128,20 @@ class OneWayFragment : Fragment() {
             DateDepart()
         }
         tvSeachFlight.setOnClickListener {
-            val intent = Intent(requireContext(),SearchListActivity::class.java)
+            val intent = Intent(requireContext(), SearchListActivity::class.java)
 
             val sk = sourceTextView!!.text
             val dk = destinationTextView!!.text
             intent.putExtra("SourceKey", sk.toString())
-            intent.putExtra("DestinationKey",dk.toString())
-            intent.putExtra("Departkey",etDepartDate.text)
-            intent.putExtra("Returnkey",etRetunDate.text)
-            intent.putExtra("Passengerkey",spPassangerString)
-            intent.putExtra("kidskey",spPassangerString)
-            intent.putExtra("Weightkey",spPassangerString)
+            intent.putExtra("DestinationKey", dk.toString())
+            intent.putExtra("Departkey", etDepartDate.text)
+            intent.putExtra("Returnkey", etRetunDate.text)
+            intent.putExtra("Passengerkey", spPassangerString)
+            intent.putExtra("kidskey", spPassangerString)
+            intent.putExtra("Weightkey", spPassangerString)
 
-           val classSelect = getPreferedAirLine()
-            intent.putExtra("Classkey",classSelect.toString())
+            val classSelect = getPreferedAirLine()
+            intent.putExtra("Classkey", classSelect.toString())
             context?.startActivity(intent)
         }
 
@@ -323,7 +321,7 @@ class OneWayFragment : Fragment() {
     }
 
     private fun getPreferedAirLine(): Int {
-        var kk  = 0
+        var kk = 0
         if (!checkElite || !checkBussiness || checkEconomy) {
             kk = 1
         } else if (!checkElite || checkBussiness || !checkEconomy) {
@@ -332,5 +330,17 @@ class OneWayFragment : Fragment() {
             kk = 3
         }
         return kk
+    }
+
+    private fun readDataExcel() {
+        val inputStream = resources.openRawResource(R.raw.excel_source)
+        val reader = BufferedReader(InputStreamReader(inputStream))
+        reader.lineSequence().forEach {
+            val token = it.split(",")
+            Log.d("newLoop", "readDataExcel: ${token[0]}  ${token[1]}")
+//            arrayExcelLoc.add(token[1]+","+token[0])
+//            arrayExcel.add(token[1]+","+token[0])
+            array.add(token[0])
+        }
     }
 }
