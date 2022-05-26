@@ -23,6 +23,9 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/top_card.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/transparent.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/drawable/two_side_border.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout-2560x1440/fragment_one_way.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout-640x360/fragment_one_way.xml" value="0.335" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout-normal/fragment_one_way.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_admin_coupan.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_aeps.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_bbps.xml" value="0.1796875" />
@@ -30,6 +33,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_bus.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_croping_tools.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_drawablectivity.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_excel.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_exp.xml" value="0.165" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_fare_rule.xml" value="0.125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_filter_wali.xml" value="0.17604166666666668" />
