@@ -18,18 +18,14 @@
         android:theme="@style/Theme.PanIndia"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".ui.activity.BookingActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.test.SearchListNewActivity"
             android:exported="true" />
         <activity
             android:name=".ui.test.filter.FilterWaliActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.TicketActivity"
             android:exported="false" />
