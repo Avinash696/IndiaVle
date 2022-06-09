@@ -47,7 +47,8 @@
                             android:layout_height="35dp"
                             android:background="@color/greenish_grey" />
 
-                        <EditText
+                        <AutoCompleteTextView
+                            android:id="@+id/etSourceRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -76,7 +77,8 @@
                             android:layout_height="35dp"
                             android:background="@color/greenish_grey" />
 
-                        <EditText
+                        <AutoCompleteTextView
+                            android:id="@+id/etDestiRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -108,7 +110,7 @@
                             android:background="@color/greenish_grey" />
 
                         <TextView
-                            android:id="@+id/etDepartDate"
+                            android:id="@+id/tvDepartDateRound"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -139,7 +141,7 @@
                             android:background="@color/greenish_grey" />
 
                         <TextView
-                            android:id="@+id/tvReturnDate"
+                            android:id="@+id/tvReturnDateRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -184,7 +186,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/llWeight"
+                        android:id="@+id/llWeightRound"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -198,7 +200,7 @@
                             app:tint="@color/cream" />
 
                         <Spinner
-                            android:id="@+id/spPassangers"
+                            android:id="@+id/spPassangersRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -210,7 +212,7 @@
                             app:tint="@color/cream" />
 
                         <Spinner
-                            android:id="@+id/spKids"
+                            android:id="@+id/spKidsRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -222,7 +224,7 @@
                             app:tint="@color/cream" />
 
                         <Spinner
-                            android:id="@+id/spWeight"
+                            android:id="@+id/spWeightRound"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -265,13 +267,15 @@
                         app:cardElevation="10dp"
                         app:cardMaxElevation="10dp"
                         app:cardPreventCornerOverlap="true"
-                        app:cardUseCompatPadding="true">
+                        app:cardUseCompatPadding="true"
+                        android:id="@+id/cvSearchFlightRound">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Search Flight" />
+                            android:text="Search Flight"
+                            android:id="@+id/tvSeachFlight"/>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

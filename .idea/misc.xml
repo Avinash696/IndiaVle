@@ -36,7 +36,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_drawablectivity.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_excel.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_exp.xml" value="0.165" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_fare_rule.xml" value="0.125" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_fare_rule.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_filter_wali.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_find_id.xml" value="0.335" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_flight.xml" value="0.1796875" />
@@ -62,7 +62,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_retailer_coupan.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_search_list.xml" value="0.2690513219284603" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_search_list_new.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_ticket.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_ticket.xml" value="0.165" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_transaction_full_detail.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/activity_transparent.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/adapter_activate.xml" value="0.2971887550200803" />
@@ -78,6 +78,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/admin_home_adapter.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/app_bar_pan_card_admin.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/card_ticket_passanger.xml" value="0.335" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/center_drop.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/child_item.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/content_main.xml" value="0.1796875" />
@@ -129,7 +130,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_mt_how_it_works.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_mt_search_kyc.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_mt_tranaction_history.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_multi_stop.xml" value="0.335" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_multi_stop.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_muncipal_taxes.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_one_way.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_pan_buy_coupon.xml" value="0.1796875" />
@@ -138,7 +139,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_psa_password_reset.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_raise_transaction_ticket.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_register_admin.xml" value="0.1796875" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_round.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_round.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_subscription.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/fragment_summary.xml" value="0.11979166666666667" />
@@ -159,6 +160,7 @@
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/nav_header.xml" value="0.165" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/nav_header_pan_card_admin.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/navigation_view_header.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/passenger_detail_fill.xml" value="0.17604166666666668" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/layout/text_center.xml" value="0.125" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/menu/activity_main_drawer.xml" value="0.335" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/PanIndia/app/src/main/res/menu/aeps_menu.xml" value="0.1796875" />

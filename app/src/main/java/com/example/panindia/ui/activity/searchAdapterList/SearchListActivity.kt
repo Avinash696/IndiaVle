@@ -1,15 +1,13 @@
 package com.example.panindia.ui.activity.searchAdapterList
 
 
+//import com.example.panindia.adapter.searchListAdapter
 import android.app.ProgressDialog
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.View
-import android.view.View.VISIBLE
 import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.TextView
@@ -19,21 +17,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.adapter.adapterSeachList
-//import com.example.panindia.adapter.searchListAdapter
 import com.example.panindia.api.ApiService
 import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
-import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.ResponceFlightSeachModel
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
-import com.example.panindia.model.searchFlightModel.sendModel.FlightSearchSendModel
-import com.example.panindia.model.searchFlightModel.sendModel.Segment
+import com.example.panindia.model.searchFlightModel.oneWay.req.FlightOneWayReqModel
+import com.example.panindia.model.searchFlightModel.oneWay.req.Segment
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class SearchListActivity : AppCompatActivity() {
-    lateinit var searchField :SearchView
+    lateinit var searchField: SearchView
     lateinit var rv: RecyclerView
     private val TAG = "mozo"
     private lateinit var tvResultCount: TextView
@@ -48,6 +45,7 @@ class SearchListActivity : AppCompatActivity() {
     lateinit var kidskey: String
     lateinit var Weightkey: String
     lateinit var Classkey: String
+    lateinit var JourneyType: String
 
     //    lateinit var  responceData :ResponceFlightSeachModel
     //progress
@@ -57,27 +55,32 @@ class SearchListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search_list)
 
         init()
-        var intent = intent
+        val intent = intent
         Sourcekey = intent.getStringExtra("SourceKey")!!
         DestinationKey = intent.getStringExtra("DestinationKey")!!
         Departkey = intent.getStringExtra("Departkey")!!
-        Returnkey = intent.getStringExtra("Returnkey")!!
+
         Passengerkey = intent.getStringExtra("Passengerkey")!!
         kidskey = intent.getStringExtra("kidskey")!!
         Weightkey = intent.getStringExtra("Weightkey")!!
         Classkey = intent.getStringExtra("Classkey")!!
+        JourneyType = intent.getStringExtra("JourneyType")!!
 
+        if (JourneyType.equals(2)) {
+            Returnkey = intent.getStringExtra("ReturnkeyRound")!!
+        }
         //action bar
         supportActionBar?.title = "$Sourcekey-->$DestinationKey"
 
-//        hitIt(Sourcekey!!,DestinationKey!!,Departkey!!,Returnkey!!,Passengerkey!!,kidskey!!,Weightkey!!,Classkey!!)
+        Log.d("roundValueTest",
+            "onCreate: $Sourcekey,$DestinationKey,$Departkey,$Returnkey,$Passengerkey,$kidskey,$Weightkey,$Classkey")
         pDialog = ProgressDialog(this)
         pDialog.setCancelable(false)
         pDialog.setProgressStyle(android.R.style.Widget_ProgressBar_Small)
         pDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         pDialog.show()
         val ll = LinearLayout(this)
-        ll.gravity  = Gravity.CENTER
+        ll.gravity = Gravity.CENTER
 
         hitAuthenticate()
     }
@@ -94,30 +97,41 @@ class SearchListActivity : AppCompatActivity() {
         source: String,
         DestinationKey: String,
         Departkey: String,
-        Returnkey: String,
         Passengerkey: String,
         kidskey: String,
         Weightkey: String,
-        Classkey: String,
+        Classkey: Int,
+        JourneyType: String,
     ) {
-        val d1 = Departkey + "T00: 00: 00 "
-        val d2 = Returnkey + "T00: 00: 00 "
+        val segmentSeach: Segment
+        if (JourneyType.equals(1)) {
+            val d1 = Departkey + "T00: 00: 00 "
+             segmentSeach = Segment(
+                 DestinationKey,
+                 1,
+                 source,
+                 d1,
+             )
+        }
+        else if (JourneyType.equals(2)) {
+            val d2 = Returnkey + "T00: 00: 00 "
 
-        Log.d("dName", "date we want 2022-12-07T00: 00: 00    2022-12-06T00: 00: 00")
-//      val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
-        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
-        Log.d("dName", " date we got $d1 $d2")
-        val postDd = FlightSearchSendModel(
-            1,
-            0,
+             segmentSeach = Segment(DestinationKey, Classkey, source, d2, )
+        }
+
+        val postDd = FlightOneWayReqModel(
+            Integer.parseInt(Passengerkey),
+            Integer.parseInt(kidskey),
             "false",
             "192.168.10.10",
-            0,
-            "1",
+            Integer.parseInt(Weightkey),
+            JourneyType,
             "false",
             null,
             listOf(segmentSeach),
             tokenNew)
+
+
         val tt = RetrofitHelper.getRetroInstance().create(ApiService::class.java)
 
         GlobalScope.launch {
@@ -127,7 +141,10 @@ class SearchListActivity : AppCompatActivity() {
                 val result = call.body()
 
                 if (result != null) {
-                    Log.d(TAG, "hitIt: ${result.Response.Results}")
+                    val gs = Gson()
+
+                    Log.d(TAG, "twitter: ${gs.toJson(result.Response.Results)}")
+                    Log.d("twitter", "hitIt:${result.Response.Results[0][0].FareBreakdown.size} ")
                     pDialog.dismiss()
                     populatingData(tokenNew, result.Response.TraceId, result.Response.Results)
 
@@ -177,22 +194,18 @@ class SearchListActivity : AppCompatActivity() {
 
             if (result != null) {
                 tokenData = result.TokenId
+                Log.d("journeyType", "hitAuthenticate:${JourneyType} ")
                 hitIt(tokenData,
                     Sourcekey,
                     DestinationKey,
                     Departkey,
-                    Returnkey,
                     Passengerkey,
                     kidskey,
                     Weightkey,
-                    Classkey)
+                    Classkey,
+                    JourneyType)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")
-                Toast.makeText(
-                    this@SearchListActivity,
-                    "Please Check UserName & Password",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         }
     }

@@ -40,10 +40,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="60dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:weightSum="3">
 
                             <RelativeLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:padding="6dp">
@@ -60,7 +61,7 @@
 
                                 <AutoCompleteTextView
                                     android:id="@+id/spFromOneWay"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvFrom"
                                     android:layout_centerHorizontal="true"
@@ -70,14 +71,14 @@
                             </RelativeLayout>
 
                             <View
-                                android:layout_width="40dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:layout_marginTop="20dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/flight_icon" />
 
                             <RelativeLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="10dp"
                                 android:layout_weight="1"
@@ -95,7 +96,7 @@
 
                                 <AutoCompleteTextView
                                     android:id="@+id/spToOneWay"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/tvTo"
                                     android:layout_centerHorizontal="true"
@@ -150,43 +151,43 @@
                             </RelativeLayout>
 
 
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_weight="1"
-                                android:padding="6dp">
+<!--                            <RelativeLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginEnd="10dp"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:padding="6dp">-->
 
-                                <TextView
-                                    android:id="@+id/tvReturn"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginStart="20dp"
-                                    android:text="Retun"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+<!--                                <TextView-->
+<!--                                    android:id="@+id/tvReturn"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_centerHorizontal="true"-->
+<!--                                    android:layout_marginStart="20dp"-->
+<!--                                    android:text="Retun"-->
+<!--                                    android:textSize="12sp"-->
+<!--                                    android:textStyle="bold" />-->
 
-                                <ImageView
-                                    android:id="@+id/ivReturnOneWay"
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_below="@+id/tvReturn"
-                                    android:layout_toLeftOf="@+id/etRetunDate"
-                                    android:src="@drawable/date_picker" />
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/ivReturnOneWay"-->
+<!--                                    android:layout_width="30dp"-->
+<!--                                    android:layout_height="30dp"-->
+<!--                                    android:layout_below="@+id/tvReturn"-->
+<!--                                    android:layout_toLeftOf="@+id/etRetunDate"-->
+<!--                                    android:src="@drawable/date_picker" />-->
 
-                                <TextView
-                                    android:id="@+id/etRetunDate"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/tvReturn"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginTop="10dp"
-                                    android:hint="Select Date"
-                                    android:textColor="@color/sf_green"
-                                    android:textColorHint="@color/sf_green" />
-                            </RelativeLayout>
+<!--                                <TextView-->
+<!--                                    android:id="@+id/etRetunDate"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_below="@+id/tvReturn"-->
+<!--                                    android:layout_centerHorizontal="true"-->
+<!--                                    android:layout_marginLeft="10dp"-->
+<!--                                    android:layout_marginTop="10dp"-->
+<!--                                    android:hint="Select Date"-->
+<!--                                    android:textColor="@color/sf_green"-->
+<!--                                    android:textColorHint="@color/sf_green" />-->
+<!--                            </RelativeLayout>-->
 
                         </LinearLayout>
 

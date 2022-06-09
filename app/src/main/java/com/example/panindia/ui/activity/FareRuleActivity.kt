@@ -14,6 +14,7 @@ import com.example.panindia.databinding.ActivityFareRuleBinding
 import com.example.panindia.model.fareRule.sendFareRule.sendFareRuleModel
 import com.example.panindia.viewModel.FareRuleFactoryModel
 import com.example.panindia.viewModel.FareRuleViewModel
+import com.google.gson.Gson
 
 class FareRuleActivity : AppCompatActivity() {
 
@@ -31,17 +32,19 @@ class FareRuleActivity : AppCompatActivity() {
         val resultIndex = intent.getStringExtra("resultIndex")
 //receive
         val airlineNameInt = intent.getStringExtra("airlineName")
-        val flightTypeInt = intent.getStringExtra("flightType")
+//        val flightTypeInt = intent.getStringExtra("flightType")
         val flightNumberInt = intent.getStringExtra("flightNumber")
         val baseFareInt = intent.getStringExtra("baseFare")
         val taxesInt = intent.getStringExtra("taxesAndFees")
         val totalFareInt = intent.getStringExtra("totalFare")
+
         //source and desti
         val srcName = intent.getStringExtra("srcInt")
         val destiName = intent.getStringExtra("desInt")
 //        val flightType = intent.extras!!.getBoolean("flightType")
         val flightTT = intent.extras?.getBoolean("flightType")
-//        Log.d("trader", "onCreate: $flightType $flightTT")
+        val countPassanger = intent.getStringExtra("passangerCount")
+        Log.d("trader", "onCreate: $countPassanger")
         Log.d("fareDd", "onCreate: " +
                 "$airlineNameInt $flightTT $flightNumberInt $baseFareInt $taxesInt $totalFareInt")
         hitFareRule(authToken!!, traceId!!, resultIndex!!)
@@ -55,6 +58,7 @@ class FareRuleActivity : AppCompatActivity() {
                 intent.putExtra("TokenId", authToken)
                 intent.putExtra("TraceId", traceId)
                 intent.putExtra("ResultIndex", resultIndex)
+                intent.putExtra("passangerCount", countPassanger)
                 startActivity(intent)
             } else {
                 //non LCc
@@ -76,8 +80,9 @@ class FareRuleActivity : AppCompatActivity() {
         taxesInt: String,
         totalFareInt: String,
         srcDef: String,
-        destiDef: String,
-    ) {
+        destiDef: String
+    )
+    {
         binding.tvAirline.text = airlineName
         binding.tvFlightType.text = flightTypeInt.toString()
         binding.tvFlightNumber.text = flightNumberInt
@@ -101,7 +106,7 @@ class FareRuleActivity : AppCompatActivity() {
             ViewModelProvider(this, FareRuleFactoryModel(retro))[FareRuleViewModel::class.java]
         fareViewModel.hitFareRule(dd)
         fareViewModel.repoLiveData.observe(this, {
-            Log.d("myNight", "hitFareRule:${it.Response.FareRules[0].FareRuleDetail} ")
+            Log.d("myNight", "hitFareRule:${Gson().toJson( it.Response)} ")
             binding.tvFareRuleDetail.text = it.Response.FareRules[0].FareRuleDetail
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

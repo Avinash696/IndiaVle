@@ -15,8 +15,6 @@ class TicketRepositary(val apiFareQuote: ApiService) {
 
     suspend fun getTicketFn(sendTicketModel: SendTicketModel){
         val result = apiFareQuote.getTicketDetail(sendTicketModel)
-        if(result != null){
-            ticketLiveData.postValue(result.body())
-        }
+        ticketLiveData.postValue(result.body())
     }
 }
