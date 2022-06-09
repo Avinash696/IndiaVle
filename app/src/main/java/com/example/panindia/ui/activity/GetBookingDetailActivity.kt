@@ -26,12 +26,18 @@ class GetBookingDetailActivity : AppCompatActivity() {
         binding = ActivityGetBookingDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //intent Data
-        val intent = intent
-//        val stTraceId = intent.getStringExtra("tktTraceId")
-        val stToken = intent.getStringExtra("tktToken")
-        val stPnr = intent.getStringExtra("tktPnr")
-        val stBookingId = intent.getStringExtra("tktBookingIdData")
-        val dddd = intent.getStringExtra("tktDataValue")
+//        val intent = intent
+////        val stTraceId = intent.getStringExtra("tktTraceId")
+//        val stToken = intent.getStringExtra("tktToken")
+//        val stPnr = intent.getStringExtra("tktPnr")
+//        val stBookingId = intent.getStringExtra("tktBookingIdData")
+//        val dddd = intent.getStringExtra("tktDataValue")
+
+        //bundle Data get
+        val bundle = intent.extras
+        val stTraceId = bundle?.get("tktToken")
+        val stToken = bundle?.get("tktTrace").toString()
+        Log.d("onticket", "onCreate: $stTraceId $stToken")
 
         //viewModel Def
         val apiCall = RetrofitHelper.getRetroInstance().create(ApiService::class.java)
@@ -40,8 +46,8 @@ class GetBookingDetailActivity : AppCompatActivity() {
             BookingDetailFactory(retroBooking))[BookingDetailViewModel::class.java]
 
 //        setBookingDetail(stTraceId!!,stPnr!!,stBookingId!!)
-        Log.d("testBookApi", "onCreate:$stToken $stPnr $dddd")
-        setBookingDetail(stToken!!, stPnr!!, dddd!!)
+//        Log.d("testBookApi", "onCreate:$stToken $stPnr $dddd")
+//        setBookingDetail(stToken, stPnr!!, dddd!!)
     }
 
     private fun setBookingDetail(stToken: String, stPnr: String, stBookingId: String) {
@@ -53,9 +59,9 @@ class GetBookingDetailActivity : AppCompatActivity() {
             binding.tvFirstName.text = it.Response.FlightItinerary.Passenger[0].FirstName.toString()
             binding.tvLastName.text = it.Response.FlightItinerary.Passenger[0].LastName
             binding.tvEmail.text = it.Response.FlightItinerary.Passenger[0].Email
-            binding.tvAddress.text = it.Response.FlightItinerary.Passenger[0].Email
+            binding.tvAddress.text = it.Response.FlightItinerary.Passenger[0].AddressLine1
             binding.tvCity.text = it.Response.FlightItinerary.Passenger[0].City
-//            binding.tvZipCode.text = it.Response.FlightItinerary.Passenger[0].
+//            binding.tvZipCode.text = it.Response.FlightItinerary.Passenger[0]
             binding.tvCountry.text = it.Response.FlightItinerary.Passenger[0].CountryCode
         })
     }

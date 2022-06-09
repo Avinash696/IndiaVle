@@ -7,269 +7,86 @@
 
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ui.activity.TicketActivity"
-        android:background="@color/whitesh_grey">
+        android:background="@drawable/back4"
+        android:orientation="vertical"
+        android:weightSum="3">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llAdult"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adult (12 +YRs)"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/green"
-                app:cardMaxElevation="12dp"
-                app:cardPreventCornerOverlap="true"
-                app:cardUseCompatPadding="true">
-
-            <LinearLayout
+                android:id="@+id/lvAdultCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                 android:id="@+id/ivAddDetails"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llChild"
+            android:layout_below="@+id/llAdult"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Child 2-11 Yrs"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp"
-                android:background="#BBDEFB">
+                android:id="@+id/lvChildCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                android:id="@+id/ivAddDetailsChild"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llInfant"
+            android:layout_below="@+id/llChild"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Infant 0-2 YRs"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvInfantCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                android:id="@+id/ivAddDetailsInfant"/>
+        </LinearLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tl_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="Enter Name"
-                    android:textColorHint="@color/black"
-                    app:helperText="Enter Full Name">
+    </LinearLayout>
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_et_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
-                    android:id="@+id/et_dob"
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:text="Select Your DOB"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"/>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tl_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="Enter Email Address"
-                    android:textColor="@color/black"
-                    app:helperText="Email Format xyz@gmail.com">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_et_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="horizontal"
-                    android:id="@+id/rgGender">
-
-                    <RadioButton
-                        android:id="@+id/rb_male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Male" />
-
-                    <RadioButton
-                        android:id="@+id/rb_female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female" />
-                </RadioGroup>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd">
-                    <!--        <Spinner-->
-                    <!--            android:layout_width="match_parent"-->
-                    <!--            android:layout_height="match_parent"/>-->
-                    <Spinner
-                        android:id="@+id/sp_countryCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:text="Country Code"
-                        android:textColor="@color/black" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <Spinner
-                        android:id="@+id/spCellCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/marginStart"
-                        android:layout_marginEnd="@dimen/marginEnd"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:text="Cell Code"
-                        android:textColor="@color/black"/>
-
-                    <EditText
-                        android:id="@+id/etPhoneNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/marginEnd"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:hint="Enter Phone Number"
-                        android:inputType="number"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd"
-                    android:hint="Enter Address Line 1"
-                    app:helperText=""
-                    android:textColor="@color/black">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd"
-                    android:hint="Enter City"
-                    app:helperText=""
-                    android:textColor="@color/black">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_city"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd"
-                    android:hint="Enter Pincode"
-                    app:helperText="Show pincode"
-                    android:textColor="@color/black">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_pincode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd"
-                    android:hint="Enter Passport No."
-                    app:helperText="Avinash@1705"
-                    android:textColor="@color/black">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tl_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <TextView
-                    android:id="@+id/tvPassportExpiry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginStart"
-                    android:layout_marginTop="@dimen/marginTop"
-                    android:layout_marginEnd="@dimen/marginEnd"
-                    android:text="Select Password Expiry Date" />
-
-<!--                <RadioGroup-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:weightSum="2"-->
-<!--                    android:id="@+id/rgConditions">-->
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="I want to receive Travelo  offers in future"
-                        android:textColor="@color/black"/>
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Aggree ,Terms and Conditions"
-                        android:textColor="@color/black"/>
-<!--                </RadioGroup>-->
-
-                <Button
-                    android:id="@+id/btConfirmTicket"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:backgroundTint="@color/green"
-                    android:text="CONFIRM BOOKING"
-                    android:textColor="@color/black"
-                    android:layout_margin="10dp"/>
-            </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </ScrollView>
-    </RelativeLayout>
 </layout>

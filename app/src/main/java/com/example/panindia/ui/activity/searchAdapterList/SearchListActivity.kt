@@ -1,15 +1,13 @@
 package com.example.panindia.ui.activity.searchAdapterList
 
 
+//import com.example.panindia.adapter.searchListAdapter
 import android.app.ProgressDialog
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.View
-import android.view.View.VISIBLE
 import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.TextView
@@ -19,14 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.panindia.R
 import com.example.panindia.adapter.adapterSeachList
-//import com.example.panindia.adapter.searchListAdapter
 import com.example.panindia.api.ApiService
 import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
-import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.ResponceFlightSeachModel
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
-import com.example.panindia.model.searchFlightModel.sendModel.FlightSearchSendModel
-import com.example.panindia.model.searchFlightModel.sendModel.Segment
+import com.example.panindia.model.searchFlightModel.oneWay.req.FlightOneWayReqModel
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -57,11 +53,11 @@ class SearchListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search_list)
 
         init()
-        var intent = intent
+        val intent = intent
         Sourcekey = intent.getStringExtra("SourceKey")!!
         DestinationKey = intent.getStringExtra("DestinationKey")!!
         Departkey = intent.getStringExtra("Departkey")!!
-        Returnkey = intent.getStringExtra("Returnkey")!!
+//        Returnkey = intent.getStringExtra("Returnkey")!!
         Passengerkey = intent.getStringExtra("Passengerkey")!!
         kidskey = intent.getStringExtra("kidskey")!!
         Weightkey = intent.getStringExtra("Weightkey")!!
@@ -94,30 +90,31 @@ class SearchListActivity : AppCompatActivity() {
         source: String,
         DestinationKey: String,
         Departkey: String,
-        Returnkey: String,
         Passengerkey: String,
         kidskey: String,
         Weightkey: String,
         Classkey: String,
     ) {
         val d1 = Departkey + "T00: 00: 00 "
-        val d2 = Returnkey + "T00: 00: 00 "
+//        val d2 = Returnkey + "T00: 00: 00 "
 
-        Log.d("dName", "date we want 2022-12-07T00: 00: 00    2022-12-06T00: 00: 00")
-//      val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
-        val segmentSeach = Segment(DestinationKey, Classkey, source, d2, d1)
-        Log.d("dName", " date we got $d1 $d2")
-        val postDd = FlightSearchSendModel(
-            1,
-            0,
+//        val segmentSeach = Segment(DestinationKey, Classkey, source, d2)
+        val segmentSeach = com.example.panindia.model.searchFlightModel.oneWay.req.Segment(DestinationKey,1,source,d1)
+
+//        Log.d("twitMe", "hitIt: $Passengerkey $kidskey $Weightkey")
+        val postDd = FlightOneWayReqModel(
+            Integer.parseInt(Passengerkey),
+            Integer.parseInt(kidskey),
             "false",
             "192.168.10.10",
-            0,
+            Integer.parseInt(Weightkey),
             "1",
             "false",
             null,
             listOf(segmentSeach),
             tokenNew)
+
+
         val tt = RetrofitHelper.getRetroInstance().create(ApiService::class.java)
 
         GlobalScope.launch {
@@ -127,7 +124,10 @@ class SearchListActivity : AppCompatActivity() {
                 val result = call.body()
 
                 if (result != null) {
-                    Log.d(TAG, "hitIt: ${result.Response.Results}")
+                    val gs = Gson()
+
+                    Log.d(TAG, "twitter: ${ gs.toJson(result.Response.Results)}")
+                    Log.d("twitter", "hitIt:${result.Response.Results[0][0].FareBreakdown.size} ")
                     pDialog.dismiss()
                     populatingData(tokenNew, result.Response.TraceId, result.Response.Results)
 
@@ -181,18 +181,17 @@ class SearchListActivity : AppCompatActivity() {
                     Sourcekey,
                     DestinationKey,
                     Departkey,
-                    Returnkey,
                     Passengerkey,
                     kidskey,
                     Weightkey,
                     Classkey)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")
-                Toast.makeText(
-                    this@SearchListActivity,
-                    "Please Check UserName & Password",
-                    Toast.LENGTH_SHORT
-                ).show()
+//                Toast.makeText(
+//                    this@SearchListActivity,
+//                    "Please Check UserName & Password",
+//                    Toast.LENGTH_SHORT
+//                ).show()
             }
         }
     }

@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 //        val repo = (application as LoginApplication).repositary
 //        loginViewModel = ViewModelProvider(this,LoginViewModelFactory(repo))[LoginViewModel::class.java]
 //        binding.lifecycleOwner = this
-//
+
 //        //viewmodel without factory
 //        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 //        binding.loginViewModel =loginViewModel
@@ -72,9 +72,9 @@ class LoginActivity : AppCompatActivity() {
             val result = call!!.body()
 
             if (name == "bpind" && password == "bpind@122") {
-//                Log.d(TAG, "hitApi: ${result.TokenId}")
+
                 val intent = Intent(this@LoginActivity, FlightActivity::class.java)
-                    intent.putExtra("loginToken", result!!.TokenId)
+//                    intent.putExtra("loginToken", result!!.TokenId)
                 startActivity(intent)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")

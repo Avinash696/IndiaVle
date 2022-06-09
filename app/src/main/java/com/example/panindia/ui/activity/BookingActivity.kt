@@ -1,17 +1,12 @@
 package com.example.panindia.ui.activity
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.CompoundButton
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.panindia.R
 import com.example.panindia.Repositary.BookingRepositary
-import com.example.panindia.Repositary.FareRuleRepositary
 import com.example.panindia.api.ApiService
 import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.databinding.ActivityBookingBinding
@@ -20,8 +15,6 @@ import com.example.panindia.model.BookingForNLCC.BookingReq.Fare
 import com.example.panindia.model.BookingForNLCC.BookingReq.Passenger
 import com.example.panindia.viewModel.BookingViewModel.bookingFactoryViewModel
 import com.example.panindia.viewModel.BookingViewModel.bookingViewModel
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class BookingActivity : AppCompatActivity() {
     private lateinit var bookViewModel :bookingViewModel
@@ -53,8 +46,7 @@ class BookingActivity : AppCompatActivity() {
 
         //gst onlclick
 
-        binding.cbGst.setOnCheckedChangeListener { arg0, isChecked ->
-            // TODO Auto-generated method stub
+        binding.cbGst.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 Log.d("checkbox", "onCheckedChanged: ")
                 binding.llGstView.visibility = View.VISIBLE
@@ -66,7 +58,7 @@ class BookingActivity : AppCompatActivity() {
         }
         //btn click
             binding.btnBook.setOnClickListener {
-                startActivity(Intent(this,TicketActivity::class.java))
+//                startActivity(Intent(this,TicketActivity::class.java))
             }
 
         hitBookingApi(resultIndex,tokenID,TraceId)
@@ -84,7 +76,7 @@ class BookingActivity : AppCompatActivity() {
 
         binding.btnBook.setOnClickListener {
             bookViewModel.bookingVM(dm)
-            startActivity(Intent(this,TicketActivity::class.java))
+//            startActivity(Intent(this,TicketActivity::class.java))
         }
         bookViewModel.repoBookingLiveData.observe(this,{
           //set ur value now

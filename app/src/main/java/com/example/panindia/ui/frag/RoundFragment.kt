@@ -1,14 +1,20 @@
 package com.example.indiavle.ui.frag
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.panindia.R
+import com.example.panindia.ui.activity.searchAdapterList.SearchListActivity
+import com.example.panindia.ui.frag.TAG
 import com.example.panindia.ui.frag.cal
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,6 +23,8 @@ import java.util.*
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+var array = ArrayList<String>()
+lateinit var arrayExcelFull: ArrayList<String>
 
 /**
  * A simple [Fragment] subclass.
@@ -31,10 +39,21 @@ class RoundFragment : Fragment() {
     lateinit var spPassanger: Spinner
     lateinit var spKids: Spinner
     lateinit var spClass :Spinner
-    lateinit var llRoundDepart:LinearLayout
-    lateinit var llReturnDate:LinearLayout
+    //string spinner var
+    lateinit var spPassangerString :String
+    lateinit var spkidsString :String
+    lateinit var spWeightString :String
+//    lateinit var llRoundDepart:LinearLayout
+//    lateinit var llReturnDate:LinearLayout
+    lateinit var etSourceRound :AutoCompleteTextView
     var items = arrayOf("1", "2", "3")
     var itemsClass = arrayOf("Economy", "Bussiness", "Elite")
+    //location
+    var sourceTextView: AutoCompleteTextView? = null
+    var destinationTextView: AutoCompleteTextView? = null
+    var adapterSour: ArrayAdapter<String>? = null
+    var adapterdesti: ArrayAdapter<String>? = null
+    lateinit var tvSeachFlight:TextView
 
     //    lateinit var etDepartDate: EditText
     lateinit var etDepartDate: TextView
@@ -46,6 +65,7 @@ class RoundFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arrayExcelFull = arrayListOf()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -62,20 +82,24 @@ class RoundFragment : Fragment() {
     }
 
     fun init() {
+        sourceTextView = view?.findViewById(R.id.etSourceRound)
+        destinationTextView = view?.findViewById(R.id.etDestiRound)
 
-        etDepartDate = viewlayout.findViewById(R.id.etDepartDate)
-        tvReturnDate = viewlayout.findViewById(R.id.tvReturnDate)
-        spPassanger = viewlayout.findViewById(R.id.spPassangers)
-        spKids = viewlayout.findViewById(R.id.spKids)
-        spWeight = viewlayout.findViewById(R.id.spWeight)
+        etDepartDate = viewlayout.findViewById(R.id.tvDepartDateRound)
+        tvReturnDate = viewlayout.findViewById(R.id.tvReturnDateRound)
+        spPassanger = viewlayout.findViewById(R.id.spPassangersRound)
+        spKids = viewlayout.findViewById(R.id.spKidsRound)
+        spWeight = viewlayout.findViewById(R.id.spWeightRound)
         //class filter
         spClass= viewlayout.findViewById(R.id.Round_class)
-        llRoundDepart= viewlayout.findViewById(R.id.llRoundDepart)
-        llReturnDate= viewlayout.findViewById(R.id.llReturnDate)
+//        llRoundDepart= viewlayout.findViewById(R.id.llRoundDepart)
+//        llReturnDate= viewlayout.findViewById(R.id.llReturnDate)
+        tvSeachFlight = viewlayout.findViewById(R.id.tvSeachFlight)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         init()
+        readDataExcel()
         //number
         val numberOfDate =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
@@ -89,17 +113,98 @@ class RoundFragment : Fragment() {
         spKids.adapter = numberOfDate
         spWeight.adapter = numberOfDate
         spClass.adapter =classSelection
+        //spinner data take
+        spPassanger.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spPassangerString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "passangers: $spPassangerString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        spKids.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spkidsString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "kids: $spkidsString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+
+        spWeight.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long,
+            ) {
+                spWeightString = parent.getItemAtPosition(position).toString()
+                Log.d(TAG, "weight: $spWeightString")
+            } // to close the onItemSelected
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
+//        spPassanger.onItemSelectedListener { adapterView, view, i, l ->
+//            spPassangerString = adapterView.getItemAtPosition(i).toString()
+//        }
+//        spKids.onItemSelectedListener { adapterView, view, i, l ->
+//            spkidsString = adapterView.getItemAtPosition(i).toString()
+//        }
+//        spWeight.onItemSelectedListener { adapterView, view, i, l ->
+//            spWeightString = adapterView.getItemAtPosition(i).toString()
+//        }
         etDepartDate.setOnClickListener {
             DateDepart()
         }
-        llRoundDepart.setOnClickListener{
-            DateDepart()
-        }
+//        llRoundDepart.setOnClickListener{
+//            DateDepart()
+//        }
         tvReturnDate.setOnClickListener {
             DateReturn()
         }
-        llReturnDate.setOnClickListener {
-            DateReturn()
+//        llReturnDate.setOnClickListener {
+//            DateReturn()
+//        }
+
+        adapterSour = ArrayAdapter<String>(requireContext(),
+            android.R.layout.simple_list_item_1, arrayExcelFull)
+        sourceTextView!!.setAdapter(adapterSour)
+
+        //destination spinner
+
+        adapterdesti = ArrayAdapter<String>(requireContext(),
+            android.R.layout.simple_list_item_1, arrayExcelFull)
+
+        destinationTextView!!.setAdapter(adapterdesti)
+
+        tvSeachFlight.setOnClickListener {
+
+            val intent = Intent(requireContext(), SearchListActivity::class.java)
+
+            val sk = sourceTextView!!.text
+            val dk = destinationTextView!!.text
+            intent.putExtra("SourceKey", sk.split(",")[1])
+            intent.putExtra("DestinationKey", dk.split(",")[1])
+            intent.putExtra("Departkey", etDepartDate.text)
+            intent.putExtra("Returnkey", tvReturnDate.text)
+            intent.putExtra("Passengerkey", spPassangerString)
+            intent.putExtra("kidskey", spkidsString)
+            intent.putExtra("Weightkey", spWeightString)
+
+            val classSelect = 1
+            intent.putExtra("Classkey", classSelect.toString())
+            context?.startActivity(intent)
         }
 
         super.onViewCreated(view, savedInstanceState)
@@ -124,10 +229,10 @@ class RoundFragment : Fragment() {
     private fun updateDateReturn() {
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        tvReturnDate!!.text = sdf.format(cal.getTime())
+        tvReturnDate!!.text = sdf.format(cal.time)
     }
 
-    fun DateDepart() {
+    private fun DateDepart() {
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 cal.set(Calendar.YEAR, year)
@@ -146,26 +251,19 @@ class RoundFragment : Fragment() {
     private fun updateDateDepart() {
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        etDepartDate!!.text = sdf.format(cal.getTime())
+        etDepartDate!!.text = sdf.format(cal.time)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RoundFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RoundFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun readDataExcel() {
+
+        val inputStream = resources.openRawResource(R.raw.excel_source)
+        val reader = BufferedReader(InputStreamReader(inputStream))
+        reader.lineSequence().forEach {
+            val token = it.split(",")
+            Log.d("newLoop", "readDataExcel: ${token[0]}  ${token[1]}")
+            array.add(token[0])
+            arrayExcelFull.add(token[1]+","+token[0])
+        }
     }
+
 }

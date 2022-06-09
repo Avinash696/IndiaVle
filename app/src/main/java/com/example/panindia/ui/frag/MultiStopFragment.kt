@@ -240,7 +240,7 @@ class MultiStopFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    fun checkCountAdd(count: Int) {
+    private fun checkCountAdd(count: Int) {
         if (count == 1) {
             cvReturnDate.isVisible = true
         } else if (count == 2) {

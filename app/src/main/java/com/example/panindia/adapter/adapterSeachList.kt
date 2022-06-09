@@ -81,7 +81,9 @@ class adapterSeachList(
             intent.putExtra("srcInt",data.Segments[0][0].Origin.Airport.AirportName)
             intent.putExtra("desInt",data.Segments[0][0].Destination.Airport.AirportName)
             intent.putExtra("flightType",data.IsLCC)
-            Log.d("trader", "onBindViewHolder: ${data.IsLCC}")
+            intent.putExtra("passangerCount",data.FareBreakdown.size.toString())
+//            Log.d("trader", "onBindViewHolder: ${data.FareBreakdown[0].PassengerCount }  ${data.FareBreakdown[1].PassengerCount }" +
+//                    "${data.FareBreakdown[2].PassengerCount } ")
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
             context?.startActivity(intent)

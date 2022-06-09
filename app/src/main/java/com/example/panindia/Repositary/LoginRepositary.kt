@@ -17,7 +17,6 @@ class LoginRepositary(private val loginService: ApiService) {
             if (result?.body() != null) {
                 loginDetail.postValue(result?.body())
                 Log.d(TAG, "authLoginUser: ${loginDetail.value?.TokenId}")
-
 //                Log.d(TAG, "authLoginUser: ${loginDetail.value}")
             } else {
                 Log.d(TAG, "authLoginUser: " + result!!.errorBody())

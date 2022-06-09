@@ -23,7 +23,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 var cal = Calendar.getInstance()
 
-class OneWayFragment : Fragment() {
+class   OneWayFragment : Fragment() {
 
 
     private var param1: String? = null
@@ -41,7 +41,7 @@ class OneWayFragment : Fragment() {
     private lateinit var spPassanger: Spinner
     lateinit var spKids: Spinner
     lateinit var etDepartDate: TextView
-    lateinit var etRetunDate: TextView
+//    lateinit var etRetunDate: TextView
 
     //textview
     lateinit var tvSeachFlight: TextView
@@ -51,7 +51,7 @@ class OneWayFragment : Fragment() {
     lateinit var tvBussiness: TextView
     lateinit var tvElite: TextView
     lateinit var departDate: ImageView
-    lateinit var returnDate: ImageView
+//    lateinit var returnDate: ImageView
 
     //autocomplteTv
     lateinit var sourceTv: AutoCompleteTextView
@@ -72,12 +72,14 @@ class OneWayFragment : Fragment() {
     //    var array = arrayOf("Lucknow ", "Delhi", "Noida","Orissa","Kanai")
     var array = ArrayList<String>()
     lateinit var arrayExcel: ArrayList<String>
+    lateinit var arrayExcelFull: ArrayList<String>
     var adapterSour: ArrayAdapter<String>? = null
     var adapterdesti: ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arrayExcel = arrayListOf()
+        arrayExcelFull = arrayListOf()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -93,7 +95,7 @@ class OneWayFragment : Fragment() {
         init()
         readDataExcel()
         val LTRadapter =
-            ArrayAdapter(requireContext(), R.layout.text_center, array)
+            ArrayAdapter(requireContext(), R.layout.text_center, arrayExcelFull)
         LTRadapter.setDropDownViewResource(R.layout.text_center)
         //number
         val numberOfDate =
@@ -113,14 +115,14 @@ class OneWayFragment : Fragment() {
         sourceTextView = view.findViewById(R.id.spFromOneWay)
 
         adapterSour = ArrayAdapter<String>(requireContext(),
-            android.R.layout.simple_list_item_1, array)
+            android.R.layout.simple_list_item_1, arrayExcelFull)
 
         sourceTextView!!.setAdapter(adapterSour)
 
         //destination spinner
         destinationTextView = view.findViewById(R.id.spToOneWay)
         adapterdesti = ArrayAdapter<String>(requireContext(),
-            android.R.layout.simple_list_item_1, array)
+            android.R.layout.simple_list_item_1, arrayExcelFull)
 
         destinationTextView!!.setAdapter(adapterdesti)
 
@@ -131,14 +133,16 @@ class OneWayFragment : Fragment() {
             val intent = Intent(requireContext(), SearchListActivity::class.java)
 
             val sk = sourceTextView!!.text
+//            val splitMe = sk.split(",")
+//            Log.d("skCheck", "${splitMe[1]} ")
             val dk = destinationTextView!!.text
-            intent.putExtra("SourceKey", sk.toString())
-            intent.putExtra("DestinationKey", dk.toString())
+            intent.putExtra("SourceKey", sk.split(",")[1])
+            intent.putExtra("DestinationKey", dk.split(",")[1])
             intent.putExtra("Departkey", etDepartDate.text)
-            intent.putExtra("Returnkey", etRetunDate.text)
+//            intent.putExtra("Returnkey", etRetunDate.text)
             intent.putExtra("Passengerkey", spPassangerString)
-            intent.putExtra("kidskey", spPassangerString)
-            intent.putExtra("Weightkey", spPassangerString)
+            intent.putExtra("kidskey", spkidsString)
+            intent.putExtra("Weightkey", spWeightString)
 
             val classSelect = getPreferedAirLine()
             intent.putExtra("Classkey", classSelect.toString())
@@ -148,12 +152,12 @@ class OneWayFragment : Fragment() {
         departDate.setOnClickListener {
             DateDepart()
         }
-        etRetunDate.setOnClickListener {
-            DateReturn()
-        }
-        returnDate.setOnClickListener {
-            DateReturn()
-        }
+//        etRetunDate.setOnClickListener {
+//            DateReturn()
+//        }
+//        returnDate.setOnClickListener {
+//            DateReturn()
+//        }
         //changing color
         tvElite.setOnClickListener {
             checkEconomy = false
@@ -226,7 +230,7 @@ class OneWayFragment : Fragment() {
     private fun updateDateReturn() {
         val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-        etRetunDate.text = sdf.format(cal.time)
+//        etRetunDate.text = sdf.format(cal.time)
     }
 
     private fun DateReturn() {
@@ -250,7 +254,7 @@ class OneWayFragment : Fragment() {
         tvSeachFlight = viewlayout.findViewById(R.id.tvSeachFlight)
 
         etDepartDate = viewlayout.findViewById(R.id.etDepartDate)
-        etRetunDate = viewlayout.findViewById(R.id.etRetunDate)
+//        etRetunDate = viewlayout.findViewById(R.id.etRetunDate)
         spPassanger = viewlayout.findViewById(R.id.spPassangers)
         spKids = viewlayout.findViewById(R.id.spKids)
         spWeight = viewlayout.findViewById(R.id.spWeight)
@@ -259,8 +263,9 @@ class OneWayFragment : Fragment() {
         tvBussiness = viewlayout.findViewById(R.id.tvBussiness)
         tvElite = viewlayout.findViewById(R.id.tvElite)
         departDate = viewlayout.findViewById(R.id.ivDepartOneWay)
-        returnDate = viewlayout.findViewById(R.id.ivReturnOneWay)
-//autocomplete
+//        returnDate = viewlayout.findViewById(R.id.ivReturnOneWay)
+
+        //autocomplete
         sourceTv = viewlayout.findViewById(R.id.spFromOneWay)
         destinationTv = viewlayout.findViewById(R.id.spToOneWay)
     }
@@ -269,6 +274,7 @@ class OneWayFragment : Fragment() {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             OneWayFragment().apply {
+
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -333,6 +339,7 @@ class OneWayFragment : Fragment() {
     }
 
     private fun readDataExcel() {
+
         val inputStream = resources.openRawResource(R.raw.excel_source)
         val reader = BufferedReader(InputStreamReader(inputStream))
         reader.lineSequence().forEach {
@@ -341,6 +348,7 @@ class OneWayFragment : Fragment() {
 //            arrayExcelLoc.add(token[1]+","+token[0])
 //            arrayExcel.add(token[1]+","+token[0])
             array.add(token[0])
+            arrayExcelFull.add(token[1]+","+token[0])
         }
     }
 }

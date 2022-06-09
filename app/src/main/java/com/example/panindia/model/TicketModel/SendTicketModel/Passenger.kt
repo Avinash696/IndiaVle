@@ -13,19 +13,15 @@ data class Passenger(
     val FFNumber: String,
     val Fare: Fare,
     val FirstName: String,
-    val GSTCompanyAddress: String,
-    val GSTCompanyContactNumber: String,
-    val GSTCompanyEmail: String,
-    val GSTCompanyName: String,
-    val GSTNumber: String,
+
     val Gender: Int,
     val IsLeadPax: Boolean,
     val LastName: String,
     val Nationality: String,
     val PassportExpiry: String,
     val PassportNo: String,
-    val PaxId: Int,
+
     val PaxType: Int,
-    val SpecialServices: List<Any>,
+
     val Title: String,
 )
