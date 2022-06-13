@@ -197,11 +197,19 @@ class RoundFragment : Fragment() {
             intent.putExtra("SourceKey", sk.split(",")[1])
             intent.putExtra("DestinationKey", dk.split(",")[1])
             intent.putExtra("Departkey", etDepartDate.text)
+<<<<<<< HEAD
             intent.putExtra("ReturnkeyRound", tvReturnDate.text)
             intent.putExtra("Passengerkey", spPassangerString)
             intent.putExtra("kidskey", spkidsString)
             intent.putExtra("Weightkey", spWeightString)
             intent.putExtra("JourneyType",2)
+=======
+            intent.putExtra("Returnkey", tvReturnDate.text)
+            intent.putExtra("Passengerkey", spPassangerString)
+            intent.putExtra("kidskey", spkidsString)
+            intent.putExtra("Weightkey", spWeightString)
+
+>>>>>>> origin/master
             val classSelect = 1
             intent.putExtra("Classkey", classSelect.toString())
             context?.startActivity(intent)

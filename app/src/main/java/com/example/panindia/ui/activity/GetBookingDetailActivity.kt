@@ -25,6 +25,16 @@ class GetBookingDetailActivity : AppCompatActivity() {
         //intent Data
         val intent = intent
 
+//        val intent = intent
+////        val stTraceId = intent.getStringExtra("tktTraceId")
+//        val stToken = intent.getStringExtra("tktToken")
+//        val stPnr = intent.getStringExtra("tktPnr")
+//        val stBookingId = intent.getStringExtra("tktBookingIdData")
+//        val dddd = intent.getStringExtra("tktDataValue")
+
+
+
+
         val stToken = intent.getStringExtra("stToken")
         val stPnr = intent.getStringExtra("stPnr")
         val stBookingId = intent.getStringExtra("stBookingId")
@@ -36,6 +46,9 @@ class GetBookingDetailActivity : AppCompatActivity() {
             BookingDetailFactory(retroBooking))[BookingDetailViewModel::class.java]
 
         setBookingDetail(stToken!!, stPnr!!, stBookingId!!)
+
+//        setBookingDetail(stTraceId!!,stPnr!!,stBookingId!!)
+
 //        Log.d("testBookApi", "onCreate:$stToken $stPnr $dddd")
 //        setBookingDetail(stToken, stPnr!!, dddd!!)
     }
@@ -45,7 +58,7 @@ class GetBookingDetailActivity : AppCompatActivity() {
 
         val dd = bookingDetailResource("192.168.11.58", stPnr, stToken)
         bookingViewModel.bookingDetailVM(bookingDummyModel)
-        bookingViewModel.repoBookingLiveData.observe(this, {
+        bookingViewModel.repoBookingLiveData.observe(this) {
             Log.d("bookingConfirm", "setBookingDetail: ${it.Response}")
             binding.tvBookingNumber.text = it.Response.FlightItinerary.BookingId.toString()
             binding.tvFirstName.text = it.Response.FlightItinerary.Passenger[0].FirstName.toString()
@@ -55,6 +68,6 @@ class GetBookingDetailActivity : AppCompatActivity() {
             binding.tvCity.text = it.Response.FlightItinerary.Passenger[0].City
 //            binding.tvZipCode.text = it.Response.FlightItinerary.Passenger[0]
             binding.tvCountry.text = it.Response.FlightItinerary.Passenger[0].CountryCode
-        })
+        }
     }
 }
