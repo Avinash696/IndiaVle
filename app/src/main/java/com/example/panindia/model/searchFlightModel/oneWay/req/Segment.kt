@@ -1,5 +1,6 @@
 package com.example.panindia.model.searchFlightModel.oneWay.req
 
+<<<<<<< HEAD
 //data class Segment(
 //    val Destination: String,
 //    val FlightCabinClass: Int,
@@ -21,3 +22,11 @@ data class Segment(
 class PreferredArrivalTimeResource(val PreferredArrivalTime: String, FlightCabinClass: Int,
                                    Destination:String,Origin:String,PreferredDepartureTime:String)
     :Segment(Destination,FlightCabinClass,Origin,PreferredDepartureTime)
+=======
+data class Segment(
+    val Destination: String,
+    val FlightCabinClass: Int,
+    val Origin: String,
+    val PreferredDepartureTime: String
+)
+>>>>>>> origin/master

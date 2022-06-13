@@ -78,9 +78,13 @@ class TicketActivity : AppCompatActivity() {
     lateinit var passportExpiry: TextView
     lateinit var arrayListPassanger :ArrayList<Passenger>
     lateinit var btnSave :Button
+<<<<<<< HEAD
     val arrAdult = ArrayList<passangerCountModel>()
     val arrInfant = ArrayList<passangerCountModel>()
     val arrChild = ArrayList<passangerCountModel>()
+=======
+    val arr = ArrayList<passangerCountModel>()
+>>>>>>> origin/master
     private  var sizeFarebreakdown = 0
 
 
@@ -146,16 +150,26 @@ class TicketActivity : AppCompatActivity() {
         spCountryCode.adapter = spCountryCodeAdapter
         //for adult
         binding.ivAddDetails.setOnClickListener{
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
             dialog.show()
             getValueFromDialog(dialog)
 //adult
             btnSave.setOnClickListener {
+<<<<<<< HEAD
                 Log.d("savetest", "onCreateAdult: ${binding.lvAdultCount.size} $adultCount ")
                 if(binding.lvAdultCount.size <  adultCount){
                     adultPassangerSet()
 
 //                    adultCount -= 1
+=======
+                if(binding.lvAdultCount.size <=  adultCount){
+                    adultPassangerSet()
+
+                    adultCount -= 1
+>>>>>>> origin/master
                     dialog.dismiss()
                 }
                 else{
@@ -167,6 +181,7 @@ class TicketActivity : AppCompatActivity() {
         binding.ivAddDetailsChild.setOnClickListener {
             dialog.show()
             getValueFromDialog(dialog)
+<<<<<<< HEAD
 
             //child
             btnSave.setOnClickListener {
@@ -176,6 +191,14 @@ class TicketActivity : AppCompatActivity() {
                     childPassangerSet()
 
 //                    childCount -= 1
+=======
+            //child
+            btnSave.setOnClickListener {
+                if(binding.lvChildCount.size <=  childCount){
+                    childPassangerSet()
+
+                    childCount -= 1
+>>>>>>> origin/master
                     dialog.dismiss()
                 }
                 else{
@@ -189,12 +212,19 @@ class TicketActivity : AppCompatActivity() {
             getValueFromDialog(dialog)
             //infant
             btnSave.setOnClickListener {
+<<<<<<< HEAD
                 Log.d("savetest", "onCreate Infant: ${binding.lvInfantCount.size} $infantCount ")
 
                 if(binding.lvInfantCount.size <  infantCount){
                     infantPassangerSet()
 
 //                    infantCount -= 1
+=======
+                if(binding.lvInfantCount.size <=  infantCount){
+                    infantPassangerSet()
+
+                    infantCount -= 1
+>>>>>>> origin/master
                     dialog.dismiss()
                 }
                 else{
@@ -202,6 +232,7 @@ class TicketActivity : AppCompatActivity() {
                 }
             }
         }
+<<<<<<< HEAD
         binding.btSaveTicket.setOnClickListener {
             Log.d("sizeCheck", "btnSAve click: ${Gson().toJson(arrayListPassanger.size)} $sizeFarebreakdown")
             if(arrayListPassanger.size == sizeFarebreakdown){
@@ -212,6 +243,16 @@ class TicketActivity : AppCompatActivity() {
             }
         }
 
+=======
+
+        if(arrayListPassanger.size == sizeFarebreakdown){
+            Log.d("sizeCheck", "onCreate: $arrayListPassanger $sizeFarebreakdown")
+            hitTicket(tokenStr, traceIdStr, resultIndexStr,arrayListPassanger)
+        }
+        else {
+            Toast.makeText(this, "Fill all Passenger details ", Toast.LENGTH_SHORT).show()
+        }
+>>>>>>> origin/master
     }
     private fun getValueFromDialog(dialog:Dialog){
         fName = dialog.findViewById<EditText>(R.id.etFirstNamePassDetail)
@@ -287,26 +328,42 @@ class TicketActivity : AppCompatActivity() {
         val dummyObj = SendFareQuoteModel("192.168.11.58", resultIndexStr, tokenStr, traceIdStr)
         fareQuote.hitFareQuote(dummyObj)
         fareQuote.repoLiveData.observe(this, {
+<<<<<<< HEAD
 //            sizeFarebreakdown = it.Response.Results.FareBreakdown.size
             //all passenger count is defined
             Log.d("fareRes", "hitFareQuote: ${Gson().toJson(it.Response)} ")
             if(it.Response.Results.FareBreakdown.size == 1){
                 adultCount = it.Response.Results.FareBreakdown[0].PassengerCount
                 sizeFarebreakdown = adultCount
+=======
+            sizeFarebreakdown = it.Response.Results.FareBreakdown.size
+            //all passenger count is defined
+            if(it.Response.Results.FareBreakdown.size == 1){
+                adultCount = it.Response.Results.FareBreakdown[0].PassengerCount
+>>>>>>> origin/master
             }
             else if(it.Response.Results.FareBreakdown.size == 2){
                 adultCount = it.Response.Results.FareBreakdown[0].PassengerCount
                 childCount = it.Response.Results.FareBreakdown[1].PassengerCount
+<<<<<<< HEAD
                 sizeFarebreakdown = adultCount +childCount
+=======
+>>>>>>> origin/master
             }
             else if(it.Response.Results.FareBreakdown.size == 3){
                 adultCount = it.Response.Results.FareBreakdown[0].PassengerCount
                 childCount = it.Response.Results.FareBreakdown[1].PassengerCount
                 infantCount = it.Response.Results.FareBreakdown[2].PassengerCount
+<<<<<<< HEAD
                 sizeFarebreakdown =adultCount +childCount +infantCount
             }
 
 //            Log.d("myChild", "hitFareQuote: $adultCount $childCount $infantCount")
+=======
+            }
+
+            Log.d("myChild", "hitFareQuote: $adultCount $childCount $infantCount")
+>>>>>>> origin/master
 
             val data = it.Response.Results.FareBreakdown
 
@@ -345,12 +402,21 @@ class TicketActivity : AppCompatActivity() {
             if(it.Response.ResponseStatus == 1 ){
                 Log.d("onticket", "hitTicket: Got Responce Ticket")
 
+<<<<<<< HEAD
                 val intent = Intent(this,GetBookingDetailActivity::class.java)
 
                 intent.putExtra("stToken",tokenStr)
                 intent.putExtra("stPnr",it.Response.Response.PNR)
                 intent.putExtra("stBookingId",it.Response.Response.BookingId)
 
+=======
+                val bundle = Bundle()
+                bundle.putString("tktToken",tokenStr)
+                bundle.putString("tktTrace",traceIdStr)
+                Log.d("timeZone", "hitTicket: ${Gson().toJson(arrayListPassanger)}")
+                val intent = Intent(this,GetBookingDetailActivity::class.java)
+                intent.putExtra("ticketBundle",bundle)
+>>>>>>> origin/master
                 startActivity(intent)
             }
             else{
@@ -363,49 +429,84 @@ class TicketActivity : AppCompatActivity() {
     }
 
     private fun adultPassangerSet(){
+<<<<<<< HEAD
 
         arrAdult.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
         val customAdapter = passangerCountTicket(arrAdult,this)
+=======
+        arr.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
+        val customAdapter = passangerCountTicket(arr,this)
+>>>>>>> origin/master
         binding.lvAdultCount.adapter = customAdapter
         customAdapter.notifyDataSetChanged()
         Log.d("myChild", "adultPassangerSet: $fAdult")
         val f1 = Fare(0,0,fAdult[0],0,fAdult[1],0)
         val p1 = Passenger(addressString.text.toString(),addressString.text.toString(),city.text.toString(),contact.text.toString()
+<<<<<<< HEAD
             ,countryCodeString,countryName.text.toString(), "1999-12-06T00:00:00",email.text.toString(),"6E",
             "123",f1,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
             "2023-12-06T00:00:00","KJHHJKHKJH",1,titleString)
+=======
+            ,countryCodeString,countryName.text.toString(), "1987-12-06T00:00:00",email.text.toString(),"6E",
+            "123",f1,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
+            "2022-12-06T00:00:00","KJHHJKHKJH",1,titleString)
+>>>>>>> origin/master
 
         arrayListPassanger.add(p1)
     }
 
     private fun childPassangerSet(){
+<<<<<<< HEAD
 
         arrChild.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
         val customAdapter = passangerCountTicket(arrChild,this)
         binding.lvChildCount.adapter = customAdapter
+=======
+        arr.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
+        val customAdapter = passangerCountTicket(arr,this)
+        binding.lvAdultCount.adapter = customAdapter
+>>>>>>> origin/master
         customAdapter.notifyDataSetChanged()
         Log.d("myChild", "childPassangerSet: $fChild $fAdult")
         val f3 = Fare(0,0,fChild[0],0,fChild[1],0)
         val p3 = Passenger(addressString.text.toString(),addressString.text.toString(),city.text.toString(),contact.text.toString(),
+<<<<<<< HEAD
             countryCodeString,countryName.text.toString(),"2016-12-06T00:00:00",email.text.toString(),"6E",
             "123",f3,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
             "2023-12-06T00:00:00","KJHHJKHKJH",2,titleString)
+=======
+            countryCodeString,countryName.text.toString(),"2021-12-06T00:00:00",email.text.toString(),"6E",
+            "123",f3,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
+            "2022-12-06T00:00:00","KJHHJKHKJH",1,titleString)
+>>>>>>> origin/master
 
         arrayListPassanger.add(p3)
     }
 
     private fun infantPassangerSet(){
+<<<<<<< HEAD
 //        val arr = ArrayList<passangerCountModel>()
         arrInfant.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
         val customAdapter = passangerCountTicket(arrInfant,this)
         binding.lvInfantCount.adapter = customAdapter
+=======
+        arr.add(passangerCountModel((fName.text.toString() +"-"+lName.text.toString()),R.drawable.edit))
+        val customAdapter = passangerCountTicket(arr,this)
+        binding.lvAdultCount.adapter = customAdapter
+>>>>>>> origin/master
         customAdapter.notifyDataSetChanged()
 
         val f2 = Fare(0,0,fInfant[0],0,fInfant[1],0)
         val p2 = Passenger(addressString.text.toString(),addressString.text.toString(),city.text.toString(),contact.text.toString(),
+<<<<<<< HEAD
             countryCodeString,countryName.text.toString(),"2021-12-06T00:00:00",email.text.toString(),"6E",
             "123",f2,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
             "2023-12-06T00:00:00","KJHHJKHKJH",3,titleString)
+=======
+            countryCodeString,countryName.text.toString(),"2015-12-06T00:00:00",email.text.toString(),"6E",
+            "123",f2,fName.text.toString(),genderString,true,lName.text.toString(),nationalityString,
+            "2022-12-06T00:00:00","KJHHJKHKJH",1,titleString)
+>>>>>>> origin/master
 
         arrayListPassanger.add(p2)
     }

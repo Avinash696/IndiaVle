@@ -10,13 +10,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:background="@drawable/back4"
         android:orientation="vertical"
         android:weightSum="3"
         tools:context=".ui.activity.TicketActivity">
+=======
+        tools:context=".ui.activity.TicketActivity"
+        android:background="@drawable/back4"
+        android:orientation="vertical"
+        android:weightSum="3">
+>>>>>>> origin/master
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -120,6 +128,78 @@
             android:layout_gravity="right"
             android:backgroundTint="@color/green"
             android:text="Save Passenger" />
+=======
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llAdult"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adult (12 +YRs)"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvAdultCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                 android:id="@+id/ivAddDetails"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llChild"
+            android:layout_below="@+id/llAdult"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Child 2-11 Yrs"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvChildCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                android:id="@+id/ivAddDetailsChild"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llInfant"
+            android:layout_below="@+id/llChild"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Infant 0-2 YRs"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lvInfantCount"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/add"
+                android:id="@+id/ivAddDetailsInfant"/>
+        </LinearLayout>
+
+>>>>>>> origin/master
     </LinearLayout>
 
 </layout>

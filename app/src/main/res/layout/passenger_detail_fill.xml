@@ -111,7 +111,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="9898989898"
+=======
+                android:text="Contact No"
+>>>>>>> origin/master
                 android:inputType="number"
                 android:layout_weight="1"
                 android:id="@+id/etContactNoPassDetail" />
@@ -120,7 +124,11 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="avinash@gmail.com"
+=======
+            android:text="Email"
+>>>>>>> origin/master
             android:id="@+id/etEmailPassDetail" />
 
         <Button

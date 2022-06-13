@@ -22,7 +22,10 @@ import com.example.panindia.api.RetrofitHelper
 import com.example.panindia.model.authenticateModel.sendModel.SendModel
 import com.example.panindia.model.searchFlightModel.ResponceFlightSeachModel.Result
 import com.example.panindia.model.searchFlightModel.oneWay.req.FlightOneWayReqModel
+<<<<<<< HEAD
 import com.example.panindia.model.searchFlightModel.oneWay.req.Segment
+=======
+>>>>>>> origin/master
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -59,7 +62,11 @@ class SearchListActivity : AppCompatActivity() {
         Sourcekey = intent.getStringExtra("SourceKey")!!
         DestinationKey = intent.getStringExtra("DestinationKey")!!
         Departkey = intent.getStringExtra("Departkey")!!
+<<<<<<< HEAD
 
+=======
+//        Returnkey = intent.getStringExtra("Returnkey")!!
+>>>>>>> origin/master
         Passengerkey = intent.getStringExtra("Passengerkey")!!
         kidskey = intent.getStringExtra("kidskey")!!
         Weightkey = intent.getStringExtra("Weightkey")!!
@@ -103,6 +110,7 @@ class SearchListActivity : AppCompatActivity() {
         Classkey: Int,
         JourneyType: String,
     ) {
+<<<<<<< HEAD
         val segmentSeach: Segment
         if (JourneyType.equals(1)) {
             val d1 = Departkey + "T00: 00: 00 "
@@ -119,13 +127,26 @@ class SearchListActivity : AppCompatActivity() {
              segmentSeach = Segment(DestinationKey, Classkey, source, d2, )
         }
 
+=======
+        val d1 = Departkey + "T00: 00: 00 "
+//        val d2 = Returnkey + "T00: 00: 00 "
+
+//        val segmentSeach = Segment(DestinationKey, Classkey, source, d2)
+        val segmentSeach = com.example.panindia.model.searchFlightModel.oneWay.req.Segment(DestinationKey,1,source,d1)
+
+//        Log.d("twitMe", "hitIt: $Passengerkey $kidskey $Weightkey")
+>>>>>>> origin/master
         val postDd = FlightOneWayReqModel(
             Integer.parseInt(Passengerkey),
             Integer.parseInt(kidskey),
             "false",
             "192.168.10.10",
             Integer.parseInt(Weightkey),
+<<<<<<< HEAD
             JourneyType,
+=======
+            "1",
+>>>>>>> origin/master
             "false",
             null,
             listOf(segmentSeach),
@@ -143,7 +164,11 @@ class SearchListActivity : AppCompatActivity() {
                 if (result != null) {
                     val gs = Gson()
 
+<<<<<<< HEAD
                     Log.d(TAG, "twitter: ${gs.toJson(result.Response.Results)}")
+=======
+                    Log.d(TAG, "twitter: ${ gs.toJson(result.Response.Results)}")
+>>>>>>> origin/master
                     Log.d("twitter", "hitIt:${result.Response.Results[0][0].FareBreakdown.size} ")
                     pDialog.dismiss()
                     populatingData(tokenNew, result.Response.TraceId, result.Response.Results)
@@ -206,6 +231,14 @@ class SearchListActivity : AppCompatActivity() {
                     JourneyType)
             } else {
                 Log.d(TAG, "hitApi: ${call.message()}")
+<<<<<<< HEAD
+=======
+//                Toast.makeText(
+//                    this@SearchListActivity,
+//                    "Please Check UserName & Password",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+>>>>>>> origin/master
             }
         }
     }

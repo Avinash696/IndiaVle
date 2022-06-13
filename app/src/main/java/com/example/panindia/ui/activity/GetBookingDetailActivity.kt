@@ -23,7 +23,22 @@ class GetBookingDetailActivity : AppCompatActivity() {
         binding = ActivityGetBookingDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //intent Data
+<<<<<<< HEAD
         val intent = intent
+=======
+//        val intent = intent
+////        val stTraceId = intent.getStringExtra("tktTraceId")
+//        val stToken = intent.getStringExtra("tktToken")
+//        val stPnr = intent.getStringExtra("tktPnr")
+//        val stBookingId = intent.getStringExtra("tktBookingIdData")
+//        val dddd = intent.getStringExtra("tktDataValue")
+
+        //bundle Data get
+        val bundle = intent.extras
+        val stTraceId = bundle?.get("tktToken")
+        val stToken = bundle?.get("tktTrace").toString()
+        Log.d("onticket", "onCreate: $stTraceId $stToken")
+>>>>>>> origin/master
 
         val stToken = intent.getStringExtra("stToken")
         val stPnr = intent.getStringExtra("stPnr")
@@ -35,7 +50,11 @@ class GetBookingDetailActivity : AppCompatActivity() {
         bookingViewModel = ViewModelProvider(this,
             BookingDetailFactory(retroBooking))[BookingDetailViewModel::class.java]
 
+<<<<<<< HEAD
         setBookingDetail(stToken!!, stPnr!!, stBookingId!!)
+=======
+//        setBookingDetail(stTraceId!!,stPnr!!,stBookingId!!)
+>>>>>>> origin/master
 //        Log.d("testBookApi", "onCreate:$stToken $stPnr $dddd")
 //        setBookingDetail(stToken, stPnr!!, dddd!!)
     }

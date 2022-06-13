@@ -23,7 +23,7 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 var cal = Calendar.getInstance()
 
-class OneWayFragment : Fragment() {
+class   OneWayFragment : Fragment() {
 
 
     private var param1: String? = null
